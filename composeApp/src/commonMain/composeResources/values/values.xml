@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Gameloop CODM Keymap Generator</string>
+    <string name="lock_mouse">Lock mouse to screen</string>
+    <string name="performance_panel">Combat performance panel</string>
+    <string name="full_screen">Full screen</string>
+    <string name="menu">Settings</string>
+    <string name="jump">Jump/Brake</string>
+    <string name="key1">Change to weapon 1</string>
+    <string name="key2">Change to weapon 2</string>
+    <string name="key3">Score streak 1</string>
+    <string name="key4">Score streak 2</string>
+    <string name="key5">Score streak 3</string>
+    <string name="key6">Score streak 4</string>
+    <string name="keyb">C4 blasting</string>
+    <string name="keyc">Crouch/Slide/Prone(if not disable in game settings)</string>
+    <string name="keye">Plant bomb/Defuse bomb/Operator skill</string>
+    <string name="keyf">Pickup throwable/Cancel throwable/Pick up weapon/Open airdrop/Execution</string>
+    <string name="keyg">Grenade/Tactical grenade (if split is active)</string>
+    <string name="keyq">Switch grenade/Lethal grenade (if split is active)</string>
+    <string name="keyh">Shop</string>
+    <string name="keym">Map</string>
+    <string name="keyr">Reload</string>
+    <string name="keyv">Knife</string>
+    <string name="keyy">Prone (if enable in game settings)/Go down with Hawk X3</string>
+    <string name="keyz">Sound</string>
+    <string name="keyf4">Emoji</string>
+    <string name="keyo">Auto run/Night vision</string>
+    <string name="keyx">Signal</string>
+    <string name="keyt">Voice</string>
+
+    <string name="br_tabkey">Backpack</string>
+    <string name="br_shiftkey">Throttle</string>
+    <string name="br_esckey">Settings/Close pick-up</string>
+    <string name="br_spacekey">Jump/Brake</string>
+    <string name="br_key1">Change to weapon 1</string>
+    <string name="br_key2">Change to weapon 2</string>
+    <string name="br_keyb">Change fire mode</string>
+    <string name="br_keyc">Crouch/Slide/Prone(if not disable in game settings)/Change position in car/Swim down</string>
+    <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
+    <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.
+    </string>
+    <string name="br_keyh">Pick up item</string>
+    <string name="br_keym">Map</string>
+    <string name="br_keyq">Snowboard/Tilt up (motorcycle)</string>
+    <string name="br_keyr">Snowboard jump/Reload</string>
+    <string name="br_keyv">1st/3rd person switch</string>
+    <string name="br_keyy">Prone(if enable in game settings)</string>
+    <string name="br_keyz">Sound</string>
+    <string name="br_keyf4">Emoji</string>
+    <string name="br_keyo">Auto run</string>
+    <string name="br_lock_mouse">Lock mouse to screen</string>
+    <string name="br_alt_key">Free view</string>
+    <string name="br_keyx">Signal</string>
+    <string name="br_keyt">Voice</string>
+    <string name="br_key4">Armors</string>
+    <string name="br_key3">Grenades</string>
+    <string name="br_keyg">Pick up items/Change skill revieve plan/Get in the car/Honk</string>
+
+    <string name="upload">UPLOAD</string>
+    <string name="download">DOWNLOAD</string>
+    <string name="reset">RESET</string>
+    <string name="upload_info_1">If you want to keep the keymap of other Gameloop applications, it is worth uploading the current configuration.</string>
+    <string name="upload_info_2">You can find the configuration file here:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml</string>
+    <string name="download_info">To apply the changes, replace the following file with the newly downloaded version:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nImportant: For proper operation, close Gameloop completely, including the small icon in the system tray.</string>
+    <string name="upload_complete">Upload completed!</string>
+
+    <string name="mp">Multi Player</string>
+    <string name="br">Battle Royale</string>
+    <string name="z">Zombie</string>
+
+    <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
+
+    <string name="br_change">Changes: New powerful armor and grenade buttons.</string>-
+
+    <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
+
+    <string name="license">Terms &amp; Conditions</string>
+    <string name="libraries">About Libraries</string>
+    <string name="source">Source code</string>
+    <string name="copyright">Copyright © 2025 Napharcos</string>
+
+    <string name="tip">Tip: You can create a desktop shortcut to quickly launch CODM using the following path:\n"C:\\Program Files\\TxGameAssistant\\ui\\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100</string>
+</resources>

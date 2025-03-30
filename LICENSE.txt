@@ -1,0 +1,10 @@
+Copyright 2025 Napharcos. All rights reserved.
+
+Permission is granted to use the website for personal or non-commercial purposes, but any copying, distribution, modification, or creation of derivative works is prohibited without the explicit permission of the author, unless otherwise stated.
+
+The source code, is publicly available for transparency and to ensure trustworthiness. However, any use of the source code is subject to the terms of this license.
+
+For any commercial use, distribution, or modification, please contact the author for explicit permission.
+
+
+This website and its contents are provided for informational purposes only. The modifications or configurations shared here are not affiliated with, endorsed by, or supported by the original software developers or publishers. Any use of the provided configurations is at your own risk. The website owner assumes no responsibility for any issues, damages, or consequences that may arise from their usage.
