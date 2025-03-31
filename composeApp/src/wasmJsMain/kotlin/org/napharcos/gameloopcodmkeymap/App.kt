@@ -3,6 +3,7 @@ package org.napharcos.gameloopcodmkeymap
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
@@ -203,11 +204,13 @@ fun LicensePage() {
             .padding(Padding.medium),
         contentAlignment = Alignment.TopCenter
     ) {
-        Text(
-            text = license,
-            style = MaterialTheme.typography.bodyLarge.copy(
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            ),
-        )
+        SelectionContainer {
+            Text(
+                text = license,
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                ),
+            )
+        }
     }
 }

@@ -3,6 +3,7 @@ package org.napharcos.gameloopcodmkeymap
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -70,23 +71,27 @@ fun AboutElements(
         ) {
             Column {
                 Box {
-                    Text(
-                        text = libraries.name,
-                        style = MaterialTheme.typography.headlineSmall.copy(
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        ),
-                    )
+                    SelectionContainer {
+                        Text(
+                            text = libraries.name,
+                            style = MaterialTheme.typography.headlineSmall.copy(
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            ),
+                        )
+                    }
                 }
                 Row {
                     libraries.developers.forEach {
                         val isLast = libraries.developers.last() == it
                         Box {
-                            Text(
-                                text = if (isLast) it.name else it.name + "; ",
-                                style = MaterialTheme.typography.bodyLarge.copy(
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                ),
-                            )
+                            SelectionContainer {
+                                Text(
+                                    text = if (isLast) it.name else it.name + "; ",
+                                    style = MaterialTheme.typography.bodyLarge.copy(
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    ),
+                                )
+                            }
                         }
                     }
                 }
@@ -102,23 +107,27 @@ fun AboutElements(
                                     bottom = Padding.mini / 2,
                                 )
                         ) {
-                            Text(
-                                text = it,
-                                style = MaterialTheme.typography.bodySmall.copy(
-                                    color = MaterialTheme.colorScheme.surfaceVariant
+                            SelectionContainer {
+                                Text(
+                                    text = it,
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = MaterialTheme.colorScheme.surfaceVariant
+                                    )
                                 )
-                            )
+                            }
                         }
                         Spacer(modifier = Modifier.width(Padding.small).background(Color.Transparent))
                     }
                 }
             }
-            Text(
-                text = libraries.artifactVersion,
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                ),
-            )
+            SelectionContainer {
+                Text(
+                    text = libraries.artifactVersion,
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    ),
+                )
+            }
         }
     }
 }

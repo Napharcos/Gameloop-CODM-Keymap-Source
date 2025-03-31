@@ -338,8 +338,8 @@
             <SwitchOperation Description="下飞" EnableSwitch="FlyDown" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.865300" Point_Y="0.774740" HideTips="1"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine1" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
-            <SwitchOperation Description="瞄准" EnableSwitch="Sniper" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.880729" Point_Y="0.566667" HideTips="1"/>
-            <SwitchOperation Description="取消瞄准" EnableSwitch="Sniper2|Reload" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.880729" Point_Y="0.566667" HideTips="1"/>
+            <SwitchOperation Description="瞄准" EnableSwitch="Sniper" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.850729" Point_Y="0.596667" HideTips="1"/>
+            <SwitchOperation Description="取消瞄准" EnableSwitch="Sniper2|Reload" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.850729" Point_Y="0.596667" HideTips="1"/>
             <SwitchOperation Description="取消瞄准（坦克）" EnableSwitch="Sniper2|Tank1" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.956808" Point_Y="0.507813" HideTips="1"/>
             <SwitchOperation Description="取消瞄准（坦克）" EnableSwitch="Sniper2|Tank2" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.956808" Point_Y="0.507813" HideTips="1"/>
             <SwitchOperation Description="打开地图时取消标记" EnableSwitch="MapOpenFlag" Point_X="0.663281" Point_Y="0.919444"/>
