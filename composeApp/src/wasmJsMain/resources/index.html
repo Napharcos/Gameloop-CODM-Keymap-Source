@@ -8,5 +8,65 @@
     <script type="application/javascript" src="composeApp.js"></script>
 </head>
 <body>
+
+<style type="text/css">
+    .preloader_container {
+        z-index: 100000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #353535;
+    }
+    .preloader_container.preloader_container_hidden {
+        display: none;
+    }
+    .preloader_spinner {
+        border: 16px solid #C4C7C9;
+        border-top: 16px solid #201F20;
+        border-radius: 50%;
+        max-width: 50vh;
+        max-height: 50vh;
+        width: 64px;
+        height: 64px;
+        margin: auto auto;
+        animation: spin 2s linear infinite;
+    }
+    .preloader_text {
+        color: #C4C7C9;
+        margin-top: 0.5em;
+        font: 16px Arial;
+        text-align: center;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<div class="preloader_container">
+    <div class="preloader">
+        <div class="preloader_spinner"></div>
+        <div class="preloader_text">
+            Loading...
+            <noscript><div style="color:red;">Please enable <strong>JavaScript</strong> to run this Webpage</div></noscript>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function preloader_complete() {
+        document.querySelector(".preloader_container").classList.add("preloader_container_hidden")
+    }
+</script>
+
+<script type="text/javascript">preloader_complete()</script>
+
+<script type="application/javascript" src="composeApp.js" onload="preloader_complete()"></script>
+
 </body>
 </html>

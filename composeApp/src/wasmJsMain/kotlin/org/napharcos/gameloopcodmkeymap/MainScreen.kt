@@ -61,10 +61,10 @@ fun MainScreen(
                     else -> ""
                 }
             )
-            when (uiState.selectedTopElement) {
-                1 -> SelectableMpElements(uiState, viewModel)
-                else -> Empty()
-            }
+            SelectableElements(
+                uiState = uiState,
+                viewModel = viewModel
+            )
             Elements(
                 elements = when (uiState.selectedTopElement) {
                     1 -> mpKeys
@@ -90,17 +90,27 @@ fun MainScreen(
 }
 
 @Composable
-fun Empty() {}
-
-@Composable
-fun SelectableMpElements(
+fun SelectableElements(
     uiState: UiState,
     viewModel: ViewModel
 ) {
     SelectableCardElement(
-        text = stringResource(Res.string.hip_fire),
-        checked = uiState.replaceMpFire,
-        onCheckedChange = { viewModel.onReplaceMpFireClick(it) },
+        text = when (uiState.selectedTopElement) {
+            1 -> stringResource(Res.string.hip_fire)
+            2 -> stringResource(Res.string.hip_fire_br)
+            else -> ""
+        },
+        checked = when (uiState.selectedTopElement) {
+            1 -> uiState.replaceMpFire
+            2 -> uiState.replaceBrFire
+            else -> false
+        },
+        onCheckedChange = {
+            when (uiState.selectedTopElement) {
+                1 -> viewModel.onReplaceMpFireClick(it)
+                2 -> viewModel.onReplaceBrFireClick(it)
+            }
+        },
     )
 }
 
@@ -323,7 +333,7 @@ fun DownloadButton(
             ),
     ) {
         Button(
-            onClick = { viewModel.onDownloadClick(uiState.replaceMpFire) },
+            onClick = { viewModel.onDownloadClick(uiState.replaceMpFire, uiState.replaceBrFire) },
             colors = ButtonDefaults.buttonColors().copy(
                 containerColor = greenButton,
                 contentColor = greenButtonText

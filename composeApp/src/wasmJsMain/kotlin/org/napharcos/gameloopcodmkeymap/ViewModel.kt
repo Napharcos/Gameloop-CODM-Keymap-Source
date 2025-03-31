@@ -24,6 +24,12 @@ class ViewModel : ViewModel() {
         }
     }
 
+    fun onReplaceBrFireClick(replacedBrFire: Boolean) {
+        _uiState.update {
+            it.copy(replaceBrFire = replacedBrFire)
+        }
+    }
+
     fun onLibrariesClick(showing: Boolean) {
         _uiState.update {
             it.copy(showingLibraries = showing)
@@ -84,5 +90,5 @@ class ViewModel : ViewModel() {
 
     fun onUploadClick() = ManageFile.uploadFile()
 
-    fun onDownloadClick(replaceMpFire: Boolean) = ManageFile.downloadFile(replaceMpFire)
+    fun onDownloadClick(replaceMpFire: Boolean, replaceBrFire: Boolean) = ManageFile.downloadFile(replaceMpFire, replaceBrFire)
 }

@@ -81,7 +81,7 @@ fun App() {
                                 viewModel = viewModel
                             )
                         else if (uiState.showingLibraries) About()
-                        else if (uiState.showingLicense) License()
+                        else if (uiState.showingLicense) LicensePage()
                     }
                     Licenses(viewModel)
                 }
@@ -163,7 +163,7 @@ fun Licenses(
             ClickableElement(
                 text = stringResource(Res.string.source),
                 onClick = {
-                    window.open("", "_blank")
+                    window.open("https://github.com/Napharcos/Gameloop-CODM-Keymap", "_blank")
                 }
             )
         }
@@ -190,7 +190,7 @@ fun ClickableElement(
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun License() {
+fun LicensePage() {
     var license by remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) {

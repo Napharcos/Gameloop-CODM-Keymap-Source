@@ -28,7 +28,7 @@
     <string name="keyx">Signal</string>
     <string name="keyt">Voice</string>
 
-    <string name="br_tabkey">Backpack</string>
+    <string name="br_tabkey">Backpack/Cancel skill</string>
     <string name="br_shiftkey">Throttle</string>
     <string name="br_esckey">Settings/Close pick-up</string>
     <string name="br_spacekey">Jump/Brake</string>
@@ -41,7 +41,7 @@
     </string>
     <string name="br_keyh">Pick up item</string>
     <string name="br_keym">Map</string>
-    <string name="br_keyq">Snowboard/Tilt up (motorcycle)</string>
+    <string name="br_keyq">Snowboard/Tilt up (motorcycle)/Execution</string>
     <string name="br_keyr">Snowboard jump/Reload</string>
     <string name="br_keyv">1st/3rd person switch</string>
     <string name="br_keyy">Prone(if enable in game settings)</string>
@@ -70,9 +70,11 @@
 
     <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
 
-    <string name="br_change">Changes: New powerful armor and grenade buttons.</string>-
+    <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
+
+    <string name="hip_fire_br">Enables hip fire for annihilator, but disables the 1-tap ADS mode.</string>
 
     <string name="license">Terms &amp; Conditions</string>
     <string name="libraries">About Libraries</string>

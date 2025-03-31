@@ -48,8 +48,8 @@ object ManageFile {
         }
     }
 
-    fun downloadFile(replaceMpFire: Boolean) {
-        val text = createCodmText(replaceMpFire)
+    fun downloadFile(replaceMpFire: Boolean, replaceBrFire: Boolean) {
+        val text = createCodmText(replaceMpFire, replaceBrFire)
         val content: JsAny? = text.toJsString()
         val blob = Blob(arrayOf(content).toJsArray(), BlobPropertyBag(type = "application/xml"))
         val url = URL.createObjectURL(blob)
@@ -76,7 +76,7 @@ object ManageFile {
         inputFile.click()
     }
 
-    private fun createCodmText(replaceMpFire: Boolean): String {
+    private fun createCodmText(replaceMpFire: Boolean, replaceBrFire: Boolean): String {
         var editedCodmText = defaultCodmText
         var editedMpText = mpText
         var editedBrText = brText
@@ -96,6 +96,7 @@ object ManageFile {
         editedCodmText = editedCodmText.replace(brText, editedBrText)
 
         if (replaceMpFire) editedCodmText = replaceMPFire(editedCodmText)
+        if (replaceBrFire) editedCodmText = replaceBRFire(editedCodmText)
 
         editedCodmText = editedCodmText.replace("$" + startTime.first, startTime.second)
         editedCodmText = editedCodmText.replace("$" + defaultId.first, defaultId.second)
@@ -122,6 +123,13 @@ object ManageFile {
         newCodmText = newCodmText.replace(line2, newLine2)
 
         return newCodmText
+    }
+
+    private fun replaceBRFire(codmText: String): String {
+        val line = """<SwitchOperation Description="射击" EnableSwitch="SetUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX|Shield|WatchTeammates" Point_X="0.854688" Point_Y="0.745833" HideTips="1"/>"""
+        val newLine = """<SwitchOperation Description="射击" EnableSwitch="SetUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX|Shield|WatchTeammates" Point_X="0.060937" Point_Y="0.519444" HideTips="1"/>"""
+
+        return codmText.replace(line, newLine)
     }
 
     private fun readFile(file: File) {
