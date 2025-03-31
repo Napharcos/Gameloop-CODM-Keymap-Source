@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import gameloopcodmkeymap.composeapp.generated.resources.*
 import kotlinx.browser.window
-import org.jetbrains.compose.resources.StringResource
+import org.napharcos.gameloopcodmkeymap.theme.res.StringResource
 import org.w3c.dom.get
 
 var startTime = "startTime" to "1"

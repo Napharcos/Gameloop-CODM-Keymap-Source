@@ -81,5 +81,7 @@
     <string name="source">Forráskód</string>
     <string name="copyright">Copyright © 2025 Napharcos</string>
 
+    <string name="language">Nyelv</string>
+
     <string name="tip">Tip: Létrehozhatsz asztali ikont, hogy gyorsan elindítsd a CODM-t az alábbi útvonallal:\n"C:\\Program Files\\TxGameAssistant\\ui\\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100</string>
 </resources>

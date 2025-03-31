@@ -81,5 +81,7 @@
     <string name="source">Source code</string>
     <string name="copyright">Copyright © 2025 Napharcos</string>
 
+    <string name="language">Language</string>
+
     <string name="tip">Tip: You can create a desktop shortcut to quickly launch CODM using the following path:\n"C:\\Program Files\\TxGameAssistant\\ui\\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100</string>
 </resources>

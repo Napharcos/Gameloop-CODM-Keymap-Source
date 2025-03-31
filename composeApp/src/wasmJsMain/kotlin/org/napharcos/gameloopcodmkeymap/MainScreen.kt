@@ -21,7 +21,7 @@ import androidx.compose.ui.input.pointer.onPointerEvent
 import androidx.compose.ui.input.pointer.pointerHoverIcon
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.stringResource
+import org.napharcos.gameloopcodmkeymap.theme.res.getStringResource
 import org.napharcos.gameloopcodmkeymap.theme.Padding
 import org.napharcos.gameloopcodmkeymap.theme.greenButton
 import org.napharcos.gameloopcodmkeymap.theme.greenButtonText
@@ -56,8 +56,8 @@ fun MainScreen(
             )
             ChangeInfo(
                 when (uiState.selectedTopElement) {
-                    1 -> stringResource(Res.string.mp_change)
-                    2 -> stringResource(Res.string.br_change)
+                    1 -> getStringResource(Res.string.mp_change)
+                    2 -> getStringResource(Res.string.br_change)
                     else -> ""
                 }
             )
@@ -75,14 +75,14 @@ fun MainScreen(
                 uiState = uiState
             )
             ChangeInfo(
-                text = stringResource(Res.string.download_info)
+                text = getStringResource(Res.string.download_info)
             )
             DownloadButton(
                 uiState = uiState,
                 viewModel = viewModel
             )
             ChangeInfo(
-                text = stringResource(Res.string.tip),
+                text = getStringResource(Res.string.tip),
                 small = true
             )
         }
@@ -96,8 +96,8 @@ fun SelectableElements(
 ) {
     SelectableCardElement(
         text = when (uiState.selectedTopElement) {
-            1 -> stringResource(Res.string.hip_fire)
-            2 -> stringResource(Res.string.hip_fire_br)
+            1 -> getStringResource(Res.string.hip_fire)
+            2 -> getStringResource(Res.string.hip_fire_br)
             else -> ""
         },
         checked = when (uiState.selectedTopElement) {
@@ -259,7 +259,7 @@ fun CardElement(
             ) {
                 SelectionContainer {
                     Text(
-                        text = stringResource(keys.text),
+                        text = getStringResource(keys.text),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -308,7 +308,7 @@ fun CardElement(
                     )
                 ) {
                     Text(
-                        text = stringResource(Res.string.reset),
+                        text = getStringResource(Res.string.reset),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = greenButtonText,
                         )
@@ -343,7 +343,7 @@ fun DownloadButton(
                 .fillMaxWidth()
         ) {
             Text(
-                text = stringResource(Res.string.download),
+                text = getStringResource(Res.string.download),
                 style = MaterialTheme.typography.bodyLarge.copy(
                     color = greenButtonText,
                 )
@@ -396,7 +396,7 @@ fun TopElements(
             TopElement(
                 onClick = { viewModel.onTopElementClick(it.first) },
                 selected = uiState.selectedTopElement == it.first,
-                title = stringResource(it.second)
+                title = getStringResource(it.second)
             )
         }
     }
@@ -460,7 +460,7 @@ fun Upload(
             ) {
                 SelectionContainer {
                     Text(
-                        text = stringResource(Res.string.upload_info_1),
+                        text = getStringResource(Res.string.upload_info_1),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         ),
@@ -479,7 +479,7 @@ fun Upload(
                     )
                 ) {
                     Text(
-                        text = stringResource(Res.string.upload),
+                        text = getStringResource(Res.string.upload),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = greenButtonText,
                         )
@@ -494,7 +494,7 @@ fun Upload(
         ) {
             SelectionContainer {
                 Text(
-                    text = stringResource(Res.string.upload_info_2),
+                    text = getStringResource(Res.string.upload_info_2),
                     style = MaterialTheme.typography.bodyLarge.copy(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     ),
@@ -508,7 +508,7 @@ fun Upload(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = stringResource(Res.string.upload_complete),
+                    text = getStringResource(Res.string.upload_complete),
                     style = MaterialTheme.typography.bodyLarge.copy(
                         color = textButtonLightBlue,
                     )
@@ -531,7 +531,7 @@ fun Title() {
     ) {
         SelectionContainer {
             Text(
-                text = stringResource(Res.string.app_name),
+                text = getStringResource(Res.string.app_name),
                 style = MaterialTheme.typography.headlineMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

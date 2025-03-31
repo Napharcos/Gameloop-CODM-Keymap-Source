@@ -29,8 +29,9 @@ import gameloopcodmkeymap.composeapp.generated.resources.license
 import gameloopcodmkeymap.composeapp.generated.resources.source
 import kotlinx.browser.window
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.stringResource
+import org.napharcos.gameloopcodmkeymap.theme.res.getStringResource
 import org.napharcos.gameloopcodmkeymap.theme.*
+import org.napharcos.gameloopcodmkeymap.theme.res.currentComposeLanguage
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalComposeUiApi::class)
 @Composable
@@ -41,92 +42,110 @@ fun App() {
         colorScheme = if (darkTheme) DarkScheme else LightScheme,
         typography = AppTypography(),
     ) {
-        val scrollState = rememberScrollState(0)
-
-        val viewModel = viewModel { ViewModel() }
-
-        val uiState by viewModel.uiState.collectAsState()
-
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.surfaceContainerLow),
-            contentAlignment = Alignment.TopCenter
+        Localization(
+            language = currentComposeLanguage
         ) {
+            val scrollState = rememberScrollState(0)
+
+            val viewModel = viewModel { ViewModel() }
+
+            val uiState by viewModel.uiState.collectAsState()
+
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(scrollState),
+                    .background(MaterialTheme.colorScheme.surfaceContainerLow),
                 contentAlignment = Alignment.TopCenter
             ) {
-                Column(
-                    modifier = Modifier
-                        .width(1152.dp)
-                        .padding(
-                            top = Padding.medium,
-                            bottom = Padding.medium
-                        )
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .then(
-                                other = Modifier
-                                    .border(1.dp, MaterialTheme.colorScheme.surfaceContainerHighest, Shape.small)
-                            ),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        if (!uiState.showingLibraries && !uiState.showingLicense)
-                            MainScreen(
-                                uiState = uiState,
-                                viewModel = viewModel
-                            )
-                        else if (uiState.showingLibraries) About()
-                        else if (uiState.showingLicense) LicensePage()
-                    }
-                    Licenses(viewModel)
-                }
-            }
-            VerticalScrollbar(
-                adapter = rememberScrollbarAdapter(scrollState),
-                style = LocalScrollbarStyle.current.copy(
-                    unhoverColor = MaterialTheme.colorScheme.surfaceContainerHigh,
-                    hoverColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                ),
-                modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .fillMaxHeight()
-            )
-            if (uiState.showingLibraries && uiState.showingLicense)
                 Box(
                     modifier = Modifier
-                        .width(768.dp)
-                        .padding(top = Padding.large,),
-                    contentAlignment = Alignment.TopEnd
+                        .fillMaxSize()
+                        .verticalScroll(scrollState),
+                    contentAlignment = Alignment.TopCenter
                 ) {
-                    var onEnter by remember { mutableStateOf(false) }
-
-                    Icon(
-                        imageVector = Icons.Default.Close,
-                        contentDescription = "Close",
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    Column(
                         modifier = Modifier
-                            .onPointerEvent(PointerEventType.Enter) {
-                                onEnter = true
+                            .width(1152.dp)
+                            .padding(
+                                top = Padding.medium,
+                                bottom = Padding.medium
+                            )
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .then(
+                                    other = Modifier
+                                        .border(1.dp, MaterialTheme.colorScheme.surfaceContainerHighest, Shape.small)
+                                ),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            if (!uiState.showingLibraries && !uiState.showingLicense)
+                                MainScreen(
+                                    uiState = uiState,
+                                    viewModel = viewModel
+                                )
+                            else if (uiState.showingLibraries) About()
+                            else if (uiState.showingLicense) LicensePage()
+                        }
+                        Licenses(viewModel)
+                    }
+                    if (!uiState.showingLibraries && !uiState.showingLicense)
+                        Box(
+                            modifier = Modifier
+                                .width(768.dp)
+                                .padding(top = Padding.large),
+                            contentAlignment = Alignment.TopEnd
+                        ) {
+                            LanguageElement(
+                                lang = currentComposeLanguage
+                            ) {
+                                changeLanguage(it)
+                                saveLang(it)
                             }
-                            .onPointerEvent(PointerEventType.Exit) {
-                                onEnter = false
-                            }
-                            .size(48.dp)
-                            .clip(CircleShape)
-                            .background(if (onEnter) MaterialTheme.colorScheme.surfaceContainerHigh else Color.Transparent)
-                            .padding(Padding.small)
-                            .onClick {
-                                viewModel.onLibrariesClick(false)
-                                viewModel.onLicenseClick(false)
-                            }
-                    )
+                        }
                 }
+                VerticalScrollbar(
+                    adapter = rememberScrollbarAdapter(scrollState),
+                    style = LocalScrollbarStyle.current.copy(
+                        unhoverColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                        hoverColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .fillMaxHeight()
+                )
+                if (uiState.showingLibraries || uiState.showingLicense)
+                    Box(
+                        modifier = Modifier
+                            .width(768.dp)
+                            .padding(top = Padding.large,),
+                        contentAlignment = Alignment.TopEnd
+                    ) {
+                        var onEnter by remember { mutableStateOf(false) }
+
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = "Close",
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier
+                                .onPointerEvent(PointerEventType.Enter) {
+                                    onEnter = true
+                                }
+                                .onPointerEvent(PointerEventType.Exit) {
+                                    onEnter = false
+                                }
+                                .size(48.dp)
+                                .clip(CircleShape)
+                                .background(if (onEnter) MaterialTheme.colorScheme.surfaceContainerHigh else Color.Transparent)
+                                .padding(Padding.small)
+                                .onClick {
+                                    viewModel.onLibrariesClick(false)
+                                    viewModel.onLicenseClick(false)
+                                }
+                        )
+                    }
+            }
         }
     }
 }
@@ -142,13 +161,13 @@ fun Licenses(
     ) {
         Column {
             ClickableElement(
-                text = stringResource(Res.string.license),
+                text = getStringResource(Res.string.license),
                 onClick = {
                     viewModel.onLicenseClick(true)
                 }
             )
             Text(
-                text = stringResource(Res.string.copyright),
+                text = getStringResource(Res.string.copyright),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 ),
@@ -156,13 +175,13 @@ fun Licenses(
         }
         Column {
             ClickableElement(
-                text = stringResource(Res.string.libraries),
+                text = getStringResource(Res.string.libraries),
                 onClick = {
                     viewModel.onLibrariesClick(true)
                 }
             )
             ClickableElement(
-                text = stringResource(Res.string.source),
+                text = getStringResource(Res.string.source),
                 onClick = {
                     window.open("https://github.com/Napharcos/Gameloop-CODM-Keymap-Source", "_blank")
                 }
