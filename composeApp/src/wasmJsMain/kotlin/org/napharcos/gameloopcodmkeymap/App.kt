@@ -163,7 +163,7 @@ fun Licenses(
             ClickableElement(
                 text = stringResource(Res.string.source),
                 onClick = {
-                    window.open("https://github.com/Napharcos/Gameloop-CODM-Keymap", "_blank")
+                    window.open("https://github.com/Napharcos/Gameloop-CODM-Keymap-Source", "_blank")
                 }
             )
         }
