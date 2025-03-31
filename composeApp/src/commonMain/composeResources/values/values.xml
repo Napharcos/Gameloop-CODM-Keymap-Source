@@ -61,7 +61,7 @@
     <string name="reset">RESET</string>
     <string name="upload_info_1">If you want to keep the keymap of other Gameloop applications, it is worth uploading the current configuration.</string>
     <string name="upload_info_2">You can find the configuration file here:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml</string>
-    <string name="download_info">To apply the changes, replace the following file with the newly downloaded version:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nImportant: For proper operation, close Gameloop completely, including the small icon in the system tray.</string>
+    <string name="download_info">To apply the changes, replace the following file with the newly downloaded version:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nImportant: For proper operation, close Gameloop completely, including the small icon in the system tray, before replace the file.</string>
     <string name="upload_complete">Upload completed!</string>
 
     <string name="mp">Multi Player</string>

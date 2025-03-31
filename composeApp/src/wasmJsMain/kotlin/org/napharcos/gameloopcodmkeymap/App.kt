@@ -97,7 +97,7 @@ fun App() {
                     .align(Alignment.CenterEnd)
                     .fillMaxHeight()
             )
-            if (uiState.showingLibraries)
+            if (uiState.showingLibraries && uiState.showingLicense)
                 Box(
                     modifier = Modifier
                         .width(768.dp)

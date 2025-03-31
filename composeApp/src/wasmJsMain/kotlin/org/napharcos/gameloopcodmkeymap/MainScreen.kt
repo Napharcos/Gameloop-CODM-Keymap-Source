@@ -479,7 +479,7 @@ fun Upload(
                     )
                 ) {
                     Text(
-                        text = "UPLOAD",
+                        text = stringResource(Res.string.upload),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = greenButtonText,
                         )
