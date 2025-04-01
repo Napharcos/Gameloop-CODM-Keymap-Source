@@ -333,7 +333,10 @@ fun DownloadButton(
             ),
     ) {
         Button(
-            onClick = { viewModel.onDownloadClick(uiState.replaceMpFire, uiState.replaceBrFire) },
+            onClick = {
+                viewModel.onDownloadClick(uiState.replaceMpFire, uiState.replaceBrFire)
+                logDownloadEvent()
+            },
             colors = ButtonDefaults.buttonColors().copy(
                 containerColor = greenButton,
                 contentColor = greenButtonText
@@ -350,6 +353,10 @@ fun DownloadButton(
             )
         }
     }
+}
+
+fun logDownloadEvent() {
+    js("gtag('event', 'download', {'event_category': 'File', 'event_label': 'config.yaml'})")
 }
 
 @Composable
