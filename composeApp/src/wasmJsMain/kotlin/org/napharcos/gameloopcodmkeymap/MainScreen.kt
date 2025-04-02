@@ -356,7 +356,7 @@ fun DownloadButton(
 }
 
 fun logDownloadEvent() {
-    js("gtag('event', 'download', {'event_category': 'File', 'event_label': 'config.yaml'})")
+    js("gtag('event', 'download')")
 }
 
 @Composable
