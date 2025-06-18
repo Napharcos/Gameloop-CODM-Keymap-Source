@@ -334,7 +334,7 @@
         </KeyMappingEx>
     </KeyMapMode>
     <KeyMapMode ModeID="2" Name="Battle Royale" CurrModeEnableTips="1">
-        <KeyMapping ItemName="Right Click" Point_X="0.889844" Point_Y="0.513889" Description="右键开镜" MiniVisiable="false" MiniDisable="false" ShowOnLockAsciiCode="192" AsciiCode="-2">
+        <KeyMapping ItemName="Right Click" Point_X="0.850729" Point_Y="0.596667" Description="右键开镜" MiniVisiable="false" MiniDisable="false" ShowOnLockAsciiCode="192" AsciiCode="-2">
             <SwitchOperation Description="下飞" EnableSwitch="FlyDown" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.865300" Point_Y="0.774740" HideTips="1"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine1" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
@@ -344,7 +344,7 @@
             <SwitchOperation Description="取消瞄准（坦克）" EnableSwitch="Sniper2|Tank2" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.956808" Point_Y="0.507813" HideTips="1"/>
             <SwitchOperation Description="打开地图时取消标记" EnableSwitch="MapOpenFlag" Point_X="0.663281" Point_Y="0.919444"/>
             <SwitchOperation Description="刀" EnableSwitch="Knife" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.060937" Point_Y="0.519444" HideTips="1"/>
-            <SwitchOperation Description="" Point_X="0.880729" Point_Y="0.566667" HideTips="1"/>
+            <SwitchOperation Description="" Point_X="0.850729" Point_Y="0.596667" HideTips="1"/>
         </KeyMapping>
         <KeyMapping ItemName="$tabName" Point_X="0.291406" Point_Y="0.858333" Description="背包" MiniVisiable="false" MiniDisable="false" AsciiCode="$tabCode">
             <SwitchOperation Description="取消僵尸雷" EnableSwitch="Sniper2" DisableSwitch="XBtn|MapOpenFlag|InSetUp|ReturnSetUp" Point_X="0.060937" Point_Y="0.519444"/>
