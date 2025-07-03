@@ -56,6 +56,18 @@
     <string name="br_key3">Gránátok</string>
     <string name="br_keyg">Elem felvétele/Képesség módosítása/Beszállás autóba/Duda</string>
 
+    <string name="gd_tabkey">Teljesítménypanel</string>
+    <string name="gd_ykey">Repülés előre</string>
+    <string name="gd_esckey">Beállítások</string>
+    <string name="gd_spacekey">Repülés felfelé</string>
+    <string name="gd_qkey">Képesség 1</string>
+    <string name="gd_ekey">Képesség 2</string>
+    <string name="gd_rkey">Képesség 3</string>
+    <string name="gd_mkey">Térkép</string>
+    <string name="gd_zkey">Hang</string>
+    <string name="gd_xkey">Jelzés</string>
+    <string name="gd_tkey">Mikrofon</string>
+
     <string name="upload">FELTÖLT</string>
     <string name="download">LETÖLTÉS</string>
     <string name="reset">ALAP</string>
@@ -67,10 +79,13 @@
     <string name="mp">Multi Player</string>
     <string name="br">Battle Royale</string>
     <string name="z">Zombie</string>
+    <string name="gd">Gundam</string>
 
     <string name="mp_change">Módosítások: Kivégzés javítva, hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
 
-    <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, kivégzés javítva, hip fire opció hozzáadva, végtelen RPD javítva.</string>-
+    <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, kivégzés javítva, hip fire opció hozzáadva, végtelen RPD javítva.</string>
+
+    <string name="gd_change">Módosítások: Jobb egérkattintás hozzáadva a másodlagos fegyverhez.</string>
 
     <string name="hip_fire">Engedélyezi a  hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
 

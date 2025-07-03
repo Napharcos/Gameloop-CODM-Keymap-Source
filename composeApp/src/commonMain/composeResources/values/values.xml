@@ -37,8 +37,7 @@
     <string name="br_keyb">Change fire mode</string>
     <string name="br_keyc">Crouch/Slide/Prone(if not disable in game settings)/Change position in car/Swim down</string>
     <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
-    <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.
-    </string>
+    <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.</string>
     <string name="br_keyh">Pick up item</string>
     <string name="br_keym">Map</string>
     <string name="br_keyq">Snowboard/Tilt up (motorcycle)/Execution</string>
@@ -56,6 +55,18 @@
     <string name="br_key3">Grenades</string>
     <string name="br_keyg">Pick up items/Change skill revieve plan/Get in the car/Honk</string>
 
+    <string name="gd_tabkey">Performance Panel</string>
+    <string name="gd_ykey">Flight forward</string>
+    <string name="gd_esckey">Settings</string>
+    <string name="gd_spacekey">Flight up</string>
+    <string name="gd_qkey">Ability 1</string>
+    <string name="gd_ekey">Ability 2</string>
+    <string name="gd_rkey">Ability 3</string>
+    <string name="gd_mkey">Térkép</string>
+    <string name="gd_zkey">Sound</string>
+    <string name="gd_xkey">Signal</string>
+    <string name="gd_tkey">Voice</string>
+
     <string name="upload">UPLOAD</string>
     <string name="download">DOWNLOAD</string>
     <string name="reset">RESET</string>
@@ -67,10 +78,13 @@
     <string name="mp">Multi Player</string>
     <string name="br">Battle Royale</string>
     <string name="z">Zombie</string>
+    <string name="gd">Gundam</string>
 
     <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
 
     <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-
+
+    <string name="gd_change">Changes: Right mouse click added to secondary weapon.</string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
 

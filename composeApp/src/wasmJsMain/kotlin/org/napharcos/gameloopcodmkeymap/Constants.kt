@@ -48,3 +48,4 @@ const val START = "startText"
 const val END = "endText"
 
 const val BR = "br"
+const val GD = "gd"

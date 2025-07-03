@@ -29,11 +29,13 @@ object ManageFile {
 
     private const val MP_START = "<KeyMapMode ModeID=\"1\""
     private const val BR_START = "<KeyMapMode ModeID=\"2\""
+    private const val GD_START = "<KeyMapMode ModeID=\"3\""
     private const val MODE_END = "</KeyMapMode>"
 
     private lateinit var defaultCodmText: String
     private lateinit var mpText: String
     private lateinit var brText: String
+    private lateinit var gdText: String
 
     var startText by mutableStateOf<String?>(null)
     var endText by mutableStateOf<String?>(null)
@@ -43,6 +45,7 @@ object ManageFile {
             defaultCodmText = Res.readBytes("files/DefaultKeyMap.xml").decodeToString()
             mpText = MP_START + defaultCodmText.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
             brText = BR_START + defaultCodmText.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+            gdText = GD_START + defaultCodmText.substringAfter(GD_START).substringBefore(MODE_END) + MODE_END
 
             loadLocalData()
         }
@@ -80,6 +83,7 @@ object ManageFile {
         var editedCodmText = defaultCodmText
         var editedMpText = mpText
         var editedBrText = brText
+        var editedGdText = gdText
 
         mpKeys.forEach {
             editedMpText = editedMpText.replace(("$" + it.id.substringBefore(key)+name), it.currentKey)
@@ -94,6 +98,13 @@ object ManageFile {
         }
 
         editedCodmText = editedCodmText.replace(brText, editedBrText)
+
+        gundamKeys.forEach {
+            editedGdText = editedGdText.replace(("$" + it.id.substringBefore(key) + name), it.currentKey)
+            editedGdText = editedGdText.replace(("$" + it.id.substringBefore(key)+CODE), it.currentCode.toString())
+        }
+
+        editedCodmText = editedCodmText.replace(gdText, editedGdText)
 
         if (replaceMpFire) editedCodmText = replaceMPFire(editedCodmText)
         if (replaceBrFire) editedCodmText = replaceBRFire(editedCodmText)

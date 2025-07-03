@@ -60,6 +60,24 @@ class ViewModel : ViewModel() {
         brKeys.addAll(newList)
     }
 
+    fun changeGdKey(id: String, key: String, code: Int) {
+        val newList = gundamKeys.map {
+            when {
+                it.id == id -> {
+                    saveBrKey(id, key, code)
+                    it.copy(currentKey = key, currentCode = code)
+                }
+                it.currentCode == code -> {
+                    saveBrKey(it.id, "", -1)
+                    it.copy(currentKey = "", currentCode = -1)
+                }
+                else -> it
+            }
+        }
+        gundamKeys.clear()
+        gundamKeys.addAll(newList)
+    }
+
     fun changeMpKey(id: String, key: String, code: Int) {
         val newList = mpKeys.map {
             when {
@@ -76,6 +94,11 @@ class ViewModel : ViewModel() {
         }
         mpKeys.clear()
         mpKeys.addAll(newList)
+    }
+
+    private fun saveGdKey(id: String, key: String, keyCode: Int) {
+        window.localStorage[GD + id] = key
+        window.localStorage[GD + id + code] = keyCode.toString()
     }
 
     private fun saveBrKey(id: String, key: String, keyCode: Int) {

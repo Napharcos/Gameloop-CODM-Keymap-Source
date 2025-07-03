@@ -565,7 +565,74 @@
             <SwitchOperation Description="鸣笛中" EnableSwitch="Whistling" DisableSwitch="XBtn|MapOpenFlag|InSetUp" Point_X="0.965625" Point_Y="0.720833"/>
         </KeyMappingEx>
     </KeyMapMode>
-    <KeyMapMode ModeID="3" Name="OB" CurrModeEnableTips="1">
+    <KeyMapMode ModeID="3" Name="Gundam" CurrModeEnableTips="1">
+        <KeyMapping ItemName="Right Click" Point_X="0.767969" Point_Y="0.846667" Description="右键开镜" MiniVisiable="true" MiniDisable="false" ShowOnLockAsciiCode="192" AsciiCode="-2"/>
+        <KeyMapping ItemName="$tabName" Point_X="0.501875" Point_Y="0.048889" Description="字母键" MiniVisiable="true" MiniDisable="false" AutoCancel="0" AsciiCode="$tabCode"/>
+        <KeyMapping ItemName="$yName" Point_X="0.951562" Point_Y="0.825000" Description="趴下" MiniVisiable="false" MiniDisable="false" AsciiCode="$yCode">
+            <SwitchOperation Description="趴下" EnableSwitch="Fall" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.967057" Point_Y="0.940104" HideTips="1"/>
+            <SwitchOperation Description="取消趴下" EnableSwitch="CancelFall" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.967057" Point_Y="0.940104" HideTips="1"/>
+            <SwitchOperation Description="" Point_X="0.950625" Point_Y="0.884444" HideTips="1"/>
+        </KeyMapping>
+        <KeyMapping ItemName="$escName" Point_X="0.765625" Point_Y="0.050000" Description="打开设置" MiniVisiable="false" MiniDisable="false" AsciiCode="$escCode">
+            <SwitchOperation Description="关闭躲猫猫介绍" EnableSwitch="Cartoon" Point_X="0.916406" Point_Y="0.209722"/>
+            <SwitchOperation Description="返回设置" EnableSwitch="ReturnSetUp" Point_X="0.033203" Point_Y="0.052083"/>
+            <SwitchOperation Description="关闭设置" EnableSwitch="InSetUp" Point_X="0.775000" Point_Y="0.504167" TexturePosition="InSetUp"/>
+            <SwitchOperation Description="打开设置" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|HangUp|Cartoon" Point_X="0.765625" Point_Y="0.050000"/>
+        </KeyMapping>
+        <KeyMapping ItemName="$spaceName" Point_X="0.958008" Point_Y="0.675347" Description="跳跃" MiniVisiable="false" MiniDisable="false" AsciiCode="$spaceCode">
+            <SwitchOperation Description="刹车（无人机）" EnableSwitch="Brake" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.046875" Point_Y="0.637500"/>
+            <SwitchOperation Description="刹车按住（无人机）" EnableSwitch="Brake2" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.046875" Point_Y="0.637500"/>
+            <SwitchOperation Description="跳跃" EnableSwitch="Jump" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.958008" Point_Y="0.675347" HideTips="1"/>
+            <SwitchOperation Description="跳跃" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.958008" Point_Y="0.675347" HideTips="1"/>
+        </KeyMapping>
+        <KeyMapping ItemName="$qName" Point_X="0.785000" Point_Y="0.440000" Description="字母键" MiniVisiable="true" MiniDisable="false" AutoCancel="0" AsciiCode="$qCode"/>
+        <KeyMapping ItemName="$eName" Point_X="0.874375" Point_Y="0.436667" Description="字母键划线" MiniVisiable="true" MiniDisable="false" AutoCancel="0" AsciiCode="$eCode"/>
+        <KeyMapping ItemName="$rName" Point_X="0.961250" Point_Y="0.434444" Description="字母键" MiniVisiable="true" MiniDisable="false" AutoCancel="0" AsciiCode="$rName"/>
+        <KeyMapping ItemName="$mName" Point_X="0.970313" Point_Y="0.062500" Description="打开地图" MiniVisiable="false" MiniDisable="false" AsciiCode="$mCode">
+            <SwitchOperation Description="打开地图" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|Cartoon" Point_X="0.967969" Point_Y="0.079167"/>
+        </KeyMapping>
+        <KeyMapping ItemName="$zName" Point_X="0.767969" Point_Y="0.220833" Description="语音按住" MiniVisiable="false" MiniDisable="false" AsciiCode="$zCode">
+            <SwitchOperation Description="语音按住" EnableSwitch="Voice" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|WatchTeammates|Cartoon"/>
+        </KeyMapping>
+        <KeyMappingEx ItemName="WASD" Point_X="0.190625" Point_Y="0.713889" Description="移动" MiniVisiable="false" MiniDisable="false" HideTipsAlways="1" Type="CrossKey" speed="0" UP_AsciiCode="87" DOWN_AsciiCode="83" LEFT_AsciiCode="65" RIGHT_AsciiCode="68" Offset="0.070258" ShiftOffset="0.100000">
+            <SwitchOperation Description="移动" EnableSwitch="SetUp" DisableSwitch="DriveMode1|DriveMode1Press"/>
+            <SwitchOperation Description="移动" EnableSwitch="SteeringWheel" DisableSwitch="DriveMode1|DriveMode1Press"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="Left Mouse Button" Point_X="0.060937" Point_Y="0.519444" Description="开火" MiniVisiable="false" MiniDisable="false" AutoActive="1" Type="LClick" LOCK_AsciiCode="88" AsciiCode="88">
+            <SwitchOperation Description="锁定（躲猫猫）" EnableSwitch="Flash2" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.848437" Point_Y="0.709722"/>
+            <SwitchOperation Description="上飞" EnableSwitch="FlyUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|Knife2|SkillX|Hand2|Turret|Turret1" Point_X="0.885156" Point_Y="0.541667" HideTips="1"/>
+            <SwitchOperation Description="弓箭" EnableSwitch="Bow" DisableSwitch="InSetUp|BreastPatting|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|WatchTeammates|SelectFireMode" Point_X="0.854688" Point_Y="0.745833" HideTips="1"/>
+            <SwitchOperation Description="射击" EnableSwitch="SetUp" DisableSwitch="InSetUp|BreastPatting|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|WatchTeammates|Cartoon" Point_X="0.060937" Point_Y="0.519444" HideTips="1"/>
+            <SwitchOperation Description="射击" EnableSwitch="Reload" DisableSwitch="InSetUp|BreastPatting|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|WatchTeammates|SelectFireMode|Cartoon" Point_X="0.060937" Point_Y="0.519444" HideTips="1"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="Move with Mouse" Point_X="0.661719" Point_Y="0.369444" Description="视角" MiniVisiable="false" MiniDisable="false" HideTipsAlways="1" AutoActive="1" Raw="1" Type="RClick" Offset="0.450000" LOCK_AsciiCode="88" AsciiCode="88" Sensi_X="1.000000" Sensi_Y="1.000000">
+            <SwitchOperation Description="视角" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|BreastPatting|Diamond1|Diamond2|Diamond3|Diamond4|SelectFireMode|HangUp|YellowM|Hand|WatchTeammates|Cartoon|Transformation|Shop2"/>
+            <SwitchOperation Description="视角" EnableSwitch="Reload" DisableSwitch="InSetUp|ReturnSetUp|Knife2|BreastPatting|Diamond1|Diamond2|Diamond3|Diamond4|SelectFireMode|HangUp|YellowM|Hand|WatchTeammates|Cartoon|Transformation|Shop2"/>
+            <SwitchOperation Description="视角" EnableSwitch="SteeringWheel" DisableSwitch="InSetUp|ReturnSetUp|Knife2|BreastPatting|Diamond1|Diamond2|Diamond3|Diamond4|SelectFireMode|HangUp|YellowM|Hand|WatchTeammates|Cartoon|Transformation|Shop2"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="$xName" Point_X="0.849375" Point_Y="0.278889" Description="信号" MiniVisiable="false" MiniDisable="false" NoDelete="1" SpecialFunc="0" OpGuidClass="0" InUseDisableView="1" Type="KeyMove" Offset="0.490000" Click_X="0.867969" Click_Y="0.318056" Click_Offset="0.450000" AsciiCode="$xCode" Cancel_X="-0.911133" Cancel_Y="-0.277778" Click_Left="1" ReleaseNow="0" Center_X="0.000000" Center_Y="0.000000" StopMoving="0" NeedPressed="1" Center_XY_Disable="1" Delay="0">
+            <SwitchOperation Description="信号" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|WatchTeammates|Cartoon"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="$tName" Point_X="0.767188" Point_Y="0.138889" Description="开启/关闭广播" MiniVisiable="false" MiniDisable="false" Type="MultiPoint" AsciiCode="$tCode">
+            <Point Point_X="0.614062" Point_Y="0.130556" Delay="300" IsMutex="1" MutexVal="1" IsRepeat="0"/>
+            <Point Point_X="0.677344" Point_Y="0.130556" Delay="300" IsMutex="1" MutexVal="0" IsRepeat="0"/>
+            <SwitchOperation Description="开启/静音广播" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|WatchTeammates|Cartoon"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="$zName" Point_X="0.767969" Point_Y="0.220833" Description="开启/关闭语音" MiniVisiable="false" MiniDisable="false" Type="MultiPoint" AsciiCode="$zCode">
+            <Point Point_X="0.580469" Point_Y="0.233333" Delay="300" IsMutex="1" MutexVal="1" IsRepeat="0"/>
+            <Point Point_X="0.715625" Point_Y="0.233333" Delay="300" IsMutex="1" MutexVal="0" IsRepeat="0"/>
+            <SwitchOperation Description="开启/关闭语音" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|Voice|WatchTeammates|Cartoon"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="F2" Point_X="0.811250" Point_Y="0.273333" Description="快速说话" MiniVisiable="false" MiniDisable="false" InUseDisableView="1" Type="MultiPoint" AsciiCode="113">
+            <Point Point_X="0.657031" Point_Y="0.073611" Delay="300" IsMutex="0" MutexVal="0" IsRepeat="0"/>
+            <SwitchOperation Description="快速说话(第一句)" EnableSwitch="SetUp" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|ReturnSetUp|Knife2|HangUp|MissileVolley|WatchTeammates|Cartoon"/>
+        </KeyMappingEx>
+        <KeyMappingEx ItemName="F3" Point_X="0.811250" Point_Y="0.275556" Description="快速说话" MiniVisiable="false" MiniDisable="false" HideTipsAlways="1" InUseDisableView="1" Type="MultiPoint" AsciiCode="114">
+            <Point Point_X="0.657813" Point_Y="0.148611" Delay="300" IsMutex="0" MutexVal="0" IsRepeat="0"/>
+            <SwitchOperation Description="快速说话(第二句)" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|MissileVolley|WatchTeammates|Cartoon"/>
+        </KeyMappingEx>
+    </KeyMapMode>
+    <KeyMapMode ModeID="4" Name="OB" CurrModeEnableTips="1">
         <KeyMapping ItemName="Tab" Point_X="0.496875" Point_Y="0.044444" Description="字母键" MiniVisiable="false" MiniDisable="false" AsciiCode="9"/>
         <KeyMapping ItemName="Ctrl" Point_X="0.949219" Point_Y="0.920833" Description="字母键" MiniVisiable="false" MiniDisable="false" AsciiCode="17"/>
         <KeyMapping ItemName="Space" Point_X="0.892969" Point_Y="0.134722" Description="字母键" MiniVisiable="false" MiniDisable="false" AsciiCode="32"/>
