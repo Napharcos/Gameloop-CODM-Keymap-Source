@@ -84,17 +84,18 @@ val brKeys = mutableStateListOf(
 )
 
 val gundamKeys = mutableStateListOf(
-    KeyData(tabKey, Res.string.gd_tabkey, "Tab", 9, loadGndamKey(tabKey) ?: "Tab", loadGundamCode(tabKey) ?: 9),
-    KeyData(yKey, Res.string.gd_ykey, "Z", 90, loadGndamKey(yKey) ?: "Z", loadGundamCode(yKey) ?: 90),
-    KeyData(escKey, Res.string.gd_esckey, "Escape", 27, loadGndamKey(escKey) ?: "Escape", loadGundamCode(escKey) ?: 27),
-    KeyData(spaceKey, Res.string.gd_spacekey, "Space", 32, loadGndamKey(spaceKey) ?: "Space", loadGundamCode(spaceKey) ?: 32),
-    KeyData(qKey, Res.string.gd_qkey, "Q", 81, loadGndamKey(qKey) ?: "Q", loadGundamCode(qKey) ?: 81),
-    KeyData(eKey, Res.string.gd_ekey, "E", 69, loadGndamKey(eKey) ?: "E", loadGundamCode(eKey) ?: 69),
-    KeyData(rKey, Res.string.gd_rkey, "R", 82, loadGndamKey(rKey) ?: "R", loadGundamCode(rKey) ?: 82),
-    KeyData(mKey, Res.string.gd_mkey, "M", 77, loadGndamKey(mKey) ?: "M", loadGundamCode(mKey) ?: 77),
-    KeyData(zKey, Res.string.gd_zkey, "Y", 89, loadGndamKey(zKey) ?: "Y", loadGundamCode(zKey) ?: 89),
-    KeyData(xKey, Res.string.gd_xkey, "X", 88, loadGndamKey(xKey) ?: "X", loadGundamCode(xKey) ?: 88),
-    KeyData(tKey, Res.string.gd_tkey, "T", 84, loadGndamKey(tKey) ?: "T", loadGundamCode(tKey) ?: 84)
+    KeyData(lockMouseKey, Res.string.br_lock_mouse, "Control", 17, loadGundamKey(lockMouseKey) ?: "Control", loadGundamCode(lockMouseKey) ?: 17),
+    KeyData(tabKey, Res.string.gd_tabkey, "Tab", 9, loadGundamKey(tabKey) ?: "Tab", loadGundamCode(tabKey) ?: 9),
+    KeyData(yKey, Res.string.gd_ykey, "Z", 90, loadGundamKey(yKey) ?: "Z", loadGundamCode(yKey) ?: 90),
+    KeyData(escKey, Res.string.gd_esckey, "Escape", 27, loadGundamKey(escKey) ?: "Escape", loadGundamCode(escKey) ?: 27),
+    KeyData(spaceKey, Res.string.gd_spacekey, "Space", 32, loadGundamKey(spaceKey) ?: "Space", loadGundamCode(spaceKey) ?: 32),
+    KeyData(qKey, Res.string.gd_qkey, "Q", 81, loadGundamKey(qKey) ?: "Q", loadGundamCode(qKey) ?: 81),
+    KeyData(eKey, Res.string.gd_ekey, "E", 69, loadGundamKey(eKey) ?: "E", loadGundamCode(eKey) ?: 69),
+    KeyData(rKey, Res.string.gd_rkey, "R", 82, loadGundamKey(rKey) ?: "R", loadGundamCode(rKey) ?: 82),
+    KeyData(mKey, Res.string.gd_mkey, "M", 77, loadGundamKey(mKey) ?: "M", loadGundamCode(mKey) ?: 77),
+    KeyData(zKey, Res.string.gd_zkey, "Y", 89, loadGundamKey(zKey) ?: "Y", loadGundamCode(zKey) ?: 89),
+    KeyData(xKey, Res.string.gd_xkey, "X", 88, loadGundamKey(xKey) ?: "X", loadGundamCode(xKey) ?: 88),
+    KeyData(tKey, Res.string.gd_tkey, "T", 84, loadGundamKey(tKey) ?: "T", loadGundamCode(tKey) ?: 84)
 )
 
 fun loadGundamCode(id: String) = window.localStorage[GD + id + code]?.toInt()
@@ -107,7 +108,7 @@ fun loadKey(id: String) = window.localStorage[id]
 
 fun loadBrKey(id: String) = window.localStorage[BR + id]
 
-fun loadGndamKey(id: String) = window.localStorage[GD + id]
+fun loadGundamKey(id: String) = window.localStorage[GD + id]
 
 data class KeyData(
     val id: String,
