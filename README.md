@@ -76,7 +76,7 @@ Now the file is saved to your computer usually in the download folder.
 > 
 > ![Image 6](GuideAssets/Image%206.jpg)
 
-Now open two file explorer and in the first navigate to the downloaded file.
+Now open two file manager and in the first navigate to the downloaded file.
 
 ![Image 8](GuideAssets/Image%208.jpg)
 

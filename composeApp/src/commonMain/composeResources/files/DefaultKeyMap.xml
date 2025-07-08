@@ -1,7 +1,7 @@
 <Item ApkName="com.activision.callofduty.shooter" 备注="使命召唤西方服" VersionCode="4400">
     <StartInfo StartTimes="$startTime"/>
     <LastMode ModeID="$id" EnableTips="$tips" EnableGameKeyDT="$gameKey" TipsTransparent="$transparent" Lightness="$lightness" EnableSwitchViewLockMethod="$switch" ExitFullScreenKey="$fullScreenKey"/>
-    <VersionInfo Version="51" ReqFeatureVer="7" CurFeatureVer="8"/>
+    <VersionInfo Version="52" ReqFeatureVer="7" CurFeatureVer="8"/>
     <Switch Name="Aarmor" TextureId="166"/>
     <Switch Name="Airdrop" TextureId="88"/>
     <Switch Name="Airdrop2" TextureId="89"/>
@@ -46,6 +46,7 @@
     <Switch Name="ECG" TextureId="180"/>
     <Switch Name="Emoji" TextureId="31"/>
     <Switch Name="End" TextureId="182"/>
+    <Switch Name="End1" TextureId="183" ModeID="1"/>
     <Switch Name="Eye" TextureId="17" ModeID="2"/>
     <Switch Name="Fall" TextureId="127"/>
     <Switch Name="FireMode1" TextureId="21"/>
@@ -163,6 +164,7 @@
     <Switch Name="printscreen" TextureId="144" ModeID="4"/>
     <KeyMapMode ModeID="1" Name="Multi Player" CurrModeEnableTips="$tips">
         <KeyMapping ItemName="Right Click" Point_X="0.874219" Point_Y="0.541667" Description="右键开镜" MiniVisiable="false" MiniDisable="false" ShowOnLockAsciiCode="192" AsciiCode="-2">
+            <SwitchOperation Description="远程（高达模式）" EnableSwitch="End1" DisableSwitch="InSetUp" Point_X="0.852083" Point_Y="0.746296"/>
             <SwitchOperation Description="导弹齐射" EnableSwitch="MissileVolley" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|Knife2|SkillX" Point_X="0.944531" Point_Y="0.506944"/>
             <SwitchOperation Description="下飞" EnableSwitch="FlyDown" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|Knife2|SkillX" Point_X="0.885938" Point_Y="0.787500" HideTips="1"/>
             <SwitchOperation Description="影刃" EnableSwitch="ShadowBlade" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2" Point_X="0.874219" Point_Y="0.541667" HideTips="1"/>
@@ -187,16 +189,19 @@
             <SwitchOperation Description="跳跃" EnableSwitch="SetUp" DisableSwitch="InSetUp|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp" Point_X="0.958008" Point_Y="0.675347" HideTips="1"/>
         </KeyMapping>
         <KeyMapping ItemName="$1Name" Point_X="0.494531" Point_Y="0.876389" Description="换1号武器" MiniVisiable="false" MiniDisable="false" AsciiCode="$1Code">
+            <SwitchOperation Description="技能1（高达模式）" EnableSwitch="End1" DisableSwitch="InSetUp" Point_X="0.788542" Point_Y="0.438272"/>
             <SwitchOperation Description="换1号武器" EnableSwitch="SwitchMode6" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.427344" Point_Y="0.852778"/>
             <SwitchOperation Description="换1号武器" EnableSwitch="Reload" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.494531" Point_Y="0.876389"/>
             <SwitchOperation Description="换1号武器" EnableSwitch="SetUp" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.494531" Point_Y="0.876389"/>
         </KeyMapping>
         <KeyMapping ItemName="$2Name" Point_X="0.618750" Point_Y="0.883333" Description="换2号武器" MiniVisiable="false" MiniDisable="false" AsciiCode="$2Code">
+            <SwitchOperation Description="技能2（高达模式）" EnableSwitch="End1" DisableSwitch="InSetUp" Point_X="0.876042" Point_Y="0.436420"/>
             <SwitchOperation Description="换1号武器" EnableSwitch="SwitchMode6" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.539063" Point_Y="0.862500"/>
             <SwitchOperation Description="换2号武器" EnableSwitch="Reload" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.618750" Point_Y="0.883333"/>
             <SwitchOperation Description="换2号武器" EnableSwitch="SetUp" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.618750" Point_Y="0.883333"/>
         </KeyMapping>
         <KeyMapping ItemName="$3Name" Point_X="0.406250" Point_Y="0.880556" Description="空对地导弹" MiniVisiable="false" MiniDisable="false" AsciiCode="$3Code">
+            <SwitchOperation Description="技能3（高达模式）" EnableSwitch="End1" DisableSwitch="InSetUp" Point_X="0.962500" Point_Y="0.436420"/>
             <SwitchOperation Description="扫描" EnableSwitch="Reload" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|SwitchMode4|Cartoon|SwitchMode6" Point_X="0.406250" Point_Y="0.880556"/>
             <SwitchOperation Description="扫描" EnableSwitch="SetUp" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|SwitchMode4|Cartoon|SwitchMode6" Point_X="0.406250" Point_Y="0.880556"/>
         </KeyMapping>
@@ -296,6 +301,7 @@
             <SwitchOperation Description="移动" EnableSwitch="SteeringWheel" DisableSwitch="DriveMode1|DriveMode1Press"/>
         </KeyMappingEx>
         <KeyMappingEx ItemName="Left Mouse Button" Point_X="0.060937" Point_Y="0.519444" Description="开火" MiniVisiable="false" MiniDisable="false" AutoActive="1" Type="LClick" LOCK_AsciiCode="$lockMouseCode">
+            <SwitchOperation Description="近战（高达模式）" EnableSwitch="End1" DisableSwitch="InSetUp" Point_X="0.778125" Point_Y="0.844444"/>
             <SwitchOperation Description="锁定（躲猫猫）" EnableSwitch="Flash2" DisableSwitch="InSetUp|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|ReturnSetUp|Knife2|Cartoon" Point_X="0.848437" Point_Y="0.709722"/>
             <SwitchOperation Description="上飞" EnableSwitch="FlyUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|Knife2|SkillX|Hand2|Turret|Turret1" Point_X="0.885156" Point_Y="0.541667" HideTips="1"/>
             <SwitchOperation Description="弓箭" EnableSwitch="Bow" DisableSwitch="InSetUp|BreastPatting|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|WatchTeammates|SelectFireMode" Point_X="0.854688" Point_Y="0.745833" HideTips="1"/>
