@@ -18,7 +18,7 @@ To start open the [website](https://napharcos.github.io/Gameloop-CODM-Keymap/).
 
 If you have only CODM installed you can skip this step.
 
-If you have other games installed, you need to upload, your current configuration or you los the other games key map.
+If you have other games installed, you need to upload, your current configuration or you lose the other games key map.
 
 #### Upload steps
 1. First copy this path:
@@ -76,7 +76,7 @@ Now the file is saved to your computer usually in the download folder.
 > 
 > ![Image 6](GuideAssets/Image%206.jpg)
 
-Now open two file manager and in the first navigate to the downloaded file.
+Now open two file managers and in the first navigate to the downloaded file.
 
 ![Image 8](GuideAssets/Image%208.jpg)
 
@@ -84,8 +84,8 @@ Now copy this path:
    ``` Path 
    C:\Users\username\AppData\Roaming\AndroidTbox\
    ```
-- Paste the path to the second file managers address bar. - It is marked in the image.
-- Replace the `username` in the path with yours. - It is marked in the image.
+- Paste the path to the address bar of second file manager. - It is marked on the image.
+- Replace the `username` in the path with yours. - It is marked on the image.
 
 ![Image 9](GuideAssets/Image%209.jpg)
 
@@ -95,11 +95,11 @@ Right click to the file and click `copy`. - As shown in the image.
 
 ![Image 7](GuideAssets/Image%207.jpg)
 
-Now go to the second, right click to the clear place in the file manager and click `paste`. - It is marked in the image.
+Now go to the second, right click to the clear place in the file manager and click `paste`. - It is marked on the image.
 
 ![Image 10](GuideAssets/Image%2010.jpg)
 
-Lets click the overwrite button. - It is marked in the image.
+Lets click the overwrite button. - It is marked on the image.
 
 ![Image 11](GuideAssets/Image%2011.jpg)
 
@@ -115,7 +115,7 @@ First copy this command:
    ```
 Now go to desktop and create new shortcut:
    - Right click to the desktop and go to `new`.
-   - Click the `shortcut` button. - It is marked in the image.
+   - Click the `shortcut` button. - It is marked on the image.
 
 ![Image 12](GuideAssets/Image%2012.jpg)
 

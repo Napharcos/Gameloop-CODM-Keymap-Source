@@ -71,9 +71,9 @@
     <string name="upload">FELTÖLT</string>
     <string name="download">LETÖLTÉS</string>
     <string name="reset">ALAP</string>
-    <string name="upload_info_1">Ha szeretnéd megtartani a többi gameloop alkalmazás billentyű kofigurációját töltsd fel az aktuális konfigurációt.</string>
+    <string name="upload_info_1">Ha szeretnéd megtartani a többi gameloop alkalmazás billentyű konfigurációját, töltsd fel az aktuális konfigurációt.</string>
     <string name="upload_info_2">A konfigurációs fájlt itt találod:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml</string>
-    <string name="download_info">A módosítások alkalmazásához csréld le ezt a fájlt a letöltött verzióval:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nFontos: A megfelelő működéshez cserélés elött zárd be a gameloop-ot teljesen beleértve a kis ikont is a tálcán.</string>
+    <string name="download_info">A módosítások alkalmazásához cseréld le ezt a fájlt a letöltött verzióval:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nFontos: A megfelelő működéshez cserélés elött zárd be a gameloop-ot teljesen beleértve a kis ikont is a tálcán.</string>
     <string name="upload_complete">Feltöltés kész!</string>
 
     <string name="mp">Multi Player</string>
