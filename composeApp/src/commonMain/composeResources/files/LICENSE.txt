@@ -7,4 +7,4 @@ The source code, is publicly available for transparency and to ensure trustworth
 For any commercial use, distribution, or modification, please contact the author for explicit permission.
 
 
-This website and its contents are provided for informational purposes only. The modifications or configurations shared here are not affiliated with, endorsed by, or supported by the original software developers or publishers. Any use of the provided configurations is at your own risk. The website owner assumes no responsibility for any issues, damages, or consequences that may arise from their usage.
+This website and its contents are provided for informational purposes only. The modifications or configurations shared here are not affiliated with, endorsed by, or supported by the original software developers or publishers - meaning companies such as Tencent, Activision, or their subsidiaries. Any use of the provided configurations is at your own risk. The website owner assumes no responsibility for any issues, damages, or consequences that may arise from their usage.
