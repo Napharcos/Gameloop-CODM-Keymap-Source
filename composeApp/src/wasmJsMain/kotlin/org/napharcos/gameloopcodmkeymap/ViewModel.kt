@@ -96,6 +96,24 @@ class ViewModel : ViewModel() {
         mpKeys.addAll(newList)
     }
 
+    fun changeDmzKey(id: String, key: String, code: Int) {
+        val newList = dmzKeys.map {
+            when {
+                it.id == id -> {
+                    saveKey(id, key, code)
+                    it.copy(currentKey = key, currentCode = code)
+                }
+                it.currentCode == code -> {
+                    saveKey(it.id, "", -1)
+                    it.copy(currentKey = "", currentCode = -1)
+                }
+                else -> it
+            }
+        }
+        dmzKeys.clear()
+        dmzKeys.addAll(newList)
+    }
+
     private fun saveGdKey(id: String, key: String, keyCode: Int) {
         window.localStorage[GD + id] = key
         window.localStorage[GD + id + code] = keyCode.toString()

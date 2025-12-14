@@ -30,12 +30,14 @@ object ManageFile {
     private const val MP_START = "<KeyMapMode ModeID=\"1\""
     private const val BR_START = "<KeyMapMode ModeID=\"2\""
     private const val GD_START = "<KeyMapMode ModeID=\"3\""
+    private const val DMZ_START = "<KeyMapMode ModeID=\"5\""
     private const val MODE_END = "</KeyMapMode>"
 
     private lateinit var defaultCodmText: String
     private lateinit var mpText: String
     private lateinit var brText: String
     private lateinit var gdText: String
+    private lateinit var dmzText: String
 
     var startText by mutableStateOf<String?>(null)
     var endText by mutableStateOf<String?>(null)
@@ -46,13 +48,15 @@ object ManageFile {
             mpText = MP_START + defaultCodmText.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
             brText = BR_START + defaultCodmText.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
             gdText = GD_START + defaultCodmText.substringAfter(GD_START).substringBefore(MODE_END) + MODE_END
+            dmzText = DMZ_START + defaultCodmText.substringAfter(DMZ_START).substringBefore(MODE_END) + MODE_END
 
-            loadLocalData()
+            //loadLocalData()
         }
     }
 
     fun downloadFile(replaceMpFire: Boolean, replaceBrFire: Boolean) {
         val text = createCodmText(replaceMpFire, replaceBrFire)
+        @Suppress("RedundantNullableReturnType")
         val content: JsAny? = text.toJsString()
         val blob = Blob(arrayOf(content).toJsArray(), BlobPropertyBag(type = "application/xml"))
         val url = URL.createObjectURL(blob)
@@ -84,27 +88,23 @@ object ManageFile {
         var editedMpText = mpText
         var editedBrText = brText
         var editedGdText = gdText
+        var editedDmzText = dmzText
 
-        mpKeys.forEach {
-            editedMpText = editedMpText.replace(("$" + it.id.substringBefore(key)+name), it.currentKey)
-            editedMpText = editedMpText.replace(("$" + it.id.substringBefore(key)+CODE), it.currentCode.toString())
-        }
+        mpKeys.forEach { editedMpText = editedMpText.replaceKeys(it) }
 
         editedCodmText = editedCodmText.replace(mpText, editedMpText)
 
-        brKeys.forEach {
-            editedBrText = editedBrText.replace(("$" + it.id.substringBefore(key)+name), it.currentKey)
-            editedBrText = editedBrText.replace(("$" + it.id.substringBefore(key)+ CODE), it.currentCode.toString())
-        }
+        brKeys.forEach { editedBrText = editedBrText.replaceKeys(it) }
 
         editedCodmText = editedCodmText.replace(brText, editedBrText)
 
-        gundamKeys.forEach {
-            editedGdText = editedGdText.replace(("$" + it.id.substringBefore(key) + name), it.currentKey)
-            editedGdText = editedGdText.replace(("$" + it.id.substringBefore(key)+CODE), it.currentCode.toString())
-        }
+        gundamKeys.forEach { editedGdText = editedGdText.replaceKeys(it) }
 
         editedCodmText = editedCodmText.replace(gdText, editedGdText)
+
+        dmzKeys.forEach { editedDmzText = editedDmzText.replaceKeys(it) }
+
+        editedCodmText = editedCodmText.replace(dmzText, editedDmzText)
 
         if (replaceMpFire) editedCodmText = replaceMPFire(editedCodmText)
         if (replaceBrFire) editedCodmText = replaceBRFire(editedCodmText)
@@ -186,5 +186,12 @@ object ManageFile {
         window.localStorage[transparent.first]?.let { transparent = transparent.first to it }
         window.localStorage[lightness.first]?.let { lightness = lightness.second to it }
         window.localStorage[switch.first]?.let { switch = switch.second to it }
+    }
+
+    fun String.replaceKeys(keyData: KeyData): String {
+        var text = this
+        text = text.replace(("$" + keyData.id.substringBefore(key) + name), keyData.currentKey)
+        text = text.replace(("$" + keyData.id.substringBefore(key) + CODE), keyData.currentCode.toString())
+        return text
     }
 }

@@ -59,10 +59,11 @@ fun MainScreen(
                     1 -> getStringResource(Res.string.mp_change)
                     2 -> getStringResource(Res.string.br_change)
                     3 -> getStringResource(Res.string.gd_change)
+                    4 -> getStringResource(Res.string.dmz_change)
                     else -> ""
                 }
             )
-            if (uiState.selectedTopElement != 3) {
+            if (uiState.selectedTopElement < 3) {
                 SelectableElements(
                     uiState = uiState,
                     viewModel = viewModel
@@ -73,6 +74,7 @@ fun MainScreen(
                     1 -> mpKeys
                     2 -> brKeys
                     3 -> gundamKeys
+                    4 -> dmzKeys
                     else -> emptyList()
                 },
                 viewModel = viewModel,
@@ -223,6 +225,11 @@ fun CardElement(
                         key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
                         code = event.which
                     )
+                    4 -> viewModel.changeDmzKey(
+                        id = keys.id,
+                        key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
+                        code = event.which
+                    )
                 }
 
                 focusManager.clearFocus()
@@ -308,6 +315,7 @@ fun CardElement(
                             1 -> viewModel.changeMpKey(keys.id, keys.baseKey, keys.baseCode)
                             2 -> viewModel.changeBrKey(keys.id, keys.baseKey, keys.baseCode)
                             3 -> viewModel.changeGdKey(keys.id, keys.baseKey, keys.baseCode)
+                            4 -> viewModel.changeDmzKey(keys.id, keys.baseKey, keys.baseCode)
                         }
                     },
                     modifier = Modifier

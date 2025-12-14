@@ -11,6 +11,7 @@
     <string name="key4">Score streak 2</string>
     <string name="key5">Score streak 3</string>
     <string name="key6">Score streak 4</string>
+    <string name="key7">Score streak 5</string>
     <string name="keyb">C4 blasting</string>
     <string name="keyc">Crouch/Slide/Prone(if not disable in game settings)</string>
     <string name="keye">Plant bomb/Defuse bomb/Operator skill</string>
@@ -29,21 +30,32 @@
     <string name="keyt">Voice</string>
 
     <string name="br_tabkey">Backpack/Cancel skill</string>
+    <string name="dmz_tabkey">Backpack</string>
     <string name="br_shiftkey">Throttle</string>
     <string name="br_esckey">Settings/Close pick-up</string>
     <string name="br_spacekey">Jump/Brake</string>
+    <string name="dmz_spacekey">Jump</string>
     <string name="br_key1">Change to weapon 1</string>
     <string name="br_key2">Change to weapon 2</string>
     <string name="br_keyb">Change fire mode</string>
     <string name="br_keyc">Crouch/Slide/Prone(if not disable in game settings)/Change position in car/Swim down</string>
+    <string name="dmz_keyc">Crouch/Slide/Prone(if not disable in game settings)</string>
     <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
+    <string name="dmz_keye">Skill</string>
     <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.</string>
+    <string name="dmz_keyf">Doors/Pick up item</string>
     <string name="br_keyh">Pick up item</string>
+    <string name="dmz_keyh">Pick up item/Open loot box</string>
     <string name="br_keym">Map</string>
-    <string name="br_keyq">Snowboard/Tilt up (motorcycle)/Execution</string>
+    <string name="br_keycaps">Snowboard/Tilt up (motorcycle)/Execution</string>
+    <string name="br_keyq">Enter car</string>
     <string name="br_keyr">Snowboard jump/Reload</string>
+    <string name="dmz_keyr">Reload</string>
     <string name="br_keyv">1st/3rd person switch</string>
+    <string name="dmz_keyv">Zipline</string>
+    <string name="dmz_keyt">Enter car (second)</string>
     <string name="br_keyy">Prone(if enable in game settings)</string>
+    <string name="dmz_keyy">Prone(if enable in game settings)/Change position in car</string>
     <string name="br_keyz">Sound</string>
     <string name="br_keyf4">Emoji</string>
     <string name="br_keyo">Auto run</string>
@@ -54,6 +66,7 @@
     <string name="br_key4">Armors</string>
     <string name="br_key3">Grenades</string>
     <string name="br_keyg">Pick up items/Change skill revieve plan/Get in the car/Honk</string>
+    <string name="dmz_keyg">Pick up items/accept mission</string>
 
     <string name="gd_tabkey">Performance Panel</string>
     <string name="gd_ykey">Flight forward</string>
@@ -79,12 +92,14 @@
     <string name="br">Battle Royale</string>
     <string name="z">Zombie</string>
     <string name="gd">Gundam</string>
+    <string name="dmz">DMZ</string>
 
     <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
 
     <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-
 
     <string name="gd_change">Changes: Right mouse click added to secondary weapon.</string>
+    <string name="dmz_change">Very basic keymap for DMZ.</string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
 

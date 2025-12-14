@@ -11,6 +11,7 @@
     <string name="key4">Score streak 2</string>
     <string name="key5">Score streak 3</string>
     <string name="key6">Score streak 4</string>
+    <string name="key7">Score streak 5</string>
     <string name="keyb">C4 robbantás</string>
     <string name="keyc">Guggolás/Csúszás/Fekvés(ha nincs letiltva a beállításoknál)</string>
     <string name="keye">Bomba telepítés/Bomba hatástalanítás/Operator skill</string>
@@ -29,22 +30,32 @@
     <string name="keyt">Mikrofon</string>
 
     <string name="br_tabkey">Táska/Mégse képesség</string>
+    <string name="dmz_tabkey">Táska</string>
     <string name="br_shiftkey">Gáz</string>
     <string name="br_esckey">Beállítások/Felszedés bezárása</string>
     <string name="br_spacekey">Ugrás/Fék</string>
+    <string name="dmz_spacekey">Ugrás</string>
     <string name="br_key1">Váltás 1-es fegyverre</string>
     <string name="br_key2">Váltás 2-es fegyverre</string>
     <string name="br_keyb">Tüzelési mód módosítása</string>
     <string name="br_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)/Hely csere autóban/Le úszás</string>
+    <string name="dmz_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)</string>
     <string name="br_keye">Képesség/Rakéta hárítás/Le billentés (motor)</string>
-    <string name="br_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Ejtőernyő/Kábel/Stb.
-    </string>
+    <string name="dmz_keye">Képesség</string>
+    <string name="br_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Ejtőernyő/Kábel/Stb.</string>
+    <string name="dmz_keyf">Ajtók/Elem felvétele</string>
     <string name="br_keyh">Elem felvétele</string>
+    <string name="dmz_keyh">Elem felvétele/Láda nyitás/Be szállás autóba (első)</string>
     <string name="br_keym">Térkép</string>
-    <string name="br_keyq">Hódeszka/Fel billentés (motor)/Kivégzés</string>
+    <string name="br_keycaps">Hódeszka/Fel billentés (motor)/Kivégzés</string>
+    <string name="br_keyq">Beszállás autóba</string>
     <string name="br_keyr">Hódeszka ugrás/Újratöltés</string>
+    <string name="dmz_keyr">Újratöltés</string>
     <string name="br_keyv">Belső/Külső nézet váltás</string>
+    <string name="dmz_keyv">Csúszka</string>
+    <string name="dmz_keyt">Beszállás autóba (másodlagos)</string>
     <string name="br_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
+    <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)/Hely csere autóban</string>
     <string name="br_keyz">Hang</string>
     <string name="br_keyf4">Emoji</string>
     <string name="br_keyo">Auto futás</string>
@@ -55,6 +66,7 @@
     <string name="br_key4">Páncélok</string>
     <string name="br_key3">Gránátok</string>
     <string name="br_keyg">Elem felvétele/Képesség módosítása/Beszállás autóba/Duda</string>
+    <string name="dmz_keyg">Elem felvétele/Küldetés elfogadása</string>
 
     <string name="gd_tabkey">Teljesítménypanel</string>
     <string name="gd_ykey">Repülés előre</string>
@@ -80,14 +92,16 @@
     <string name="br">Battle Royale</string>
     <string name="z">Zombie</string>
     <string name="gd">Gundam</string>
+    <string name="dmz">DMZ</string>
 
     <string name="mp_change">Módosítások: Kivégzés javítva, hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
 
     <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, kivégzés javítva, hip fire opció hozzáadva, végtelen RPD javítva.</string>
 
     <string name="gd_change">Módosítások: Jobb egérkattintás hozzáadva a másodlagos fegyverhez.</string>
+    <string name="dmz_change">Nagyon alap szintű billentyűkiosztás a DMZ-hez.</string>
 
-    <string name="hip_fire">Engedélyezi a  hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
+    <string name="hip_fire">Engedélyezi a hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
 
     <string name="hip_fire_br">Engedélyezi a  hip fire módot az annihilator-nak, de letíltja az 1-tap ADS módot.</string>
 
