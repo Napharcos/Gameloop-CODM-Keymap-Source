@@ -43,9 +43,9 @@
     <string name="br_keye">Képesség/Rakéta hárítás/Le billentés (motor)</string>
     <string name="dmz_keye">Képesség</string>
     <string name="br_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Ejtőernyő/Kábel/Stb.</string>
-    <string name="dmz_keyf">Ajtók/Elem felvétele</string>
+    <string name="dmz_keyf">Doboz kinyitása/Be-ki szállás autóból</string>
     <string name="br_keyh">Elem felvétele</string>
-    <string name="dmz_keyh">Elem felvétele/Láda nyitás/Be szállás autóba (első)</string>
+    <string name="dmz_keyh">Elem felvétele</string>
     <string name="br_keym">Térkép</string>
     <string name="br_keycaps">Hódeszka/Fel billentés (motor)/Kivégzés</string>
     <string name="br_keyq">Beszállás autóba</string>
@@ -53,7 +53,7 @@
     <string name="dmz_keyr">Újratöltés</string>
     <string name="br_keyv">Belső/Külső nézet váltás</string>
     <string name="dmz_keyv">Csúszka</string>
-    <string name="dmz_keyt">Beszállás autóba (másodlagos)</string>
+    <string name="dmz_keyt">Csapattárs megmentése</string>
     <string name="br_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
     <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)/Hely csere autóban</string>
     <string name="br_keyz">Hang</string>
@@ -94,12 +94,12 @@
     <string name="gd">Gundam</string>
     <string name="dmz">DMZ</string>
 
-    <string name="mp_change">Módosítások: Kivégzés javítva, hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
+    <string name="mp_change">Módosítások: Hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
 
-    <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, kivégzés javítva, hip fire opció hozzáadva, végtelen RPD javítva.</string>
+    <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, hip fire opció hozzáadva, végtelen RPD javítva.</string>
 
     <string name="gd_change">Módosítások: Jobb egérkattintás hozzáadva a másodlagos fegyverhez.</string>
-    <string name="dmz_change">Nagyon alap szintű billentyűkiosztás a DMZ-hez.</string>
+    <string name="dmz_change">Alap szintű billentyűkiosztás a DMZ-hez. A hátizsák megnyitásakor automatikusan felold az egér.</string>
 
     <string name="hip_fire">Engedélyezi a hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
 

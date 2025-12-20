@@ -30,7 +30,7 @@ object ManageFile {
     private const val MP_START = "<KeyMapMode ModeID=\"1\""
     private const val BR_START = "<KeyMapMode ModeID=\"2\""
     private const val GD_START = "<KeyMapMode ModeID=\"3\""
-    private const val DMZ_START = "<KeyMapMode ModeID=\"5\""
+    private const val DMZ_START = "<KeyMapMode ModeID=\"4\""
     private const val MODE_END = "</KeyMapMode>"
 
     private lateinit var defaultCodmText: String

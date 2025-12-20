@@ -34,7 +34,7 @@
     <string name="br_shiftkey">Throttle</string>
     <string name="br_esckey">Settings/Close pick-up</string>
     <string name="br_spacekey">Jump/Brake</string>
-    <string name="dmz_spacekey">Jump</string>
+    <string name="dmz_spacekey">Jump/Parachute</string>
     <string name="br_key1">Change to weapon 1</string>
     <string name="br_key2">Change to weapon 2</string>
     <string name="br_keyb">Change fire mode</string>
@@ -43,9 +43,9 @@
     <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
     <string name="dmz_keye">Skill</string>
     <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.</string>
-    <string name="dmz_keyf">Doors/Pick up item</string>
+    <string name="dmz_keyf">Open box/Enter-exit car</string>
     <string name="br_keyh">Pick up item</string>
-    <string name="dmz_keyh">Pick up item/Open loot box</string>
+    <string name="dmz_keyh">Pick up item</string>
     <string name="br_keym">Map</string>
     <string name="br_keycaps">Snowboard/Tilt up (motorcycle)/Execution</string>
     <string name="br_keyq">Enter car</string>
@@ -53,7 +53,7 @@
     <string name="dmz_keyr">Reload</string>
     <string name="br_keyv">1st/3rd person switch</string>
     <string name="dmz_keyv">Zipline</string>
-    <string name="dmz_keyt">Enter car (second)</string>
+    <string name="dmz_keyt">Rescue teammate</string>
     <string name="br_keyy">Prone(if enable in game settings)</string>
     <string name="dmz_keyy">Prone(if enable in game settings)/Change position in car</string>
     <string name="br_keyz">Sound</string>
@@ -99,7 +99,7 @@
     <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-
 
     <string name="gd_change">Changes: Right mouse click added to secondary weapon.</string>
-    <string name="dmz_change">Very basic keymap for DMZ.</string>
+    <string name="dmz_change">Basic keymap for DMZ. The mouse automatically unlocks when you open the backpack.</string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
 
