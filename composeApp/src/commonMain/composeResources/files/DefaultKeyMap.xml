@@ -347,7 +347,7 @@
     </KeyMapMode>
     <KeyMapMode ModeID="2" Name="Battle Royale" CurrModeEnableTips="1">
         <KeyMapping ItemName="Right Click" Point_X="0.850729" Point_Y="0.596667" Description="右键开镜" MiniVisiable="false" MiniDisable="false" ShowOnLockAsciiCode="192" AsciiCode="-2">
-            <SwitchOperation Description="下飞" EnableSwitch="FlyDown" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.865300" Point_Y="0.774740" HideTips="1"/>
+            <SwitchOperation Description="下飞" EnableSwitch="FlyDown" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.775694" Point_Y="0.780864" HideTips="1"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
             <SwitchOperation Description="飞机导弹" EnableSwitch="Machine1" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.744375" Point_Y="0.856667"/>
             <SwitchOperation Description="瞄准" EnableSwitch="Sniper" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.850729" Point_Y="0.596667" HideTips="1"/>
@@ -517,7 +517,7 @@
             <SwitchOperation Description="鸣笛中" EnableSwitch="Whistling" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.965625" Point_Y="0.720833" HideTips="1"/>
             <SwitchOperation Description="飞机机枪" EnableSwitch="Machine" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.730000" Point_Y="0.677778"/>
             <SwitchOperation Description="飞机机枪" EnableSwitch="Machine1" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.730000" Point_Y="0.677778"/>
-            <SwitchOperation Description="上飞" EnableSwitch="FlyUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.856515" Point_Y="0.528646" HideTips="1"/>
+            <SwitchOperation Description="上飞" EnableSwitch="FlyUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX" Point_X="0.770486" Point_Y="0.524074" HideTips="1"/>
             <SwitchOperation Description="射击" EnableSwitch="SetUp" DisableSwitch="XBtn|MapOpenFlag|InSetUp|BreastPatting|ReturnSetUp|SkillX|Shield|WatchTeammates" Point_X="0.854688" Point_Y="0.745833" HideTips="1"/>
         </KeyMappingEx>
         <KeyMappingEx ItemName="Move with Mouse" Point_X="0.581250" Point_Y="0.570833" Description="视角" MiniVisiable="false" MiniDisable="false" HideTipsAlways="1" AutoActive="1" Raw="1" Type="RClick" Offset="0.450000" LOCK_AsciiCode="$lockMouseCode" AsciiCode="$lockMouseCode" Sensi_X="1.000000" Sensi_Y="1.000000">
