@@ -14,7 +14,7 @@ var tips = "tips" to "1"
 var gameKey = "gameKey" to "1"
 var transparent = "transparent" to "0.500000"
 var lightness = "lightness" to "1.000000"
-var switch = "switch" to "0"
+var switch = "switch" to "1"
 
 var exitFullScreen = mutableStateOf(KeyData(fullScreenKey, Res.string.full_screen, "F11", 122, "F11", 122))
 

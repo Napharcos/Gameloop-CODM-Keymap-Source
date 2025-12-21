@@ -94,6 +94,8 @@
     <string name="gd">Gundam</string>
     <string name="dmz">DMZ</string>
 
+    <string name="override_text">Override Multi Player and Battle Royale config.</string>
+
     <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
 
     <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-

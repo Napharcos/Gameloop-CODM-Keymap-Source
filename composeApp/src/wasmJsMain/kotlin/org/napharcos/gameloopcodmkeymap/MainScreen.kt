@@ -50,6 +50,11 @@ fun MainScreen(
         ) {
             Title()
             Upload(viewModel)
+
+            if (ManageFile.showingOverrideMpAndBr) {
+                OverrideMpBr()
+            }
+
             TopElements(
                 uiState = uiState,
                 viewModel = viewModel
@@ -90,6 +95,28 @@ fun MainScreen(
             ChangeInfo(
                 text = getStringResource(Res.string.tip),
                 small = true
+            )
+        }
+    }
+}
+
+@Composable
+fun OverrideMpBr() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Checkbox(
+            checked = ManageFile.overrideMpAndBr,
+            onCheckedChange = { ManageFile.overrideMpAndBr = it },
+        )
+        SelectionContainer {
+            Text(
+                text = getStringResource(Res.string.override_text),
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                ),
             )
         }
     }

@@ -94,6 +94,8 @@
     <string name="gd">Gundam</string>
     <string name="dmz">DMZ</string>
 
+    <string name="override_text">Multi Player és Battle Royale konfiguráció felülírása.</string>
+
     <string name="mp_change">Módosítások: Hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
 
     <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, hip fire opció hozzáadva, végtelen RPD javítva.</string>

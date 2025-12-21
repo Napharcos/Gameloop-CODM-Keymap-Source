@@ -2,6 +2,7 @@ package org.napharcos.gameloopcodmkeymap
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import kotlinx.browser.document
@@ -39,8 +40,13 @@ object ManageFile {
     private lateinit var gdText: String
     private lateinit var dmzText: String
 
+    var showingOverrideMpAndBr by mutableStateOf(false)
+    var overrideMpAndBr by mutableStateOf(true)
     var startText by mutableStateOf<String?>(null)
     var endText by mutableStateOf<String?>(null)
+
+    var privateMpText by mutableStateOf<String?>(null)
+    var privateBrText by mutableStateOf<String?>(null)
 
     init {
         CoroutineScope(Dispatchers.Default).launch {
@@ -90,13 +96,21 @@ object ManageFile {
         var editedGdText = gdText
         var editedDmzText = dmzText
 
-        mpKeys.forEach { editedMpText = editedMpText.replaceKeys(it) }
+        if (overrideMpAndBr || privateMpText == null) {
+            mpKeys.forEach { editedMpText = editedMpText.replaceKeys(it) }
 
-        editedCodmText = editedCodmText.replace(mpText, editedMpText)
+            editedCodmText = editedCodmText.replace(mpText, editedMpText)
+        } else {
+            privateMpText?.let { editedCodmText = editedCodmText.replace(mpText, it) }
+        }
 
-        brKeys.forEach { editedBrText = editedBrText.replaceKeys(it) }
+        if (overrideMpAndBr || privateBrText == null) {
+            brKeys.forEach { editedBrText = editedBrText.replaceKeys(it) }
 
-        editedCodmText = editedCodmText.replace(brText, editedBrText)
+            editedCodmText = editedCodmText.replace(brText, editedBrText)
+        } else {
+            privateBrText?.let { editedCodmText = editedCodmText.replace(brText, it) }
+        }
 
         gundamKeys.forEach { editedGdText = editedGdText.replaceKeys(it) }
 
@@ -150,6 +164,15 @@ object ManageFile {
             if (content != null) {
                 startText = content.substringBefore(START_TEXT)
                 val codmText = START_TEXT + content.substringAfter(START_TEXT).substringBefore(END_TEXT) + END_TEXT
+
+                privateMpText = MP_START + content.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
+                privateBrText = BR_START + content.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+
+                if (privateMpText != null && privateBrText != null) {
+                    showingOverrideMpAndBr = true
+                    overrideMpAndBr = false
+                }
+
                 endText = content.substringAfter(codmText)
 
                 startTime = startTime.first to codmText.substringAfter(startTimes).substringBefore(end)
