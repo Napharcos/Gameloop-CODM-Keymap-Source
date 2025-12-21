@@ -165,8 +165,8 @@ object ManageFile {
                 startText = content.substringBefore(START_TEXT)
                 val codmText = START_TEXT + content.substringAfter(START_TEXT).substringBefore(END_TEXT) + END_TEXT
 
-                privateMpText = MP_START + content.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
-                privateBrText = BR_START + content.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+                privateMpText = MP_START + codmText.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
+                privateBrText = BR_START + codmText.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
 
                 if (privateMpText != null && privateBrText != null) {
                     showingOverrideMpAndBr = true
