@@ -2,8 +2,8 @@ package org.napharcos.gameloopcodmkeymap
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -13,7 +13,6 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.w3c.dom.HTMLAnchorElement
 import org.w3c.dom.HTMLInputElement
-import org.w3c.dom.get
 import org.w3c.dom.set
 import org.w3c.dom.url.URL
 import org.w3c.files.Blob
@@ -26,7 +25,12 @@ import org.w3c.files.get
 object ManageFile {
 
     private const val START_TEXT = "<Item ApkName=\"com.activision.callofduty.shooter\""
+    private const val START_TEXT_GARENA = "<Item ApkName=\"com.garena.game.codm\""
     private const val END_TEXT = "</Item>"
+    private const val VERSION_INFO = "<VersionInfo Version=\"55\" ReqFeatureVer=\"7\" CurFeatureVer=\"8\"/>"
+    private const val VERSION_INFO_GARENA = "<VersionInfo Version=\"49\" ReqFeatureVer=\"7\" CurFeatureVer=\"8\"/>"
+    private const val VERSION_CODE = "VersionCode=\"4400\""
+    private const val VERSION_CODE_GARENA = "VersionCode=\"23800\""
 
     private const val MP_START = "<KeyMapMode ModeID=\"1\""
     private const val BR_START = "<KeyMapMode ModeID=\"2\""
@@ -42,11 +46,11 @@ object ManageFile {
 
     var showingOverrideMpAndBr by mutableStateOf(false)
     var overrideMpAndBr by mutableStateOf(true)
-    var startText by mutableStateOf<String?>(null)
-    var endText by mutableStateOf<String?>(null)
-
+    var contentText by mutableStateOf<String?>(null)
     var privateMpText by mutableStateOf<String?>(null)
     var privateBrText by mutableStateOf<String?>(null)
+    var privateMpTextGarena by mutableStateOf<String?>(null)
+    var privateBrTextGarena by mutableStateOf<String?>(null)
 
     init {
         CoroutineScope(Dispatchers.Default).launch {
@@ -91,51 +95,59 @@ object ManageFile {
 
     private fun createCodmText(replaceMpFire: Boolean, replaceBrFire: Boolean): String {
         var editedCodmText = defaultCodmText
-        var editedMpText = mpText
-        var editedBrText = brText
         var editedGdText = gdText
         var editedDmzText = dmzText
 
-        if (overrideMpAndBr || privateMpText == null) {
-            mpKeys.forEach { editedMpText = editedMpText.replaceKeys(it) }
+        editedCodmText = applyMode(
+            codm = editedCodmText,
+            baseText = mpText,
+            keys = mpKeys,
+            privateText = privateMpText,
+            privateGarenaText = privateMpTextGarena
+        )
 
-            editedCodmText = editedCodmText.replace(mpText, editedMpText)
-        } else {
-            privateMpText?.let { editedCodmText = editedCodmText.replace(mpText, it) }
-        }
-
-        if (overrideMpAndBr || privateBrText == null) {
-            brKeys.forEach { editedBrText = editedBrText.replaceKeys(it) }
-
-            editedCodmText = editedCodmText.replace(brText, editedBrText)
-        } else {
-            privateBrText?.let { editedCodmText = editedCodmText.replace(brText, it) }
-        }
+        editedCodmText = applyMode(
+            codm = editedCodmText,
+            baseText = brText,
+            keys = brKeys,
+            privateText = privateBrText,
+            privateGarenaText = privateBrTextGarena
+        )
 
         gundamKeys.forEach { editedGdText = editedGdText.replaceKeys(it) }
-
         editedCodmText = editedCodmText.replace(gdText, editedGdText)
 
         dmzKeys.forEach { editedDmzText = editedDmzText.replaceKeys(it) }
-
         editedCodmText = editedCodmText.replace(dmzText, editedDmzText)
 
         if (replaceMpFire) editedCodmText = replaceMPFire(editedCodmText)
         if (replaceBrFire) editedCodmText = replaceBRFire(editedCodmText)
 
-        editedCodmText = editedCodmText.replace("$" + startTime.first, startTime.second)
-        editedCodmText = editedCodmText.replace("$" + defaultId.first, defaultId.second)
-        editedCodmText = editedCodmText.replace("$" + tips.first, tips.second)
-        editedCodmText = editedCodmText.replace("$" + gameKey.first, gameKey.second)
-        editedCodmText = editedCodmText.replace("$" + transparent.first, transparent.second)
-        editedCodmText = editedCodmText.replace("$" + lightness.first, lightness.second)
-        editedCodmText = editedCodmText.replace("$" + switch.first, switch.second)
+        listOf(
+            startTime, defaultId, tips, gameKey,
+            transparent, lightness, switch
+        ).forEach { editedCodmText = editedCodmText.replace("$${it.first}", it.second) }
+
         editedCodmText = editedCodmText.replace("$" + exitFullScreen.value.id, exitFullScreen.value.currentCode.toString())
 
-        return if (startText != null && endText != null)
-            startText + editedCodmText + endText
-        else editedCodmText
+        val garena = editedCodmText
+            .replace(START_TEXT, START_TEXT_GARENA)
+            .replace(VERSION_INFO, VERSION_INFO_GARENA)
+            .replace(VERSION_CODE, VERSION_CODE_GARENA)
+
+        return (contentText ?: "") + editedCodmText + garena
     }
+
+    private fun applyMode(
+        codm: String,
+        baseText: String,
+        keys: SnapshotStateList<KeyData>,
+        privateText: String?,
+        privateGarenaText: String?
+    ): String =
+        if (overrideMpAndBr || (privateText == null && privateGarenaText == null))
+            codm.replace(baseText, keys.fold(baseText) { acc, k -> acc.replaceKeys(k) })
+        else codm.replace(baseText, privateText ?: privateGarenaText ?: baseText)
 
     private fun replaceMPFire(codmText: String): String {
         val line1 = """<SwitchOperation Description="射击" EnableSwitch="SetUp" DisableSwitch="InSetUp|BreastPatting|ReturnSetUp|Knife2|Diamond1|Diamond2|Diamond3|Diamond4|HangUp|WatchTeammates|Cartoon" Point_X="0.854688" Point_Y="0.745833" HideTips="1"/>"""
@@ -162,54 +174,56 @@ object ManageFile {
         reader.onload = {
             val content = reader.result?.toString()
             if (content != null) {
-                startText = content.substringBefore(START_TEXT)
-                val codmText = START_TEXT + content.substringAfter(START_TEXT).substringBefore(END_TEXT) + END_TEXT
+                val codmText = if (content.contains(START_TEXT)) START_TEXT + content.substringAfter(START_TEXT).substringBefore(END_TEXT) + END_TEXT else ""
+                val codmTextGarena = if (content.contains(START_TEXT_GARENA)) START_TEXT_GARENA + content.substringAfter(START_TEXT_GARENA).substringBefore(END_TEXT) + END_TEXT else ""
 
-                privateMpText = MP_START + codmText.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
-                privateBrText = BR_START + codmText.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+                if (codmText.isNotEmpty()) {
+                    privateMpText = MP_START + codmText.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
+                    privateBrText = BR_START + codmText.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+                }
+                if (codmTextGarena.isNotEmpty()) {
+                    privateMpTextGarena = MP_START + codmTextGarena.substringAfter(MP_START).substringBefore(MODE_END) + MODE_END
+                    privateBrTextGarena = BR_START + codmTextGarena.substringAfter(BR_START).substringBefore(MODE_END) + MODE_END
+                }
 
-                if (privateMpText != null && privateBrText != null) {
+                if ((privateMpText != null && privateBrText != null) || (privateBrTextGarena != null && privateMpTextGarena != null)) {
                     showingOverrideMpAndBr = true
                     overrideMpAndBr = false
                 }
 
-                endText = content.substringAfter(codmText)
+                contentText = content.replace(codmText, "").replace(codmTextGarena, "")
 
-                startTime = startTime.first to codmText.substringAfter(startTimes).substringBefore(end)
-                defaultId = defaultId.first to codmText.substringAfter(modeId).substringBefore(end)
-                tips = tips.first to codmText.substringAfter(enableTips).substringBefore(end)
-                gameKey = gameKey.first to codmText.substringAfter(gameKeyDT).substringBefore(end)
-                transparent = transparent.first to codmText.substringAfter(tipsTransparent).substringBefore(end)
-                lightness = lightness.first to codmText.substringAfter(Lightness).substringBefore(end)
-                switch = switch.first to codmText.substringAfter(enableSwitch).substringBefore(end)
+                when {
+                    codmText.isNotEmpty() -> applySettings(codmText)
+                    codmTextGarena.isNotEmpty() -> applySettings(codmTextGarena)
+                }
 
-
-                startText?.let { window.localStorage[START] = it }
-                endText?.let { window.localStorage[END] = it }
-                window.localStorage[startTime.first] = startTime.second
-                window.localStorage[defaultId.first] = defaultId.second
-                window.localStorage[tips.first] = tips.second
-                window.localStorage[gameKey.first] = gameKey.second
-                window.localStorage[transparent.first] = transparent.second
-                window.localStorage[lightness.first] = lightness.second
-                window.localStorage[switch.first] = switch.second
+                listOf(startTime, defaultId, tips, gameKey, transparent, lightness, switch)
+                    .forEach { window.localStorage[it.first] = it.second }
             }
         }
         reader.readAsText(file)
     }
 
-    private fun loadLocalData() {
-        window.localStorage[START_TEXT]?.let { startText = it }
-        window.localStorage[END_TEXT]?.let { endText = it }
-
-        window.localStorage[startTime.first]?.let { startTime = startTime.first to it }
-        window.localStorage[defaultId.first]?.let { defaultId = defaultId.second to it }
-        window.localStorage[tips.first]?.let { tips = tips.first to it }
-        window.localStorage[gameKey.first]?.let { gameKey = gameKey.second to it }
-        window.localStorage[transparent.first]?.let { transparent = transparent.first to it }
-        window.localStorage[lightness.first]?.let { lightness = lightness.second to it }
-        window.localStorage[switch.first]?.let { switch = switch.second to it }
+    private fun applySettings(src: String) {
+        startTime = startTime.first to src.substringAfter(startTimes).substringBefore(end)
+        defaultId = defaultId.first to src.substringAfter(modeId).substringBefore(end)
+        tips = tips.first to src.substringAfter(enableTips).substringBefore(end)
+        gameKey = gameKey.first to src.substringAfter(gameKeyDT).substringBefore(end)
+        transparent = transparent.first to src.substringAfter(tipsTransparent).substringBefore(end)
+        lightness = lightness.first to src.substringAfter(Lightness).substringBefore(end)
+        switch = switch.first to src.substringAfter(enableSwitch).substringBefore(end)
     }
+
+//    private fun loadLocalData() {
+//        window.localStorage[startTime.first]?.let { startTime = startTime.first to it }
+//        window.localStorage[defaultId.first]?.let { defaultId = defaultId.second to it }
+//        window.localStorage[tips.first]?.let { tips = tips.first to it }
+//        window.localStorage[gameKey.first]?.let { gameKey = gameKey.second to it }
+//        window.localStorage[transparent.first]?.let { transparent = transparent.first to it }
+//        window.localStorage[lightness.first]?.let { lightness = lightness.second to it }
+//        window.localStorage[switch.first]?.let { switch = switch.second to it }
+//    }
 
     fun String.replaceKeys(keyData: KeyData): String {
         var text = this

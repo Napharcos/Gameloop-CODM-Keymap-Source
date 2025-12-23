@@ -553,7 +553,7 @@ fun Upload(
                 )
             }
         }
-        if (ManageFile.startText != null && ManageFile.endText != null) {
+        if (ManageFile.contentText != null) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth(),
