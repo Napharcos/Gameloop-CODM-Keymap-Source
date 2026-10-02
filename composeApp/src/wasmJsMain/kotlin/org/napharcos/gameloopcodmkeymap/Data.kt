@@ -1,28 +1,16 @@
 package org.napharcos.gameloopcodmkeymap
 
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import gameloopcodmkeymap.composeapp.generated.resources.*
 import kotlinx.browser.window
-import org.napharcos.gameloopcodmkeymap.theme.res.StringResource
+import org.jetbrains.compose.resources.StringResource
 import org.w3c.dom.get
 
-var startTime = "startTime" to "1"
-var defaultId = "id" to "1"
-var tips = "tips" to "1"
-var gameKey = "gameKey" to "1"
-var transparent = "transparent" to "0.500000"
-var lightness = "lightness" to "1.000000"
-var switch = "switch" to "1"
-
-var exitFullScreen = mutableStateOf(KeyData(fullScreenKey, Res.string.full_screen, "F11", 122, "F11", 122))
-
 val topElements = listOf(
-    1 to Res.string.mp,
-    2 to Res.string.br,
-    3 to Res.string.gd,
-    4 to Res.string.dmz
+    Mod.MP to Res.string.mp,
+    Mod.BR to Res.string.br,
+    Mod.DMZ to Res.string.dmz
 )
 
 //replaceKey, text,  baseKey, baseCode, currentKey, currentCode
@@ -80,52 +68,44 @@ val brKeys = mutableStateListOf(
     KeyData(altKey, Res.string.br_alt_key, "Alt", 18, loadBrKey(altKey) ?: "Alt", loadBrKeyCode(altKey) ?: 18),
     KeyData(xKey, Res.string.br_keyx, "X", 88, loadBrKey(xKey) ?: "X", loadBrKeyCode(xKey) ?: 88),
     KeyData(tKey, Res.string.br_keyt, "T", 84, loadBrKey(tKey) ?: "T", loadBrKeyCode(tKey) ?: 84),
-    KeyData(key4, Res.string.br_key4, "4", 52, loadBrKey(key4) ?: "4", loadBrKeyCode(key4) ?: 52),
-    KeyData(key3, Res.string.br_key3, "3", 51, loadBrKey(key3) ?: "3", loadBrKeyCode(key3) ?: 51),
+    KeyData(key5, Res.string.br_key5, "5", 53, loadBrKey(key5) ?: "5", loadBrKeyCode(key5) ?: 53),
+    KeyData(key6, Res.string.br_key6, "6", 54, loadBrKey(key6) ?: "6", loadBrKeyCode(key6) ?: 54),
+    KeyData(key7, Res.string.br_key7, "7", 55, loadBrKey(key7) ?: "7", loadBrKeyCode(key7) ?: 55),
+    KeyData(key8, Res.string.br_key8, "8", 56, loadBrKey(key8) ?: "8", loadBrKeyCode(key8) ?: 56),
     KeyData(gKey, Res.string.br_keyg, "G", 71, loadBrKey(gKey) ?: "G", loadBrKeyCode(gKey) ?: 71),
-)
-
-val gundamKeys = mutableStateListOf(
-    KeyData(lockMouseKey, Res.string.br_lock_mouse, "Control", 17, loadGundamKey(lockMouseKey) ?: "Control", loadGundamCode(lockMouseKey) ?: 17),
-    KeyData(tabKey, Res.string.gd_tabkey, "Tab", 9, loadGundamKey(tabKey) ?: "Tab", loadGundamCode(tabKey) ?: 9),
-    KeyData(yKey, Res.string.gd_ykey, "Z", 90, loadGundamKey(yKey) ?: "Z", loadGundamCode(yKey) ?: 90),
-    KeyData(escKey, Res.string.gd_esckey, "Escape", 27, loadGundamKey(escKey) ?: "Escape", loadGundamCode(escKey) ?: 27),
-    KeyData(spaceKey, Res.string.gd_spacekey, "Space", 32, loadGundamKey(spaceKey) ?: "Space", loadGundamCode(spaceKey) ?: 32),
-    KeyData(qKey, Res.string.gd_qkey, "Q", 81, loadGundamKey(qKey) ?: "Q", loadGundamCode(qKey) ?: 81),
-    KeyData(eKey, Res.string.gd_ekey, "E", 69, loadGundamKey(eKey) ?: "E", loadGundamCode(eKey) ?: 69),
-    KeyData(rKey, Res.string.gd_rkey, "R", 82, loadGundamKey(rKey) ?: "R", loadGundamCode(rKey) ?: 82),
-    KeyData(mKey, Res.string.gd_mkey, "M", 77, loadGundamKey(mKey) ?: "M", loadGundamCode(mKey) ?: 77),
-    KeyData(zKey, Res.string.gd_zkey, "Y", 89, loadGundamKey(zKey) ?: "Y", loadGundamCode(zKey) ?: 89),
-    KeyData(xKey, Res.string.gd_xkey, "X", 88, loadGundamKey(xKey) ?: "X", loadGundamCode(xKey) ?: 88),
-    KeyData(tKey, Res.string.gd_tkey, "T", 84, loadGundamKey(tKey) ?: "T", loadGundamCode(tKey) ?: 84)
+    KeyData(capsKey, Res.string.br_keycaps, "Caps", 20, loadBrKey(capsKey) ?: "Caps", loadBrKeyCode(capsKey) ?: 20),
+    KeyData(key3, Res.string.br_key3, "3", 51, loadBrKey(key3) ?: "3", loadBrKeyCode(key3) ?: 51),
+    KeyData(f2Key, Res.string.br_keyf2, "F2", 113, loadBrKey(f2Key) ?: "F2", loadBrKeyCode(f2Key) ?: 113),
+    KeyData(f3Key, Res.string.br_keyf3, "F3", 114, loadBrKey(f3Key) ?: "F3", loadBrKeyCode(f3Key) ?: 114)
 )
 
 val dmzKeys = mutableStateListOf(
     KeyData(tabKey, Res.string.dmz_tabkey, "TAB", 9, loadDmzKey(tabKey) ?: "TAB", loadDmzKeyCode(tabKey) ?: 9),
-    KeyData(ctrlKey, Res.string.br_keyy, "Z", 90, loadDmzKey(yKey) ?: "Z", loadDmzKeyCode(yKey) ?: 90),
+    KeyData(shiftKey, Res.string.dmz_shiftkey, "Shift", 16, loadDmzKey(shiftKey) ?: "Shift", loadDmzKeyCode(shiftKey) ?: 16),
+    KeyData(yKey, Res.string.dmz_keyy, "Z", 90, loadDmzKey(yKey) ?: "Z", loadDmzKeyCode(yKey) ?: 90),
     KeyData(spaceKey, Res.string.dmz_spacekey, "SPACE", 32, loadDmzKey(spaceKey) ?: "SPACE", loadDmzKeyCode(spaceKey) ?: 32),
-    KeyData(key1, Res.string.br_key1, "1", 49, loadDmzKey(key1) ?: "1", loadDmzKeyCode(key1) ?: 49),
-    KeyData(key2, Res.string.br_key2, "2", 50, loadDmzKey(key2) ?: "2", loadDmzKeyCode(key2) ?: 50),
-    KeyData(key4, Res.string.br_key4, "4", 52, loadDmzKey(key4) ?: "4", loadDmzKeyCode(key4) ?: 52),
+    KeyData(key1, Res.string.dmz_key1, "1", 49, loadDmzKey(key1) ?: "1", loadDmzKeyCode(key1) ?: 49),
+    KeyData(key2, Res.string.dmz_key2, "2", 50, loadDmzKey(key2) ?: "2", loadDmzKeyCode(key2) ?: 50),
+    KeyData(bKey, Res.string.dmz_keyb, "B", 66, loadDmzKey(bKey) ?: "B", loadDmzKeyCode(bKey) ?: 66),
     KeyData(cKey, Res.string.dmz_keyc, "C", 67, loadDmzKey(cKey) ?: "C", loadDmzKeyCode(cKey) ?: 67),
     KeyData(eKey, Res.string.dmz_keye, "E", 69, loadDmzKey(eKey) ?: "E", loadDmzKeyCode(eKey) ?: 69),
     KeyData(fKey, Res.string.dmz_keyf, "F", 70, loadDmzKey(fKey) ?: "F", loadDmzKeyCode(fKey) ?: 70),
+    KeyData(hKey, Res.string.dmz_keyh, "H", 72, loadDmzKey(hKey) ?: "H", loadDmzKeyCode(hKey) ?: 72),
+    KeyData(jKey, Res.string.dmz_keyj, "J", 74, loadDmzKey(jKey) ?: "J", loadDmzKeyCode(jKey) ?: 74),
     KeyData(gKey, Res.string.dmz_keyg, "G", 71, loadDmzKey(gKey) ?: "G", loadDmzKeyCode(gKey) ?: 71),
-    KeyData(qKey, Res.string.dmz_keyh, "Q", 81, loadDmzKey(qKey) ?: "Q", loadDmzKeyCode(qKey) ?: 81),
-    KeyData(escKey, Res.string.menu, "ESC", 27, loadDmzKey(escKey) ?: "ESC", loadDmzKeyCode(escKey) ?: 27),
-    KeyData(mKey, Res.string.br_keym, "M", 77, loadDmzKey(mKey) ?: "M", loadDmzKeyCode(mKey) ?: 77),
+    KeyData(qKey, Res.string.dmz_keyq, "Q", 81, loadDmzKey(qKey) ?: "Q", loadDmzKeyCode(qKey) ?: 81),
+    KeyData(escKey, Res.string.dmz_esckey, "ESC", 27, loadDmzKey(escKey) ?: "ESC", loadDmzKeyCode(escKey) ?: 27),
+    KeyData(mKey, Res.string.dmz_keym, "M", 77, loadDmzKey(mKey) ?: "M", loadDmzKeyCode(mKey) ?: 77),
     KeyData(rKey, Res.string.dmz_keyr, "R", 82, loadDmzKey(rKey) ?: "R", loadDmzKeyCode(rKey) ?: 82),
-    KeyData(f4Key, Res.string.br_keyf4, "F4", 115, loadDmzKey(f4Key) ?: "F4", loadDmzKeyCode(f4Key) ?: 115),
-    KeyData(oKey, Res.string.br_keyo, "O", 187, loadDmzKey(oKey) ?: "O", loadDmzKeyCode(oKey) ?: 187),
-    KeyData(iKey, Res.string.keyx, "Í", 226, loadDmzKey(iKey) ?: "Í", loadDmzKeyCode(iKey) ?: 226),
-    KeyData(key3, Res.string.br_key3, "3", 51, loadDmzKey(key3) ?: "3", loadDmzKeyCode(key3) ?: 51),
+    KeyData(f4Key, Res.string.dmz_keyf4, "F4", 115, loadDmzKey(f4Key) ?: "F4", loadDmzKeyCode(f4Key) ?: 115),
+    KeyData(oKey, Res.string.dmz_keyo, "O", 187, loadDmzKey(oKey) ?: "O", loadDmzKeyCode(oKey) ?: 187),
+    KeyData(xKey, Res.string.dmz_keyx, "X", 88, loadDmzKey(xKey) ?: "X", loadDmzKeyCode(xKey) ?: 88),
+    KeyData(key3, Res.string.dmz_key3, "3", 51, loadDmzKey(key3) ?: "3", loadDmzKeyCode(key3) ?: 51),
     KeyData(vKey, Res.string.dmz_keyv, "V", 86, loadDmzKey(vKey) ?: "V", loadDmzKeyCode(vKey) ?: 86),
     KeyData(tKey, Res.string.dmz_keyt, "T", 84, loadDmzKey(tKey) ?: "T", loadDmzKeyCode(tKey) ?: 84),
-    KeyData(lockMouseKey, Res.string.br_lock_mouse, "CTRL", 17, loadBrKey(lockMouseKey) ?: "CTRL", loadBrKeyCode(lockMouseKey) ?: 17)
+    KeyData(lockMouseKey, Res.string.br_lock_mouse, "CTRL", 17, loadDmzKey(lockMouseKey) ?: "CTRL", loadDmzKeyCode(lockMouseKey) ?: 17),
+    KeyData(zKey, Res.string.dmz_keyz, "Y", 89, loadDmzKey(zKey) ?: "Y", loadDmzKeyCode(zKey) ?: 89)
 )
-
-
-fun loadGundamCode(id: String) = window.localStorage[GD + id + code]?.toInt()
 
 fun loadKeyCode(id: String) = window.localStorage[id + code]?.toInt()
 
@@ -136,8 +116,6 @@ fun loadKey(id: String) = window.localStorage[id]
 
 fun loadBrKey(id: String) = window.localStorage[BR + id]
 fun loadDmzKey(id: String) = window.localStorage[DMZ + id]
-
-fun loadGundamKey(id: String) = window.localStorage[GD + id]
 
 data class KeyData(
     val id: String,

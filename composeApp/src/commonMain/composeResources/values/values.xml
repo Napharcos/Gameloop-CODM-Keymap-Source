@@ -1,107 +1,153 @@
 <resources>
     <string name="app_name">Gameloop CODM Keymap Generator</string>
+
     <string name="lock_mouse">Lock mouse to screen</string>
     <string name="performance_panel">Combat performance panel</string>
-    <string name="full_screen">Full screen</string>
     <string name="menu">Settings</string>
-    <string name="jump">Jump/Brake</string>
-    <string name="key1">Change to weapon 1</string>
-    <string name="key2">Change to weapon 2</string>
-    <string name="key3">Score streak 1</string>
+    <string name="jump">Jump/Brake/Hawk-X3 fire</string>
+    <string name="key1">Switch to weapon 1/Gunship switch weapon 1</string>
+    <string name="key2">Switch to weapon 2/Gunship switch weapon 2</string>
+    <string name="key3">Score streak 1//Gunship switch weapon 3</string>
     <string name="key4">Score streak 2</string>
     <string name="key5">Score streak 3</string>
     <string name="key6">Score streak 4</string>
     <string name="key7">Score streak 5</string>
-    <string name="keyb">C4 blasting</string>
+    <string name="keyb">C4 blasting/Detonate RC-XD/Detonate Bomb drone</string>
     <string name="keyc">Crouch/Slide/Prone(if not disable in game settings)</string>
-    <string name="keye">Plant bomb/Defuse bomb/Operator skill</string>
-    <string name="keyf">Pickup throwable/Cancel throwable/Pick up weapon/Open airdrop/Execution</string>
+    <string name="keye">Plant-Defuse bomb/Operator skill/Fire with MQ-27/Chopper gunner missile jamming</string>
+    <string name="keyf">Loadout/Pickup-Cancel throwable/Pick up weapon/Open airdrop/Execution/Etc.</string>
     <string name="keyg">Grenade/Tactical grenade (if split is active)</string>
     <string name="keyq">Switch grenade/Lethal grenade (if split is active)</string>
-    <string name="keyh">Shop</string>
-    <string name="keym">Map</string>
-    <string name="keyr">Reload</string>
+    <string name="keyh">Shop/Operator skill 2/Vtol missiles</string>
+    <string name="keym">Open-Close Map</string>
+    <string name="keyr">Reload/Jump RC-XD</string>
     <string name="keyv">Knife</string>
-    <string name="keyy">Prone (if enable in game settings)/Go down with Hawk X3</string>
+    <string name="keyy">Prone (if enable in game settings)</string>
     <string name="keyz">Sound</string>
     <string name="keyf4">Emoji</string>
     <string name="keyo">Auto run/Night vision</string>
     <string name="keyx">Signal</string>
     <string name="keyt">Voice</string>
 
-    <string name="br_tabkey">Backpack/Cancel skill</string>
-    <string name="dmz_tabkey">Backpack</string>
+    <string name="br_tabkey">Backpack</string>
     <string name="br_shiftkey">Throttle</string>
-    <string name="br_esckey">Settings/Close pick-up</string>
+    <string name="br_esckey">Settings/Close pick-up/Close buy station</string>
     <string name="br_spacekey">Jump/Brake</string>
-    <string name="dmz_spacekey">Jump/Parachute</string>
     <string name="br_key1">Change to weapon 1</string>
     <string name="br_key2">Change to weapon 2</string>
-    <string name="br_keyb">Change fire mode</string>
+    <string name="br_keyb">Change fire mode/Detonate RC-XD and Bomb drone</string>
     <string name="br_keyc">Crouch/Slide/Prone(if not disable in game settings)/Change position in car/Swim down</string>
-    <string name="dmz_keyc">Crouch/Slide/Prone(if not disable in game settings)</string>
     <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
-    <string name="dmz_keye">Skill</string>
     <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.</string>
-    <string name="dmz_keyf">Open box/Enter-exit car</string>
     <string name="br_keyh">Pick up item</string>
-    <string name="dmz_keyh">Pick up item</string>
     <string name="br_keym">Map</string>
-    <string name="br_keycaps">Snowboard/Tilt up (motorcycle)/Execution</string>
-    <string name="br_keyq">Enter car</string>
+    <string name="br_keyq">Snowboard/Tilt up (motorcycle)/Open box/Shield Turret</string>
     <string name="br_keyr">Snowboard jump/Reload</string>
-    <string name="dmz_keyr">Reload</string>
     <string name="br_keyv">1st/3rd person switch</string>
-    <string name="dmz_keyv">Zipline</string>
-    <string name="dmz_keyt">Rescue teammate</string>
     <string name="br_keyy">Prone(if enable in game settings)</string>
-    <string name="dmz_keyy">Prone(if enable in game settings)/Change position in car</string>
     <string name="br_keyz">Sound</string>
     <string name="br_keyf4">Emoji</string>
+    <string name="br_keyf2">First message</string>
+    <string name="br_keyf3">Second message</string>
     <string name="br_keyo">Auto run</string>
     <string name="br_lock_mouse">Lock mouse to screen</string>
     <string name="br_alt_key">Free view</string>
-    <string name="br_keyx">Signal</string>
+    <string name="br_keyx">Mark</string>
     <string name="br_keyt">Voice</string>
-    <string name="br_key4">Armors</string>
+    <string name="br_key4">Armor</string>
     <string name="br_key3">Grenades</string>
-    <string name="br_keyg">Pick up items/Change skill revieve plan/Get in the car/Honk</string>
-    <string name="dmz_keyg">Pick up items/accept mission</string>
+    <string name="br_key5">Cluster/snowman grenade</string>
+    <string name="br_key6">Frag/Conclusion grenade</string>
+    <string name="br_key7">Smoke/Gas grenade</string>
+    <string name="br_key8">Flash grenade</string>
+    <string name="br_keyg">Pick up items/Change skill revieve plan/Get in the car/Armor/Horn</string>
+    <string name="br_keycaps">Scorestreak</string>
 
-    <string name="gd_tabkey">Performance Panel</string>
-    <string name="gd_ykey">Flight forward</string>
-    <string name="gd_esckey">Settings</string>
-    <string name="gd_spacekey">Flight up</string>
-    <string name="gd_qkey">Ability 1</string>
-    <string name="gd_ekey">Ability 2</string>
-    <string name="gd_rkey">Ability 3</string>
-    <string name="gd_mkey">Térkép</string>
-    <string name="gd_zkey">Sound</string>
-    <string name="gd_xkey">Signal</string>
-    <string name="gd_tkey">Voice</string>
+    <string name="br_armor_text">Separate armor button</string>
 
-    <string name="upload">UPLOAD</string>
+    <string name="dmz_tabkey">Backpack</string>
+    <string name="dmz_shiftkey">Throttle</string>
+    <string name="dmz_esckey">Settings</string>
+    <string name="dmz_spacekey">Jump/Brake</string>
+    <string name="dmz_key1">Switch to weapon 1</string>
+    <string name="dmz_key2">Switch to weapon 2</string>
+    <string name="dmz_keyb">Switch fire mod/Detonate RC-XD and Bomb drone</string>
+    <string name="dmz_keyc">Crouch/Slide/Prone(if not disable in game settings)/Switch seats in car</string>
+    <string name="dmz_keye">Tilt down (motorcycle)/Skill</string>
+    <string name="dmz_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Task/Cable/Etc.</string>
+    <string name="dmz_keyh">Rotary armor</string>
+    <string name="dmz_keyj">Scorestreak</string>
+    <string name="dmz_keym">Open-close map</string>
+    <string name="dmz_keyq">Tilt up (motorcycle)/Pick up item</string>
+    <string name="dmz_keyr">Reload</string>
+    <string name="dmz_keyv">Cancel armor</string>
+    <string name="dmz_keyt">Microphone</string>
+    <string name="dmz_keyy">Prone(if enable in game settings)</string>
+    <string name="dmz_keyz">Voice</string>
+    <string name="dmz_keyg">Get in car/Horn/Armor</string>
+    <string name="dmz_key3">Grenades</string>
+    <string name="dmz_keyf4">Emoji</string>
+    <string name="dmz_keyo">Auto run</string>
+    <string name="dmz_keyx">Mark</string>
+
     <string name="download">DOWNLOAD</string>
     <string name="reset">RESET</string>
-    <string name="upload_info_1">If you want to keep the keymap of other Gameloop applications, it is worth uploading the current configuration.</string>
-    <string name="upload_info_2">You can find the configuration file here:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml</string>
-    <string name="download_info">To apply the changes, replace the following file with the newly downloaded version:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nImportant: For proper operation, close Gameloop completely, including the small icon in the system tray, before replace the file.</string>
-    <string name="upload_complete">Upload completed!</string>
+    <string name="download_info">To apply the changes, just import the downloaded txt in Gameloop keybindings.</string>
 
     <string name="mp">Multi Player</string>
     <string name="br">Battle Royale</string>
-    <string name="z">Zombie</string>
-    <string name="gd">Gundam</string>
     <string name="dmz">DMZ</string>
 
-    <string name="override_text">Override Multi Player and Battle Royale config.</string>
+    <string name="mp_change_log">
+        <b>2026.10.02:</b>
+        &#160;&#160;&#160;&#160;- Keys added for gunship to switch weapons.
+        &#160;&#160;&#160;&#160;- Keys added for RC-XD to jump and detonate.
+        &#160;&#160;&#160;&#160;- Keys added for care package and wildcard scorestreaks.
+        &#160;&#160;&#160;&#160;- Key added for wildcard operator skill.
+        &#160;&#160;&#160;&#160;- Key added for Chopper Gunner missile jamming.
+        &#160;&#160;&#160;&#160;- Key added for Bomb drone to detonate.
+        &#160;&#160;&#160;&#160;- Fixed auto run key.
+        &#160;&#160;&#160;&#160;- V-tol missiles added to wildcard operator skill.
+        &#160;&#160;&#160;&#160;- HawkX-3 fire added to jump button.
+        &#160;&#160;&#160;&#160;- Added hip fire option for scorestreaks and operator skills.
+    </string>
 
-    <string name="mp_change">Changes: Execution fixed, hip fire options added, go down with Hawk X3 added.</string>
+    <string name="br_change_log">
+        <b>2026.10.02:</b>
+        &#160;&#160;&#160;&#160;- Added hip fire option for Annihilator.
+        &#160;&#160;&#160;&#160;- Option to separate armor button added.
+        &#160;&#160;&#160;&#160;- Rotary grenade button added.
+        &#160;&#160;&#160;&#160;- Fixed auto run key.
+        &#160;&#160;&#160;&#160;- Fixed free view key.
+        &#160;&#160;&#160;&#160;- Fixed jet boost slide.
+        &#160;&#160;&#160;&#160;- Close buy station button added to Settings key.
+        &#160;&#160;&#160;&#160;- Hawk-X3 fire added to jump button.
+        &#160;&#160;&#160;&#160;- Key added to detonate bomb drone.
+        &#160;&#160;&#160;&#160;- Keys added for RC-XD to jump and detonate.
+        &#160;&#160;&#160;&#160;- Added circle based rotary scorestreak button.
+        &#160;&#160;&#160;&#160;- Key added to AAV scanning and rocket.
+        &#160;&#160;&#160;&#160;- Fixed tank aim.
+        &#160;&#160;&#160;&#160;- Fixed aim in car.
+        &#160;&#160;&#160;&#160;- Key added for shield turret.
+        &#160;&#160;&#160;&#160;- Snowboard jump fixed.
+    </string>
 
-    <string name="br_change">Changes: New powerful armor and grenade buttons, execution fixed, hip fire option added, unlimited RPD fixed.</string>-
-
-    <string name="gd_change">Changes: Right mouse click added to secondary weapon.</string>
-    <string name="dmz_change">Basic keymap for DMZ. The mouse automatically unlocks when you open the backpack.</string>
+    <string name="dmz_change_log">
+        <b>2026.10.02:</b>
+        &#160;&#160;&#160;&#160;- Rotary grenade button added.
+        &#160;&#160;&#160;&#160;- Rotary armor button added.
+        &#160;&#160;&#160;&#160;- Armor button moved to be same as in br.
+        &#160;&#160;&#160;&#160;- Hide not required keys from map.
+        &#160;&#160;&#160;&#160;- Fixed prone button.
+        &#160;&#160;&#160;&#160;- Fixed parachute button.
+        &#160;&#160;&#160;&#160;- Hawk-X3 fire added to jump button.
+        &#160;&#160;&#160;&#160;- Key added to detonate bomb drone.
+        &#160;&#160;&#160;&#160;- Keys added for RC-XD to jump and detonate.
+        &#160;&#160;&#160;&#160;- Fixed aim in car.
+        &#160;&#160;&#160;&#160;- Fixed cursor lock at warehouse.
+        &#160;&#160;&#160;&#160;- Key added to cancel armor use.
+        &#160;&#160;&#160;&#160;- Added circle based rotary scorestreak button.
+    </string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
 
@@ -110,9 +156,16 @@
     <string name="license">Terms &amp; Conditions</string>
     <string name="libraries">About Libraries</string>
     <string name="source">Source code</string>
-    <string name="copyright">Copyright © 2025 Napharcos</string>
+    <string name="copyright">Copyright © 2025-2026 Napharcos</string>
 
     <string name="language">Language</string>
 
-    <string name="tip">Tip: You can create a desktop shortcut to quickly launch CODM using the following path:\n"C:\\Program Files\\TxGameAssistant\\ui\\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100</string>
+    <string name="tip">Tip: You can create a desktop shortcut for CODM using the following path: [copy]\n"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.activision.callofduty.shooter --from 8</string>
+    <string name="tip_2">Tip2: You can remove Google Play appearing at game start:
+- Create a desktop shortcut for Settings using the following path: [copy]\n"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.android.settings --from 8
+- Go to: Apps → See all aps → Google Play services → first force stop then disable it
+    </string>
+
+    <string name="copy">[copy]</string>
+    <string name="copied">Copied to clipboard!</string>
 </resources>

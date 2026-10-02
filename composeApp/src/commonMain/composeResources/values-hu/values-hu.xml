@@ -4,7 +4,7 @@
     <string name="performance_panel">Harc teljesítmény panel</string>
     <string name="full_screen">Teljes képernyő</string>
     <string name="menu">Beállítások</string>
-    <string name="jump">Ugrás/Fék</string>
+    <string name="jump">Ugrás/Fék/HawwkX-3 lövés</string>
     <string name="key1">Váltás 1-es fegyverre</string>
     <string name="key2">Váltás 2-es fegyverre</string>
     <string name="key3">Score streak 1</string>
@@ -12,50 +12,39 @@
     <string name="key5">Score streak 3</string>
     <string name="key6">Score streak 4</string>
     <string name="key7">Score streak 5</string>
-    <string name="keyb">C4 robbantás</string>
+    <string name="keyb">C4, RC-XD és Bomb drón robbantása</string>
     <string name="keyc">Guggolás/Csúszás/Fekvés(ha nincs letiltva a beállításoknál)</string>
-    <string name="keye">Bomba telepítés/Bomba hatástalanítás/Operator skill</string>
-    <string name="keyf">Gránát felemelése/Mégse gránát/Fegyvercsere/Airdrop kinyitás/Kivégzés</string>
+    <string name="keye">Bomba telepítés-hatástalanítás/Operator skill/MQ-27 lövés/Chooper gunner hárítás</string>
+    <string name="keyf">Loadout/Gránát felemelése-megszakítása/Fegyvercsere/Airdrop kinyitás/Kivégzés/stb.</string>
     <string name="keyg">Gránát/Taktikai gránát (ha a "split" engedélyezve van)</string>
     <string name="keyq">Gránát csere/Halálos gránát (ha a "split" engedélyezve van)</string>
-    <string name="keyh">Bolt</string>
+    <string name="keyh">Bolt/Operator skill 2/Vtol rakéták</string>
     <string name="keym">Térkép</string>
-    <string name="keyr">Újratöltés</string>
+    <string name="keyr">Újratöltés/RC-XD ugrás</string>
     <string name="keyv">Kés</string>
-    <string name="keyy">Fekvés (ha engedélyezve van a beállításoknál)/Lefele menés a Hawk X3-mal</string>
+    <string name="keyy">Fekvés (ha engedélyezve van a beállításoknál)</string>
     <string name="keyz">Hang</string>
     <string name="keyf4">Emoji</string>
     <string name="keyo">Auto futás/Éjjel látás</string>
     <string name="keyx">Jelzés</string>
     <string name="keyt">Mikrofon</string>
 
-    <string name="br_tabkey">Táska/Mégse képesség</string>
-    <string name="dmz_tabkey">Táska</string>
+    <string name="br_tabkey">Táska</string>
     <string name="br_shiftkey">Gáz</string>
-    <string name="br_esckey">Beállítások/Felszedés bezárása</string>
+    <string name="br_esckey">Beállítások/Felszedés bezárása/Buy tation bezárása</string>
     <string name="br_spacekey">Ugrás/Fék</string>
-    <string name="dmz_spacekey">Ugrás</string>
     <string name="br_key1">Váltás 1-es fegyverre</string>
     <string name="br_key2">Váltás 2-es fegyverre</string>
-    <string name="br_keyb">Tüzelési mód módosítása</string>
+    <string name="br_keyb">Tüzelési mód módosítása/RC-XD és bomb drón robbantása</string>
     <string name="br_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)/Hely csere autóban/Le úszás</string>
-    <string name="dmz_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)</string>
     <string name="br_keye">Képesség/Rakéta hárítás/Le billentés (motor)</string>
-    <string name="dmz_keye">Képesség</string>
     <string name="br_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Ejtőernyő/Kábel/Stb.</string>
-    <string name="dmz_keyf">Doboz kinyitása/Be-ki szállás autóból</string>
     <string name="br_keyh">Elem felvétele</string>
-    <string name="dmz_keyh">Elem felvétele</string>
     <string name="br_keym">Térkép</string>
-    <string name="br_keycaps">Hódeszka/Fel billentés (motor)/Kivégzés</string>
-    <string name="br_keyq">Beszállás autóba</string>
+    <string name="br_keyq">Hódeszka/Fel billentés (motor)/Shield Turret</string>
     <string name="br_keyr">Hódeszka ugrás/Újratöltés</string>
-    <string name="dmz_keyr">Újratöltés</string>
     <string name="br_keyv">Belső/Külső nézet váltás</string>
-    <string name="dmz_keyv">Csúszka</string>
-    <string name="dmz_keyt">Csapattárs megmentése</string>
     <string name="br_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
-    <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)/Hely csere autóban</string>
     <string name="br_keyz">Hang</string>
     <string name="br_keyf4">Emoji</string>
     <string name="br_keyo">Auto futás</string>
@@ -63,45 +52,100 @@
     <string name="br_alt_key">Szabad nézet</string>
     <string name="br_keyx">Jelzés</string>
     <string name="br_keyt">Mikrofon</string>
-    <string name="br_key4">Páncélok</string>
+    <string name="br_key4">Páncél</string>
     <string name="br_key3">Gránátok</string>
-    <string name="br_keyg">Elem felvétele/Képesség módosítása/Beszállás autóba/Duda</string>
-    <string name="dmz_keyg">Elem felvétele/Küldetés elfogadása</string>
+    <string name="br_key5">Cluster/snowman gránát</string>
+    <string name="br_key6">Frag/Conclusion gránát</string>
+    <string name="br_key7">Smoke/Gas gránát</string>
+    <string name="br_key8">Flash gránát</string>
+    <string name="br_keyg">Elem felvétele/Képesség módosítása/Beszállás autóba/Páncél/Duda</string>
+    <string name="br_keycaps">Scorestreak</string>
+    <string name="br_armor_text">Külön páncél gomb</string>
+    <string name="br_keyf2">Első üzenet</string>
+    <string name="br_keyf3">Második üzenet</string>
 
-    <string name="gd_tabkey">Teljesítménypanel</string>
-    <string name="gd_ykey">Repülés előre</string>
-    <string name="gd_esckey">Beállítások</string>
-    <string name="gd_spacekey">Repülés felfelé</string>
-    <string name="gd_qkey">Képesség 1</string>
-    <string name="gd_ekey">Képesség 2</string>
-    <string name="gd_rkey">Képesség 3</string>
-    <string name="gd_mkey">Térkép</string>
-    <string name="gd_zkey">Hang</string>
-    <string name="gd_xkey">Jelzés</string>
-    <string name="gd_tkey">Mikrofon</string>
+    <string name="dmz_tabkey">Táska</string>
+    <string name="dmz_shiftkey">Gáz</string>
+    <string name="dmz_esckey">Beállítások</string>
+    <string name="dmz_spacekey">Ugrás/Fék</string>
+    <string name="dmz_key1">Váltás 1-es fegyverre</string>
+    <string name="dmz_key2">Váltás 2-es fegyverre</string>
+    <string name="dmz_keyb">Tüzelési mód módosítása/RC-XD és bomb drón robbantása</string>
+    <string name="dmz_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)/Hely csere autóban/Le úszás</string>
+    <string name="dmz_keye">Képesség/Le billentés (motor)</string>
+    <string name="dmz_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Feladat/Kábel/Stb.</string>
+    <string name="dmz_keyh">Forgó páncél</string>
+    <string name="dmz_keyj">Scorestreak</string>
+    <string name="dmz_keym">Térkép</string>
+    <string name="dmz_keyq">Fel billentés (motor)/Elem felvétele</string>
+    <string name="dmz_keyr">Újratöltés</string>
+    <string name="dmz_keyv">Mégse páncél</string>
+    <string name="dmz_keyt">Mikrofon</string>
+    <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
+    <string name="dmz_keyz">Hang</string>
+    <string name="dmz_keyg">Beszállás autóba/Páncél/Duda</string>
+    <string name="dmz_key3">Gránát</string>
+    <string name="dmz_keyf4">Emoji</string>
+    <string name="dmz_keyo">Automatikus futás</string>
+    <string name="dmz_keyx">Jelzés</string>
 
-    <string name="upload">FELTÖLT</string>
     <string name="download">LETÖLTÉS</string>
     <string name="reset">ALAP</string>
-    <string name="upload_info_1">Ha szeretnéd megtartani a többi gameloop alkalmazás billentyű konfigurációját, töltsd fel az aktuális konfigurációt.</string>
-    <string name="upload_info_2">A konfigurációs fájlt itt találod:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml</string>
-    <string name="download_info">A módosítások alkalmazásához cseréld le ezt a fájlt a letöltött verzióval:\nC:\\Users\\username\\AppData\\Roaming\\AndroidTbox\\TVM_100.xml\nFontos: A megfelelő működéshez cserélés elött zárd be a gameloop-ot teljesen beleértve a kis ikont is a tálcán.</string>
-    <string name="upload_complete">Feltöltés kész!</string>
+    <string name="download_info">A módosítások alkalmazásához importáld a letöltött txt fájlt a Gameloop billentyű konfigurálásánál.</string>
 
     <string name="mp">Multi Player</string>
     <string name="br">Battle Royale</string>
-    <string name="z">Zombie</string>
-    <string name="gd">Gundam</string>
     <string name="dmz">DMZ</string>
 
-    <string name="override_text">Multi Player és Battle Royale konfiguráció felülírása.</string>
+    <string name="mp_change_log">
+        <b>2026.09.30:</b>
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva a Gunship fegyvereihez.
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva a care package és wildcard scorestreak-ekhez.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a wildcard operator skill-hez.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Chopper Gunner rakéta hárításához.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Bomb drón robbantásához.
+        &#160;&#160;&#160;&#160;- Auto futás gomb javítva.
+        &#160;&#160;&#160;&#160;- V-tol rakéták hozzáadva a wildcard operator skill gombhoz.
+        &#160;&#160;&#160;&#160;- HawkX-3 lövés hozzáadva az ugrás gombhoz.
+    </string>
 
-    <string name="mp_change">Módosítások: Hip fire opció hozzáadva, lefele menés a Hawk X3-al hozzáadva.</string>
+    <string name="br_change_log">
+        <b>2026.09.30:</b>
+        &#160;&#160;&#160;&#160;- Opció annihilator hip fire lövéséhez.
+        &#160;&#160;&#160;&#160;- Opció külön páncél gombhoz.
+        &#160;&#160;&#160;&#160;- Forgó gránát gomb hozzáadva.
+        &#160;&#160;&#160;&#160;- Auto futás javítva.
+        &#160;&#160;&#160;&#160;- Szabad nézet javítva.
+        &#160;&#160;&#160;&#160;- Jet boost csúszás javítva.
+        &#160;&#160;&#160;&#160;- Buy station bezárása a beállítások gombbal.
+        &#160;&#160;&#160;&#160;- Forgó gomb hozzáadva a scorestreak-hez.
+        &#160;&#160;&#160;&#160;- HawkX-3 lövés hozzáadva az ugrás gombhoz.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Bomb drón robbantásához.
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az AAV szkenneléshez és rakétához.
+        &#160;&#160;&#160;&#160;- Tank aim javítva.
+        &#160;&#160;&#160;&#160;- Autóban aim javítva.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva Shield turret-hez.
+        &#160;&#160;&#160;&#160;- Hódeszka ugrás javítva.
+    </string>
 
-    <string name="br_change">Módosítások: Új hatékony páncél és gránát gombok, hip fire opció hozzáadva, végtelen RPD javítva.</string>
-
-    <string name="gd_change">Módosítások: Jobb egérkattintás hozzáadva a másodlagos fegyverhez.</string>
-    <string name="dmz_change">Alap szintű billentyűkiosztás a DMZ-hez. A hátizsák megnyitásakor automatikusan felold az egér.</string>
+    <string name="dmz_change_log">
+        <b>2026.09.30:</b>
+        &#160;&#160;&#160;&#160;- Forgó gránát gomb hozzáadva.
+        &#160;&#160;&#160;&#160;- Forgó páncél gomb hozzáadva.
+        &#160;&#160;&#160;&#160;- Páncél gomb áthelyezve, hogy megegyezzen a BR-el.
+        &#160;&#160;&#160;&#160;- Nem szükséges gombok eltávolítva a térképről.
+        &#160;&#160;&#160;&#160;- Fekvés gomb javítva.
+        &#160;&#160;&#160;&#160;- Ernyő gomb javítva.
+        &#160;&#160;&#160;&#160;- HawkX-3 lövés hozzáadva az ugrás gombhoz.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Bomb drón robbantásához.
+        &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
+        &#160;&#160;&#160;&#160;- Autóban aim javítva.
+        &#160;&#160;&#160;&#160;- Kurzor rögzítés a raktárban javítva.
+        &#160;&#160;&#160;&#160;- Gomb hozzáadva a mégse páncélhoz.
+        &#160;&#160;&#160;&#160;- Forgó gomb hozzáadva a scorestreak-hez.
+    </string>
 
     <string name="hip_fire">Engedélyezi a hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
 
@@ -110,9 +154,16 @@
     <string name="license">Felhasználói feltételek</string>
     <string name="libraries">Könyvtárakról</string>
     <string name="source">Forráskód</string>
-    <string name="copyright">Copyright © 2025 Napharcos</string>
+    <string name="copyright">Copyright © 2025-2026 Napharcos</string>
 
     <string name="language">Nyelv</string>
 
-    <string name="tip">Tip: Létrehozhatsz asztali ikont, hogy gyorsan elindítsd a CODM-t az alábbi útvonallal:\n"C:\\Program Files\\TxGameAssistant\\ui\\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100</string>
+    <string name="tip">Tip: Létrehozhatsz asztali ikont a CODM-hoz az alábbi útvonallal: [másolás]\n"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.activision.callofduty.shooter --from 8</string>
+    <string name="tip_2">Tip2: Eltávolíthatod a Google Play játék indításkor történő megjelenését:
+- Hozz létre asztali ikont a beállításoknak, az alábbi útvonallal: [másolás]\n"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.android.settings --from 8
+- Menj: Apps → See all aps → Google play services → először force stop utána disable
+    </string>
+
+    <string name="copy">[másolás]</string>
+    <string name="copied">Vágólapra másolva!</string>
 </resources>

@@ -2,12 +2,41 @@ package org.napharcos.gameloopcodmkeymap
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.LocalScrollbarStyle
+import androidx.compose.foundation.VerticalScrollbar
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.onClick
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.rememberScrollbarAdapter
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Switch
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -19,19 +48,28 @@ import androidx.compose.ui.input.pointer.PointerEventType
 import androidx.compose.ui.input.pointer.PointerIcon
 import androidx.compose.ui.input.pointer.onPointerEvent
 import androidx.compose.ui.input.pointer.pointerHoverIcon
+import androidx.compose.ui.platform.ClipEntry
+import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.LinkAnnotation
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.unit.dp
-import org.napharcos.gameloopcodmkeymap.theme.res.getStringResource
 import org.napharcos.gameloopcodmkeymap.theme.Padding
 import org.napharcos.gameloopcodmkeymap.theme.greenButton
 import org.napharcos.gameloopcodmkeymap.theme.greenButtonText
-import org.napharcos.gameloopcodmkeymap.theme.textButtonLightBlue
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import gameloopcodmkeymap.composeapp.generated.resources.*
 import kotlinx.browser.window
 import kotlinx.coroutines.awaitCancellation
+import org.jetbrains.compose.resources.stringResource
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.KeyboardEvent
+import kotlin.js.Promise
 
 @Composable
 fun MainScreen(
@@ -49,11 +87,6 @@ fun MainScreen(
                 .fillMaxWidth()
         ) {
             Title()
-            Upload(viewModel)
-
-            if (ManageFile.showingOverrideMpAndBr) {
-                OverrideMpBr()
-            }
 
             TopElements(
                 uiState = uiState,
@@ -61,62 +94,48 @@ fun MainScreen(
             )
             ChangeInfo(
                 when (uiState.selectedTopElement) {
-                    1 -> getStringResource(Res.string.mp_change)
-                    2 -> getStringResource(Res.string.br_change)
-                    3 -> getStringResource(Res.string.gd_change)
-                    4 -> getStringResource(Res.string.dmz_change)
-                    else -> ""
+                    Mod.MP -> stringResource(Res.string.mp_change_log)
+                    Mod.BR -> stringResource(Res.string.br_change_log)
+                    Mod.DMZ -> stringResource(Res.string.dmz_change_log)
                 }
             )
-            if (uiState.selectedTopElement < 3) {
-                SelectableElements(
-                    uiState = uiState,
-                    viewModel = viewModel
-                )
-            }
+            RadioCardElement(
+                uiState = uiState,
+                viewModel = viewModel
+            )
+            SelectableElements(
+                uiState = uiState,
+                viewModel = viewModel
+            )
             Elements(
                 elements = when (uiState.selectedTopElement) {
-                    1 -> mpKeys
-                    2 -> brKeys
-                    3 -> gundamKeys
-                    4 -> dmzKeys
-                    else -> emptyList()
+                    Mod.MP -> mpKeys
+                    Mod.BR -> brKeys
+                    Mod.DMZ -> dmzKeys
                 },
                 viewModel = viewModel,
                 uiState = uiState
             )
             ChangeInfo(
-                text = getStringResource(Res.string.download_info)
+                text = stringResource(Res.string.download_info)
             )
             DownloadButton(
                 uiState = uiState,
                 viewModel = viewModel
             )
-            ChangeInfo(
-                text = getStringResource(Res.string.tip),
-                small = true
+            Tip(
+                text = stringResource(Res.string.tip),
+                small = true,
+                copyText = stringResource(Res.string.copy),
+                path = "\"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe\" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.activision.callofduty.shooter --from 8",
+                viewModel = viewModel
             )
-        }
-    }
-}
-
-@Composable
-fun OverrideMpBr() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Checkbox(
-            checked = ManageFile.overrideMpAndBr,
-            onCheckedChange = { ManageFile.overrideMpAndBr = it },
-        )
-        SelectionContainer {
-            Text(
-                text = getStringResource(Res.string.override_text),
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                ),
+            Tip(
+                text = stringResource(Res.string.tip_2),
+                small = true,
+                copyText = stringResource(Res.string.copy),
+                path = "\"C:\\Program Files\\Tencent\\GameLoop\\Application\\GameLoopLauncher.exe\" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.android.settings --from 8",
+                viewModel = viewModel
             )
         }
     }
@@ -127,24 +146,20 @@ fun SelectableElements(
     uiState: UiState,
     viewModel: ViewModel
 ) {
-    SelectableCardElement(
-        text = when (uiState.selectedTopElement) {
-            1 -> getStringResource(Res.string.hip_fire)
-            2 -> getStringResource(Res.string.hip_fire_br)
-            else -> ""
-        },
-        checked = when (uiState.selectedTopElement) {
-            1 -> uiState.replaceMpFire
-            2 -> uiState.replaceBrFire
-            else -> false
-        },
-        onCheckedChange = {
-            when (uiState.selectedTopElement) {
-                1 -> viewModel.onReplaceMpFireClick(it)
-                2 -> viewModel.onReplaceBrFireClick(it)
-            }
-        },
-    )
+    if (uiState.selectedTopElement != Mod.DMZ)
+        SelectableCardElement(
+            text = when (uiState.selectedTopElement) {
+                Mod.MP -> stringResource(Res.string.hip_fire)
+                Mod.BR -> stringResource(Res.string.hip_fire_br)
+            },
+            checked = uiState.replaceFire
+        ) { viewModel.onReplaceFireClick(!uiState.replaceFire) }
+
+    if (uiState.selectedTopElement == Mod.BR)
+        SelectableCardElement(
+            text = stringResource(Res.string.br_armor_text),
+            checked = uiState.brArmorButton
+        ) { viewModel.switchArmorButton(!uiState.brArmorButton) }
 }
 
 @Composable
@@ -208,6 +223,76 @@ fun SelectableCardElement(
 }
 
 @Composable
+fun RadioCardElement(
+    uiState: UiState,
+    viewModel: ViewModel
+) {
+    Card(
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.onSurfaceVariant),
+        colors = CardDefaults.cardColors().copy(
+            containerColor = Color.Transparent,
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(80.dp)
+            .padding(
+                top = Padding.mini,
+                bottom = Padding.mini,
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(Padding.large),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            ScreenRatio.entries.forEach {
+                if (it == ScreenRatio.R_16_9)
+                    SelectableRadioButton(
+                        text = it.displayName,
+                        selected = uiState.screenRatio == it,
+                        onClick = {
+                            viewModel.changeScreenRatio(it)
+                        }
+                    )
+            }
+            Spacer(modifier = Modifier.width(1.dp))
+            Spacer(modifier = Modifier.width(1.dp))
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun SelectableRadioButton(
+    text: String,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxHeight(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(
+            selected = selected,
+            onClick = onClick
+        )
+        SelectionContainer(
+            modifier = Modifier.onClick(onClick = onClick)
+        ) {
+            Text(
+                text = text,
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            )
+        }
+    }
+}
+
+@Composable
 fun Elements(
     elements: List<KeyData>,
     viewModel: ViewModel,
@@ -237,22 +322,17 @@ fun CardElement(
             val keyListener: (Event) -> Unit = { event ->
                 event as KeyboardEvent
                 when (uiState.selectedTopElement) {
-                    1 -> viewModel.changeMpKey(
+                    Mod.MP -> viewModel.changeMpKey(
                         id = keys.id,
                         key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
                         code = event.which
                     )
-                    2 -> viewModel.changeBrKey(
+                    Mod.BR -> viewModel.changeBrKey(
                         id = keys.id,
                         key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
                         code = event.which
                     )
-                    3 -> viewModel.changeGdKey(
-                        id = keys.id,
-                        key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
-                        code = event.which
-                    )
-                    4 -> viewModel.changeDmzKey(
+                    Mod.DMZ -> viewModel.changeDmzKey(
                         id = keys.id,
                         key = if (event.key != " ") event.key.replaceFirstChar { c -> c.uppercaseChar() } else event.code,
                         code = event.which
@@ -302,7 +382,7 @@ fun CardElement(
             ) {
                 SelectionContainer {
                     Text(
-                        text = getStringResource(keys.text),
+                        text = stringResource(keys.text),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -339,10 +419,9 @@ fun CardElement(
                 Button(
                     onClick = {
                         when (uiState.selectedTopElement) {
-                            1 -> viewModel.changeMpKey(keys.id, keys.baseKey, keys.baseCode)
-                            2 -> viewModel.changeBrKey(keys.id, keys.baseKey, keys.baseCode)
-                            3 -> viewModel.changeGdKey(keys.id, keys.baseKey, keys.baseCode)
-                            4 -> viewModel.changeDmzKey(keys.id, keys.baseKey, keys.baseCode)
+                            Mod.MP -> viewModel.changeMpKey(keys.id, keys.baseKey, keys.baseCode)
+                            Mod.BR -> viewModel.changeBrKey(keys.id, keys.baseKey, keys.baseCode)
+                            Mod.DMZ -> viewModel.changeDmzKey(keys.id, keys.baseKey, keys.baseCode)
                         }
                     },
                     modifier = Modifier
@@ -353,7 +432,7 @@ fun CardElement(
                     )
                 ) {
                     Text(
-                        text = getStringResource(Res.string.reset),
+                        text = stringResource(Res.string.reset),
                         style = MaterialTheme.typography.bodyLarge.copy(
                             color = greenButtonText,
                         )
@@ -379,19 +458,25 @@ fun DownloadButton(
     ) {
         Button(
             onClick = {
-                viewModel.onDownloadClick(uiState.replaceMpFire, uiState.replaceBrFire)
-                logDownloadEvent()
+                val mod = uiState.selectedTopElement
+                viewModel.onDownloadClick(
+                    replaceFire = uiState.replaceFire,
+                    mod = mod,
+                    ratio = uiState.screenRatio,
+                    brArmor = mod == Mod.BR && uiState.brArmorButton
+                )
+                logDownloadEvent(uiState.selectedTopElement)
             },
             colors = ButtonDefaults.buttonColors().copy(
                 containerColor = greenButton,
                 contentColor = greenButtonText
             ),
-            enabled = !mpKeys.any { it.currentKey == "" },
+            enabled = !uiState.selectedTopElement.getKeys().any { it.currentKey == "" },
             modifier = Modifier
                 .fillMaxWidth()
         ) {
             Text(
-                text = getStringResource(Res.string.download),
+                text = stringResource(Res.string.download),
                 style = MaterialTheme.typography.bodyLarge.copy(
                     color = greenButtonText,
                 )
@@ -400,8 +485,9 @@ fun DownloadButton(
     }
 }
 
-fun logDownloadEvent() {
-    js("gtag('event', 'download')")
+fun logDownloadEvent(mod: Mod) {
+    val name = mod.displayName
+    gtag("event", "download-$name")
 }
 
 @Composable
@@ -409,24 +495,45 @@ fun ChangeInfo(
     text: String,
     small: Boolean = false,
 ) {
+    val scrollState = rememberScrollState(0)
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .heightIn(max = 250.dp)
             .padding(
-                top = Padding.small,
-                bottom = Padding.small
-            ),
-    ) {
-        SelectionContainer {
-            Text(
-                text = text,
-                style = if (small) MaterialTheme.typography.bodyMedium.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                ) else MaterialTheme.typography.bodyLarge.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                top = Padding.medium,
+                bottom = Padding.medium
             )
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(min = 0.dp, max = 250.dp)
+                .verticalScroll(scrollState)
+        ) {
+            SelectionContainer {
+                Text(
+                    text = text.trimIndent(),
+                    style = if (small) MaterialTheme.typography.bodyMedium.copy(
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    ) else MaterialTheme.typography.bodyLarge.copy(
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                )
+            }
         }
+        if (scrollState.maxValue != 0)
+            VerticalScrollbar(
+                adapter = rememberScrollbarAdapter(scrollState),
+                style = LocalScrollbarStyle.current.copy(
+                    unhoverColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                    hoverColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                ),
+                modifier = Modifier
+                    .align(Alignment.CenterEnd)
+                    .fillMaxHeight()
+            )
     }
 }
 
@@ -448,7 +555,7 @@ fun TopElements(
             TopElement(
                 onClick = { viewModel.onTopElementClick(it.first) },
                 selected = uiState.selectedTopElement == it.first,
-                title = getStringResource(it.second)
+                title = stringResource(it.second)
             )
         }
     }
@@ -494,83 +601,6 @@ fun TopElement(
 }
 
 @Composable
-fun Upload(
-    viewModel: ViewModel
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth(0.77f),
-            ) {
-                SelectionContainer {
-                    Text(
-                        text = getStringResource(Res.string.upload_info_1),
-                        style = MaterialTheme.typography.bodyLarge.copy(
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        ),
-                    )
-                }
-            }
-            Box(
-                modifier = Modifier
-                    .padding(Padding.small)
-            ) {
-                Button(
-                    onClick = { viewModel.onUploadClick() },
-                    colors = ButtonDefaults.buttonColors().copy(
-                        containerColor = greenButton,
-                        contentColor = greenButtonText
-                    )
-                ) {
-                    Text(
-                        text = getStringResource(Res.string.upload),
-                        style = MaterialTheme.typography.bodyLarge.copy(
-                            color = greenButtonText,
-                        )
-                    )
-                }
-            }
-        }
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = Padding.small)
-        ) {
-            SelectionContainer {
-                Text(
-                    text = getStringResource(Res.string.upload_info_2),
-                    style = MaterialTheme.typography.bodyLarge.copy(
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    ),
-                )
-            }
-        }
-        if (ManageFile.contentText != null) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = getStringResource(Res.string.upload_complete),
-                    style = MaterialTheme.typography.bodyLarge.copy(
-                        color = textButtonLightBlue,
-                    )
-                )
-            }
-        }
-    }
-}
-
-@Composable
 fun Title() {
     Box(
         modifier = Modifier
@@ -583,9 +613,66 @@ fun Title() {
     ) {
         SelectionContainer {
             Text(
-                text = getStringResource(Res.string.app_name),
+                text = stringResource(Res.string.app_name),
                 style = MaterialTheme.typography.headlineMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalWasmJsInterop::class)
+@Composable
+fun Tip(
+    text: String,
+    copyText: String,
+    path: String,
+    small: Boolean = false,
+    viewModel: ViewModel
+) {
+    val annotatedString = buildAnnotatedString {
+        append(text.substringBefore(copyText))
+
+        withLink(
+            LinkAnnotation.Clickable(
+                tag = "copy_path",
+                styles = TextLinkStyles(
+                    style = SpanStyle(
+                        color = Color(0xFF2196F3),
+                        fontWeight = FontWeight.Bold
+                    )
+                ),
+                linkInteractionListener = {
+                    try {
+                        window.navigator.clipboard.writeText(path)
+                        viewModel.showCopied(true)
+                    } catch (e: Exception) {
+                        println(e)
+                    }
+                }
+            )
+        ) {
+            append(copyText)
+        }
+        append(text.substringAfter(copyText))
+    }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                top = Padding.medium,
+                bottom = Padding.mini
+            )
+    ) {
+        SelectionContainer {
+            Text(
+                text = annotatedString,
+                style = if (small) MaterialTheme.typography.bodyMedium.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                ) else MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             )
         }

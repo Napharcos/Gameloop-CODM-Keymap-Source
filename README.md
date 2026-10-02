@@ -14,28 +14,6 @@ This guide will presents how to use the Gameloop CODM Keymap Generator.
 The website includes some fixes and optimizations to improve the controls.
 To start open the [website](https://napharcos.github.io/Gameloop-CODM-Keymap/).
 
-### Upload
-
-If you have only CODM installed you can skip this step.
-
-If you have other games installed, you need to upload, your current configuration or you lose the other games key map.
-
-#### Upload steps
-1. First copy this path:
-    ``` Path 
-   C:\Users\username\AppData\Roaming\AndroidTbox\
-2. Press the upload button:
-
-    ![Image 1](GuideAssets/Image%201.png)
-3.
-   - Paste the path to the address bar. - It is marked (1) in the image.
-   - Replace the `username` in the path with yours. - It is marked (1) in the image.
-   - Select the `TVM_100.xml` file. - It is marked (2) in the image.
-   - And press `Open`. - It is marked (3) in the image.
-
-   
-   ![Image 2](GuideAssets/Image%202.jpg)
-
 ### Change keys
 
 Each item has a description that provides information about that button. - It is marked (1) in the image.
@@ -50,60 +28,39 @@ You can replace all buttons with your preferred one:
 >
 > The site does not allow duplication of buttons and does not allow download if any button is missing.
 
-![Image 3](GuideAssets/Image%203.jpg)
+![Image 3](GuideAssets/Image%203.webp)
 
 You can switch between mods by clicking the mod name. - As shown in the image.
 
 So you can configure keymap for every mod.
 
-![Image 4](GuideAssets/Image%204.jpg)
+![Image](GuideAssets/image.webp)
 
 The browser save your configuration so next time you need only download it.
 
-### Download & Apply
+### Download & import
 
-Click the `DOWNLOAD` button.
+Click the `DOWNLOAD` button to download keymap for the selected mod.
 
-![Image 5](GuideAssets/Image%205.jpg)
+![Image 5](GuideAssets/Image%205.webp)
 
 Now the file is saved to your computer usually in the download folder.
 
-> ##### Important
-> 
-> If Gameloop is opened close it.
-> 
-> Also close Gameloop in taskbar.
-> 
-> ![Image 6](GuideAssets/Image%206.jpg)
+Now launch CODM and click the `Keybinding` menu element and select the game mod.
 
-Now open two file managers and in the first navigate to the downloaded file.
+![Image 5](GuideAssets/image_2.webp)
 
-![Image 8](GuideAssets/Image%208.jpg)
+After game mod selected press import and select the downloaded text file. - Shown in the image.
 
-Now copy this path:
-   ``` Path 
-   C:\Users\username\AppData\Roaming\AndroidTbox\
-   ```
-- Paste the path to the address bar of second file manager. - It is marked on the image.
-- Replace the `username` in the path with yours. - It is marked on the image.
+> #### Important
+>
+> Every keymap works only its own type. So make sure select the correct mod before import.
 
-![Image 9](GuideAssets/Image%209.jpg)
+![Image 6](GuideAssets/image_6.webp)
 
-Now go back to the first file manager.
+For last step select the imported keymap.
 
-Right click to the file and click `copy`. - As shown in the image.
-
-![Image 7](GuideAssets/Image%207.jpg)
-
-Now go to the second, right click to the clear place in the file manager and click `paste`. - It is marked on the image.
-
-![Image 10](GuideAssets/Image%2010.jpg)
-
-Lets click the overwrite button. - It is marked on the image.
-
-![Image 11](GuideAssets/Image%2011.jpg)
-
-Now you can launch Gameloop and play.
+![Image 7](GuideAssets/image_7.webp)
 
 ### Tip
 
@@ -111,24 +68,43 @@ The tip presents how to create desktop shortcut for CODM.
 
 First copy this command:
    ``` Path 
-   "C:\Program Files\TxGameAssistant\ui\AndroidEmulatorEn.exe" -cmd StartApk -param  -startpkg com.activision.callofduty.shooter -engine aow -vm 100
+   "C:\Program Files\Tencent\GameLoop\Application\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.activision.callofduty.shooter --from 8
    ```
 Now go to desktop and create new shortcut:
    - Right click to the desktop and go to `new`.
    - Click the `shortcut` button. - It is marked on the image.
 
-![Image 12](GuideAssets/Image%2012.jpg)
+![Image_3](GuideAssets/image_3.webp)
 
 This will start the `create shortcut` wizard.
 
 - Now paste the command to the textbox. - It is marked (1) in the image.
 - And press next. - It is marked (2) in the image.
 
-![Image 13](GuideAssets/Image%2013.jpg)
+![Image 4](GuideAssets/image_4.webp)
 
 - Add a name for example `CODM`. - It is marked (1) in the image.
 - Press finish. - It is marked (2) in the image.
 
-![Image 14](GuideAssets/Image%2014.jpg)
+![Image 5](GuideAssets/image_5.webp)
 
 Now the shortcut completed, double click and CODM is launched.
+
+### Tip2
+
+First create desktop shortcut for `Settings` the steps are same as in [Tip](#Tip), but with another command.
+
+So copy this command and create the shortcut:
+   ``` Path 
+   "C:\Program Files\Tencent\GameLoop\Application\GameLoopLauncher.exe" --launch-proc-name GameLoopEmulator.exe --launch-pkg-name com.android.settings --from 8
+   ```
+After shortcut created open it.
+
+And go to:
+- Apps → See all aps → Google Play services → first force stop then disable it
+
+Steps:
+
+| Apps | See all aps | Google Play services | Force stop | Disable |
+| :---: | :---: | :---: | :---: | :---: |
+| ![Image 8](GuideAssets/image_8.webp) | ![Image 9](GuideAssets/image_9.webp) | ![Image 10](GuideAssets/image_10.webp) | ![Image 11](GuideAssets/image_11.webp) | ![Image 12](GuideAssets/image_12.webp) |

@@ -4,8 +4,6 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,15 +21,17 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import gameloopcodmkeymap.composeapp.generated.resources.Res
+import gameloopcodmkeymap.composeapp.generated.resources.copied
 import gameloopcodmkeymap.composeapp.generated.resources.copyright
 import gameloopcodmkeymap.composeapp.generated.resources.libraries
 import gameloopcodmkeymap.composeapp.generated.resources.license
 import gameloopcodmkeymap.composeapp.generated.resources.source
 import kotlinx.browser.window
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.napharcos.gameloopcodmkeymap.theme.res.getStringResource
+import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.stringResource
+import org.napharcos.gameloopcodmkeymap.icons.close
 import org.napharcos.gameloopcodmkeymap.theme.*
-import org.napharcos.gameloopcodmkeymap.theme.res.currentComposeLanguage
+import kotlin.time.Duration.Companion.seconds
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalComposeUiApi::class)
 @Composable
@@ -42,14 +42,23 @@ fun App() {
         colorScheme = if (darkTheme) DarkScheme else LightScheme,
         typography = AppTypography(),
     ) {
-        Localization(
-            language = currentComposeLanguage
-        ) {
+        LaunchedEffect(Unit) {
+            ManageFile.initTexts()
+        }
+
+        AppEnvironment {
             val scrollState = rememberScrollState(0)
 
             val viewModel = viewModel { ViewModel() }
 
             val uiState by viewModel.uiState.collectAsState()
+
+            LaunchedEffect(uiState.showCopied) {
+                if (uiState.showCopied){
+                    delay(2.seconds)
+                    viewModel.showCopied(false)
+                }
+            }
 
             Box(
                 modifier = Modifier
@@ -98,7 +107,7 @@ fun App() {
                             contentAlignment = Alignment.TopEnd
                         ) {
                             LanguageElement(
-                                lang = currentComposeLanguage
+                                lang = LocalAppLocale.current
                             ) {
                                 changeLanguage(it)
                                 saveLang(it)
@@ -125,7 +134,7 @@ fun App() {
                         var onEnter by remember { mutableStateOf(false) }
 
                         Icon(
-                            imageVector = Icons.Default.Close,
+                            imageVector = close,
                             contentDescription = "Close",
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier
@@ -145,6 +154,8 @@ fun App() {
                                 }
                         )
                     }
+
+                if (uiState.showCopied) Copied()
             }
         }
     }
@@ -161,13 +172,13 @@ fun Licenses(
     ) {
         Column {
             ClickableElement(
-                text = getStringResource(Res.string.license),
+                text = stringResource(Res.string.license),
                 onClick = {
                     viewModel.onLicenseClick(true)
                 }
             )
             Text(
-                text = getStringResource(Res.string.copyright),
+                text = stringResource(Res.string.copyright),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 ),
@@ -175,13 +186,13 @@ fun Licenses(
         }
         Column {
             ClickableElement(
-                text = getStringResource(Res.string.libraries),
+                text = stringResource(Res.string.libraries),
                 onClick = {
                     viewModel.onLibrariesClick(true)
                 }
             )
             ClickableElement(
-                text = getStringResource(Res.string.source),
+                text = stringResource(Res.string.source),
                 onClick = {
                     window.open("https://github.com/Napharcos/Gameloop-CODM-Keymap-Source", "_blank")
                 }
@@ -208,7 +219,6 @@ fun ClickableElement(
     )
 }
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun LicensePage() {
     var license by remember { mutableStateOf("") }
@@ -230,6 +240,30 @@ fun LicensePage() {
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 ),
             )
+        }
+    }
+}
+
+@Composable
+fun Copied() {
+    Box(
+        modifier = Modifier
+            .padding(top = Padding.large)
+    ) {
+        Box(
+            modifier = Modifier
+                .clip(Shape.extraLarge)
+                .background(MaterialTheme.colorScheme.surfaceContainerLowest)
+                .padding(Padding.medium)
+        ) {
+            SelectionContainer {
+                Text(
+                    text = stringResource(Res.string.copied),
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                )
+            }
         }
     }
 }

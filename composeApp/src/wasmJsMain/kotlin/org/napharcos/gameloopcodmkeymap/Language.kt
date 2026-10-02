@@ -1,4 +1,4 @@
-package org.napharcos.gameloopcodmkeymap.theme
+package org.napharcos.gameloopcodmkeymap
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -20,6 +20,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -28,21 +29,46 @@ import androidx.compose.ui.window.PopupProperties
 import gameloopcodmkeymap.composeapp.generated.resources.*
 import kotlinx.browser.window
 import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
-import org.napharcos.gameloopcodmkeymap.theme.res.currentComposeLanguage
-import org.napharcos.gameloopcodmkeymap.theme.res.getStringResource
+import org.napharcos.gameloopcodmkeymap.theme.Padding
 
-val LocalLocalization = staticCompositionLocalOf { "en" }
+var customAppLocale by mutableStateOf<String?>(null)
+
+object LocalAppLocale {
+    private val LocalAppLocale = staticCompositionLocalOf { Locale.current.language }
+
+    val current: String
+        @Composable get() = LocalAppLocale.current
+
+    @Composable
+    infix fun provides(value: String?): ProvidedValue<*> {
+        updateCustomLocale(value)
+        return LocalAppLocale.provides(Locale.current.language)
+    }
+}
+
+@OptIn(ExperimentalWasmJsInterop::class)
+private fun updateCustomLocale(value: String?) {
+    js(
+        """
+        if (window.__customLocale !== value) {
+            window.__customLocale = value;
+            window.dispatchEvent(new Event("languagechange"));
+        }
+        """
+    )
+}
 
 @Composable
-fun Localization (
-    language: String = "en",
-    content: @Composable () -> Unit
-) {
+fun AppEnvironment(content: @Composable () -> Unit) {
     CompositionLocalProvider(
-        LocalLocalization provides language,
-        content = content
-    )
+        LocalAppLocale provides customAppLocale,
+    ) {
+        key(customAppLocale) {
+            content()
+        }
+    }
 }
 
 val languages = listOf(
@@ -51,12 +77,11 @@ val languages = listOf(
 )
 
 fun changeLanguage(language: String) {
-    currentComposeLanguage = language
+    customAppLocale = language
     saveLang(language)
 }
 
 fun saveLang(language: String) = window.localStorage.setItem("lang", language)
-
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalComposeUiApi::class)
 @Composable
@@ -112,7 +137,7 @@ fun LanguageElement(
                     "hu" -> vectorResource(Res.drawable.hu)
                     else -> vectorResource(Res.drawable.us)
                 },
-                contentDescription = getStringResource(Res.string.language),
+                contentDescription = stringResource(Res.string.language),
                 tint = Color.Unspecified
             )
         }
@@ -193,7 +218,7 @@ fun LanguageDropDownElement(
         ) {
             Icon(
                 imageVector = vectorResource(vector),
-                contentDescription = getStringResource(Res.string.language),
+                contentDescription = stringResource(Res.string.language),
                 tint = Color.Unspecified
             )
         }
