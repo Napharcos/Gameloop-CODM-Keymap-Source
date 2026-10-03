@@ -98,6 +98,10 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Chopper gunner rakéta hárítás
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Billentyűk hozzáadva a Gunship fegyvereihez.
         &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
@@ -111,6 +115,14 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Páncél gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Mégse páncél gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Helikopter rakéta hárítás
+        &#160;&#160;&#160;&#160;&#160;&#160;- Garázs kinyitás
+        &#160;&#160;&#160;&#160;&#160;&#160;- Loot legördülő menü
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Opció annihilator hip fire lövéséhez.
         &#160;&#160;&#160;&#160;- Opció külön páncél gombhoz.
@@ -131,6 +143,16 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Mozgás nyitott táskával javítva.
+        &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Ugrás gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Beszállás autóba gombok
+        &#160;&#160;&#160;&#160;&#160;&#160;- Fekvés gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Loot kinyitása gombok
+        &#160;&#160;&#160;&#160;&#160;&#160;- Mégse gránát gombok
+        &#160;&#160;&#160;&#160;&#160;&#160;- Kimenekítő helikopter hívása
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Forgó gránát gomb hozzáadva.
         &#160;&#160;&#160;&#160;- Forgó páncél gomb hozzáadva.

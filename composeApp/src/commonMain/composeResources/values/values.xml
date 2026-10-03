@@ -99,6 +99,10 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Chopper gunner jamming key
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Keys added for gunship to switch weapons.
         &#160;&#160;&#160;&#160;- Keys added for RC-XD to jump and detonate.
@@ -113,6 +117,14 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Armor button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Cancel armor button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Helicopter missile jamming
+        &#160;&#160;&#160;&#160;&#160;&#160;- Open garage
+        &#160;&#160;&#160;&#160;&#160;&#160;- Open loot dropdown
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Added hip fire option for Annihilator.
         &#160;&#160;&#160;&#160;- Option to separate armor button added.
@@ -133,6 +145,16 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.10.03:</b>
+        &#160;&#160;&#160;&#160;- Enable move while backpack opened.
+        &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Jump button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Get in car buttons
+        &#160;&#160;&#160;&#160;&#160;&#160;- Prone button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Open loot boxes
+        &#160;&#160;&#160;&#160;&#160;&#160;- Cancel grenade button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Call extract helicopter
+
         <b>2026.10.02:</b>
         &#160;&#160;&#160;&#160;- Rotary grenade button added.
         &#160;&#160;&#160;&#160;- Rotary armor button added.
