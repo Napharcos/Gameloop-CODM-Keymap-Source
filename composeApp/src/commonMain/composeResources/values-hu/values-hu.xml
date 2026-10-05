@@ -31,7 +31,7 @@
 
     <string name="br_tabkey">Táska</string>
     <string name="br_shiftkey">Gáz</string>
-    <string name="br_esckey">Beállítások/Felszedés bezárása/Buy tation bezárása</string>
+    <string name="br_esckey">Beállítások/Felszedés bezárása/Buy station bezárása</string>
     <string name="br_spacekey">Ugrás/Fék</string>
     <string name="br_key1">Váltás 1-es fegyverre</string>
     <string name="br_key2">Váltás 2-es fegyverre</string>
@@ -39,7 +39,7 @@
     <string name="br_keyc">Guggolás/Csúszás/Fekvés(ha nincs tiltva a beállításoknál)/Hely csere autóban/Le úszás</string>
     <string name="br_keye">Képesség/Rakéta hárítás/Le billentés (motor)</string>
     <string name="br_keyf">Feléleszt/Mégse gránát/Be-ki szállás autóból/Ajtók/Elem felvétele/Ejtőernyő/Kábel/Stb.</string>
-    <string name="br_keyh">Elem felvétele</string>
+    <string name="br_keyh">Elem felvétele/Lift</string>
     <string name="br_keym">Térkép</string>
     <string name="br_keyq">Hódeszka/Fel billentés (motor)/Shield Turret</string>
     <string name="br_keyr">Hódeszka ugrás/Újratöltés</string>
@@ -58,7 +58,7 @@
     <string name="br_key6">Frag/Conclusion gránát</string>
     <string name="br_key7">Smoke/Gas gránát</string>
     <string name="br_key8">Flash gránát</string>
-    <string name="br_keyg">Elem felvétele/Képesség módosítása/Beszállás autóba/Páncél/Duda</string>
+    <string name="br_keyg">Elem felvétele/Képesség módosítása repülőn/Beszállás autóba/Páncél/Duda</string>
     <string name="br_keycaps">Scorestreak</string>
     <string name="br_armor_text">Külön páncél gomb</string>
     <string name="br_keyf2">Első üzenet</string>
@@ -115,6 +115,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.05:</b>
+        &#160;&#160;&#160;&#160;- Desperadó célzás javítva.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a lifthez.
+
         <b>2026.10.04:</b>
         &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
         &#160;&#160;&#160;&#160;&#160;&#160;- Autó kihajolás
@@ -141,8 +145,8 @@
         &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Bomb drón robbantásához.
         &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
         &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az AAV szkenneléshez és rakétához.
-        &#160;&#160;&#160;&#160;- Tank aim javítva.
-        &#160;&#160;&#160;&#160;- Autóban aim javítva.
+        &#160;&#160;&#160;&#160;- Tank célzás javítva.
+        &#160;&#160;&#160;&#160;- Autóban célzás javítva.
         &#160;&#160;&#160;&#160;- Billentyű hozzáadva Shield turret-hez.
         &#160;&#160;&#160;&#160;- Hódeszka ugrás javítva.
     </string>
@@ -168,7 +172,7 @@
         &#160;&#160;&#160;&#160;- HawkX-3 lövés hozzáadva az ugrás gombhoz.
         &#160;&#160;&#160;&#160;- Billentyű hozzáadva a Bomb drón robbantásához.
         &#160;&#160;&#160;&#160;- Billentyűk hozzáadva az RC-XD esetén az ugráshoz és robbantáshoz.
-        &#160;&#160;&#160;&#160;- Autóban aim javítva.
+        &#160;&#160;&#160;&#160;- Autóban célzás javítva.
         &#160;&#160;&#160;&#160;- Kurzor rögzítés a raktárban javítva.
         &#160;&#160;&#160;&#160;- Gomb hozzáadva a mégse páncélhoz.
         &#160;&#160;&#160;&#160;- Forgó gomb hozzáadva a scorestreak-hez.

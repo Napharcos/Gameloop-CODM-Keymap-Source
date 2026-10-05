@@ -39,7 +39,7 @@
     <string name="br_keyc">Crouch/Slide/Prone(if not disable in game settings)/Change position in car/Swim down</string>
     <string name="br_keye">Skill/Aircraft jammer/Tilt down (motorcycle)</string>
     <string name="br_keyf">Revive/Cancel grenade/Enter-exit car/Doors/Pick up item/Open parachute/Cable/Etc.</string>
-    <string name="br_keyh">Pick up item</string>
+    <string name="br_keyh">Pick up item/Lift</string>
     <string name="br_keym">Map</string>
     <string name="br_keyq">Snowboard/Tilt up (motorcycle)/Open box/Shield Turret</string>
     <string name="br_keyr">Snowboard jump/Reload</string>
@@ -117,6 +117,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.05:</b>
+        &#160;&#160;&#160;&#160;- Fixed desperado aim.
+        &#160;&#160;&#160;&#160;- Key added to lift.
+
         <b>2026.10.04:</b>
         &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
         &#160;&#160;&#160;&#160;&#160;&#160;- Lean out car
