@@ -29,7 +29,7 @@
     <string name="keyx">Signal</string>
     <string name="keyt">Voice</string>
 
-    <string name="br_tabkey">Backpack</string>
+    <string name="br_tabkey">Backpack/Cancel skill</string>
     <string name="br_shiftkey">Throttle</string>
     <string name="br_esckey">Settings/Close pick-up/Close buy station</string>
     <string name="br_spacekey">Jump/Brake</string>
@@ -117,6 +117,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.06:</b>
+        &#160;&#160;&#160;&#160;- Unlimited RPD fix.
+        &#160;&#160;&#160;&#160;- Cancel skill moved to backpack button.
+
         <b>2026.10.05:</b>
         &#160;&#160;&#160;&#160;- Fixed desperado aim.
         &#160;&#160;&#160;&#160;- Key added to lift.

@@ -29,7 +29,7 @@
     <string name="keyx">Jelzés</string>
     <string name="keyt">Mikrofon</string>
 
-    <string name="br_tabkey">Táska</string>
+    <string name="br_tabkey">Táska/Mégse képesség</string>
     <string name="br_shiftkey">Gáz</string>
     <string name="br_esckey">Beállítások/Felszedés bezárása/Buy station bezárása</string>
     <string name="br_spacekey">Ugrás/Fék</string>
@@ -115,6 +115,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.06:</b>
+        &#160;&#160;&#160;&#160;- Végtelen RPD javítva.
+        &#160;&#160;&#160;&#160;- Mégse képesség áthelyezve a táska gombhoz.
+
         <b>2026.10.05:</b>
         &#160;&#160;&#160;&#160;- Desperadó célzás javítva.
         &#160;&#160;&#160;&#160;- Billentyű hozzáadva a lifthez.
