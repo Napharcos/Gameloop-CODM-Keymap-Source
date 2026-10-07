@@ -525,7 +525,7 @@ fun DownloadButton(
 
 fun logDownloadEvent(mod: Mod) {
     val name = mod.displayName
-//    gtag("event", "download-$name")
+    gtag("event", "download-$name")
 }
 
 @Composable
