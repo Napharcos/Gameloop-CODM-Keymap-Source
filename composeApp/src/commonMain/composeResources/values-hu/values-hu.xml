@@ -54,15 +54,18 @@
     <string name="br_keyt">Mikrofon</string>
     <string name="br_key4">Páncél</string>
     <string name="br_key3">Gránátok</string>
+    <string name="br_keyn">Buy station</string>
     <string name="br_key5">Cluster/snowman gránát</string>
     <string name="br_key6">Frag/Conclusion gránát</string>
     <string name="br_key7">Smoke/Gas gránát</string>
     <string name="br_key8">Flash gránát</string>
     <string name="br_keyg">Elem felvétele/Képesség módosítása repülőn/Beszállás autóba/Páncél/Duda</string>
     <string name="br_keycaps">Scorestreak</string>
-    <string name="br_armor_text">Külön páncél gomb</string>
     <string name="br_keyf2">Első üzenet</string>
     <string name="br_keyf3">Második üzenet</string>
+
+    <string name="br_armor_text">Külön páncél gomb</string>
+    <string name="buy_station">Külön buy station gomb</string>
 
     <string name="dmz_tabkey">Táska</string>
     <string name="dmz_shiftkey">Gáz</string>
@@ -88,6 +91,7 @@
     <string name="dmz_keyf4">Emoji</string>
     <string name="dmz_keyo">Automatikus futás</string>
     <string name="dmz_keyx">Jelzés</string>
+    <string name="dmz_keyn">Buy station</string>
 
     <string name="download">LETÖLTÉS</string>
     <string name="reset">ALAP</string>
@@ -121,6 +125,7 @@
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Automatikus jelzés lehelyezés térkép görgetése közben javítva.
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
+        &#160;&#160;&#160;&#160;- Opció külön buy station gombhoz.
 
         <b>2026.10.06:</b>
         &#160;&#160;&#160;&#160;- Végtelen RPD javítva.
@@ -165,6 +170,7 @@
     <string name="dmz_change_log">
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
+        &#160;&#160;&#160;&#160;- Opció külön buy station gombhoz.
 
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Mozgás nyitott táskával javítva.

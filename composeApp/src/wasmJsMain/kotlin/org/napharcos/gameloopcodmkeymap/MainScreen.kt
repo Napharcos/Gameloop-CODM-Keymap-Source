@@ -157,11 +157,21 @@ fun SelectableElements(
             checked = uiState.replaceFire
         ) { viewModel.onReplaceFireClick(!uiState.replaceFire) }
 
-    if (uiState.selectedTopElement == Mod.BR)
+    if (uiState.selectedTopElement == Mod.BR) {
         SelectableCardElement(
             text = stringResource(Res.string.br_armor_text),
             checked = uiState.brArmorButton
         ) { viewModel.switchArmorButton(!uiState.brArmorButton) }
+        SelectableCardElement(
+            text = stringResource(Res.string.buy_station),
+            checked = uiState.separateBuyStationBR
+        ) { viewModel.switchBuyStationButton(!uiState.separateBuyStationBR) }
+    } else if (uiState.selectedTopElement == Mod.DMZ) {
+        SelectableCardElement(
+            text = stringResource(Res.string.buy_station),
+            checked = uiState.separateBuyStationDMZ
+        ) { viewModel.switchBuyStationButton(!uiState.separateBuyStationDMZ) }
+    }
 }
 
 @Composable
@@ -490,7 +500,8 @@ fun DownloadButton(
                     replaceFire = uiState.replaceFire,
                     mod = mod,
                     ratio = uiState.screenRatio,
-                    brArmor = mod == Mod.BR && uiState.brArmorButton
+                    brArmor = mod == Mod.BR && uiState.brArmorButton,
+                    buyStation = (mod == Mod.BR && uiState.separateBuyStationBR) || (mod == Mod.DMZ && uiState.separateBuyStationDMZ)
                 )
                 logDownloadEvent(uiState.selectedTopElement)
             },

@@ -79,8 +79,8 @@ object ManageFile {
         defaultDMZText = Res.readBytes("files/dmz-default.xml").decodeToString()
     }
 
-    fun downloadFile(replaceFire: Boolean, mod: Mod, ratio: ScreenRatio, removeArmor: Boolean) {
-        val text = createCodmText(replaceFire, mod, removeArmor)
+    fun downloadFile(replaceFire: Boolean, mod: Mod, ratio: ScreenRatio, removeArmor: Boolean, removeBuyStation: Boolean) {
+        val text = createCodmText(replaceFire, mod, removeArmor, removeBuyStation)
         @Suppress("RedundantNullableReturnType")
         val content: JsAny? = text.toJsString()
         val blob = Blob(arrayOf(content).toJsArray(), BlobPropertyBag(type = "text/plain"))
@@ -94,7 +94,7 @@ object ManageFile {
         URL.revokeObjectURL(url)
     }
 
-    private fun createCodmText(replaceFire: Boolean, mod: Mod, removeArmor: Boolean): String {
+    private fun createCodmText(replaceFire: Boolean, mod: Mod, removeArmor: Boolean, removeBuyStation: Boolean): String {
         var editedCodmText = when (mod) {
             Mod.MP -> defaultMPText
             Mod.BR -> defaultBRText
@@ -102,6 +102,9 @@ object ManageFile {
         }
         
         editedCodmText = editedCodmText.removeDuplicateButtons(mod)
+
+        if (!removeBuyStation)
+            editedCodmText = removeBuyStationButton(editedCodmText)
 
         if (!removeArmor)
             editedCodmText = removeArmorButton(editedCodmText)
@@ -147,9 +150,14 @@ object ManageFile {
 
     private fun removeArmorButton(codmText: String): String {
         val armorButtonStart = """<KeyMapping ItemName="$4Name""""
-        val armorButtonEnd = """</KeyMapping>"""
 
-        return removeButton(codmText, armorButtonStart, armorButtonEnd)
+        return removeButton(codmText, armorButtonStart, SIMPLE_END)
+    }
+
+    private fun removeBuyStationButton(codmText: String): String {
+        val buyStationButtonStart = $$"""<KeyMapping ItemName="$nName""""
+
+        return removeButton(codmText, buyStationButtonStart, SIMPLE_END)
     }
 
     private fun removeButton(codmText: String, start: String, end: String): String {

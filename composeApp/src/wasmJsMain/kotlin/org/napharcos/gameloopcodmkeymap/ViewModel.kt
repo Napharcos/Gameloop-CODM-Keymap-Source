@@ -3,6 +3,8 @@ package org.napharcos.gameloopcodmkeymap
 import androidx.lifecycle.ViewModel
 import gameloopcodmkeymap.composeapp.generated.resources.Res
 import gameloopcodmkeymap.composeapp.generated.resources.br_key4
+import gameloopcodmkeymap.composeapp.generated.resources.br_keyn
+import gameloopcodmkeymap.composeapp.generated.resources.dmz_keyn
 import kotlinx.browser.window
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -18,7 +20,9 @@ class ViewModel : ViewModel() {
             replaceFire = initReplaceFire(),
             brArmorButton = initSeparateArmor().also {
                 if (it) addArmorKey()
-            }
+            },
+            separateBuyStationBR = initSeparateBuyStation(Mod.BR).also { if (it) addBuyStationKey(Mod.BR) },
+            separateBuyStationDMZ = initSeparateBuyStation(Mod.DMZ).also { if (it) addBuyStationKey(Mod.DMZ) }
         )
     )
 
@@ -74,6 +78,24 @@ class ViewModel : ViewModel() {
         saveSeparateArmor(enable)
     }
 
+    fun switchBuyStationButton(enable: Boolean) {
+        _uiState.update {
+            if (it.selectedTopElement == Mod.DMZ)
+                it.copy(
+                    separateBuyStationDMZ = enable
+                )
+            else it.copy(
+                separateBuyStationBR = enable
+            )
+        }
+
+        if (enable)
+            addBuyStationKey(uiState.value.selectedTopElement)
+        else removeBuyStationKey(uiState.value.selectedTopElement)
+
+        saveSeparateBuyStation(enable, uiState.value.selectedTopElement)
+    }
+
     fun changeBrKey(id: String, key: String, code: Int) {
         val newList = brKeys.map {
             when {
@@ -100,6 +122,35 @@ class ViewModel : ViewModel() {
         val armor = KeyData(key4, Res.string.br_key4, "4", 52, loadBrKey(key4) ?: "4", loadBrKeyCode(key4) ?: 52)
 
         brKeys.firstOrNull { it.id == armor.id } ?: run { brKeys.add(armor) }
+    }
+
+    private fun removeBuyStationKey(mod: Mod) {
+        val list = when (mod) {
+            Mod.MP -> mpKeys
+            Mod.BR -> brKeys
+            Mod.DMZ -> dmzKeys
+        }
+
+        list.firstOrNull { it.id == nKey }?.let { list.remove(it) }
+    }
+
+    private fun addBuyStationKey(mod: Mod) {
+        val brKeyData = KeyData(nKey, Res.string.br_keyn, "N", 78, loadBrKey(nKey) ?: "N", loadBrKeyCode(nKey) ?: 78)
+        val dmzKeyData = KeyData(nKey, Res.string.dmz_keyn, "N", 78, loadDmzKey(nKey) ?: "N", loadDmzKeyCode(nKey) ?: 78)
+
+        val list = when (mod) {
+            Mod.MP -> mpKeys
+            Mod.BR -> brKeys
+            Mod.DMZ -> dmzKeys
+        }
+
+        val keyData = when (mod) {
+            Mod.MP -> null
+            Mod.BR -> brKeyData
+            Mod.DMZ -> dmzKeyData
+        }
+
+        list.firstOrNull { it.id == keyData?.id } ?: run { keyData?.let { list.add(it) } }
     }
 
     fun changeMpKey(id: String, key: String, code: Int) {
@@ -190,6 +241,11 @@ class ViewModel : ViewModel() {
         return ratio.toBooleanStrict()
     }
 
+    private fun initSeparateBuyStation(mod: Mod): Boolean {
+        val ratio = window.localStorage["separateBuyStation_${mod.displayName}"] ?: "false"
+        return ratio.toBooleanStrict()
+    }
+
     private fun initReplaceFire(): Boolean {
         val ratio = window.localStorage["replaceFire"] ?: "true"
         return ratio.toBooleanStrict()
@@ -203,6 +259,10 @@ class ViewModel : ViewModel() {
         window.localStorage["separateArmor"] = replace.toString()
     }
 
-    fun onDownloadClick(replaceFire: Boolean, mod: Mod, ratio: ScreenRatio, brArmor: Boolean) =
-        ManageFile.downloadFile(replaceFire, mod, ratio, brArmor)
+    fun saveSeparateBuyStation(separate: Boolean, mod: Mod) {
+        window.localStorage["separateBuyStation_${mod.displayName}"] = separate.toString()
+    }
+
+    fun onDownloadClick(replaceFire: Boolean, mod: Mod, ratio: ScreenRatio, brArmor: Boolean, buyStation: Boolean) =
+        ManageFile.downloadFile(replaceFire, mod, ratio, brArmor, buyStation)
 }

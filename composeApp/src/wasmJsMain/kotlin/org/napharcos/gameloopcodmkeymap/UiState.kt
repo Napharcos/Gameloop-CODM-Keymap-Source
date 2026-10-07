@@ -5,6 +5,8 @@ data class UiState(
     val screenRatio: ScreenRatio,
     val replaceFire: Boolean,
     val brArmorButton: Boolean,
+    val separateBuyStationBR: Boolean,
+    val separateBuyStationDMZ: Boolean,
     val showingLibraries: Boolean = false,
     val showingLicense: Boolean = false,
     val showCopied: Boolean = false

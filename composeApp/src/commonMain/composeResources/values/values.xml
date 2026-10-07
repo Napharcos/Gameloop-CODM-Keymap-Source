@@ -55,6 +55,7 @@
     <string name="br_keyx">Mark</string>
     <string name="br_keyt">Voice</string>
     <string name="br_key4">Armor</string>
+    <string name="br_keyn">Buy station</string>
     <string name="br_key3">Grenades</string>
     <string name="br_key5">Cluster/snowman grenade</string>
     <string name="br_key6">Frag/Conclusion grenade</string>
@@ -64,6 +65,7 @@
     <string name="br_keycaps">Scorestreak</string>
 
     <string name="br_armor_text">Separate armor button</string>
+    <string name="buy_station">Seperate buy station button</string>
 
     <string name="dmz_tabkey">Backpack</string>
     <string name="dmz_shiftkey">Throttle</string>
@@ -89,6 +91,7 @@
     <string name="dmz_keyf4">Emoji</string>
     <string name="dmz_keyo">Auto run</string>
     <string name="dmz_keyx">Mark</string>
+    <string name="dmz_keyn">Buy station</string>
 
     <string name="download">DOWNLOAD</string>
     <string name="reset">RESET</string>
@@ -123,6 +126,7 @@
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Fixed auto marking while scrolling the map.
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
+        &#160;&#160;&#160;&#160;- Option to separate buy station button.
 
         <b>2026.10.06:</b>
         &#160;&#160;&#160;&#160;- Unlimited RPD fix.
@@ -167,6 +171,7 @@
     <string name="dmz_change_log">
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
+        &#160;&#160;&#160;&#160;- Option to separate buy station button.
 
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Enable move while backpack opened.
@@ -198,7 +203,6 @@
     <string name="rotary_key">Rotary key</string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
-
     <string name="hip_fire_br">Enables hip fire for annihilator, but disables the 1-tap ADS mode.</string>
 
     <string name="license">Terms &amp; Conditions</string>
