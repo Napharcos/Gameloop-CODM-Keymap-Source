@@ -98,6 +98,9 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
+
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
         &#160;&#160;&#160;&#160;&#160;&#160;- Chopper gunner rakéta hárítás
@@ -115,6 +118,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Automatikus jelzés lehelyezés térkép görgetése közben javítva.
+        &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
+
         <b>2026.10.06:</b>
         &#160;&#160;&#160;&#160;- Végtelen RPD javítva.
         &#160;&#160;&#160;&#160;- Mégse képesség áthelyezve a táska gombhoz.
@@ -156,6 +163,9 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
+
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Mozgás nyitott táskával javítva.
         &#160;&#160;&#160;&#160;- Javított eltűnő gombok:
@@ -181,6 +191,9 @@
         &#160;&#160;&#160;&#160;- Gomb hozzáadva a mégse páncélhoz.
         &#160;&#160;&#160;&#160;- Forgó gomb hozzáadva a scorestreak-hez.
     </string>
+
+    <string name="simple_key">Egyszerű gomb</string>
+    <string name="rotary_key">Forgó gomb</string>
 
     <string name="hip_fire">Engedélyezi a hip fire módot a score streak-ekhez és operator skill-ekhez, de letíltja az 1-tap ADS módot.</string>
 

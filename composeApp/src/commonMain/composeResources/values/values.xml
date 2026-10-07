@@ -99,6 +99,9 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
+
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
         &#160;&#160;&#160;&#160;&#160;&#160;- Chopper gunner jamming key
@@ -117,6 +120,10 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Fixed auto marking while scrolling the map.
+        &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
+
         <b>2026.10.06:</b>
         &#160;&#160;&#160;&#160;- Unlimited RPD fix.
         &#160;&#160;&#160;&#160;- Cancel skill moved to backpack button.
@@ -158,6 +165,9 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.10.07:</b>
+        &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
+
         <b>2026.10.03:</b>
         &#160;&#160;&#160;&#160;- Enable move while backpack opened.
         &#160;&#160;&#160;&#160;- Fixed disappearing buttons:
@@ -183,6 +193,9 @@
         &#160;&#160;&#160;&#160;- Key added to cancel armor use.
         &#160;&#160;&#160;&#160;- Added circle based rotary scorestreak button.
     </string>
+
+    <string name="simple_key">Simple key</string>
+    <string name="rotary_key">Rotary key</string>
 
     <string name="hip_fire">Enables hip fire for score streaks and operator skills, but disables the 1-tap ADS mode.</string>
 

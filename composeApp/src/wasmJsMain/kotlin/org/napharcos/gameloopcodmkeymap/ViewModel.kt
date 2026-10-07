@@ -138,6 +138,29 @@ class ViewModel : ViewModel() {
         dmzKeys.addAll(newList)
     }
 
+    fun updateApplyWheel(mod: Mod, id: String, apply: Boolean) {
+        val modList = when (mod) {
+            Mod.MP -> mpKeys
+            Mod.BR -> brKeys
+            Mod.DMZ -> dmzKeys
+        }
+        val newList = modList.map {
+            when {
+                it.id == id -> {
+                    saveWheel(mod, id, apply)
+                    it.copy(applyWheel = apply)
+                }
+                else -> it
+            }
+        }
+        modList.clear()
+        modList.addAll(newList)
+    }
+
+    fun saveWheel(mod: Mod, id: String, apply: Boolean) {
+        window.localStorage["${mod.displayName}_${id}_wheel"] = apply.toString()
+    }
+
     private fun saveBrKey(id: String, key: String, keyCode: Int) {
         window.localStorage[BR + id] = key
         window.localStorage[BR + id + code] = keyCode.toString()

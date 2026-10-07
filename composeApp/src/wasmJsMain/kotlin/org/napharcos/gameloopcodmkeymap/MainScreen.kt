@@ -40,6 +40,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.geometry.Offset
@@ -67,6 +68,7 @@ import gameloopcodmkeymap.composeapp.generated.resources.*
 import kotlinx.browser.window
 import kotlinx.coroutines.awaitCancellation
 import org.jetbrains.compose.resources.stringResource
+import org.napharcos.gameloopcodmkeymap.SelectableRadioButton
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.KeyboardEvent
 import kotlin.js.Promise
@@ -360,82 +362,107 @@ fun CardElement(
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .height(80.dp)
+            .height(if (keys.wheelAvailable) 110.dp else 70.dp)
             .padding(
                 top = Padding.mini,
                 bottom = Padding.mini,
             )
     ) {
-        Row(
-            modifier = Modifier
-                .padding(Padding.small)
-        ) {
-            Box(
+        Column {
+            Row(
                 modifier = Modifier
-                    .fillMaxWidth(0.6f)
-                    .fillMaxHeight()
-                    .padding(
-                        start = Padding.small,
-                        end = Padding.small,
-                    ),
-                contentAlignment = Alignment.Center
+                    .padding(Padding.mini)
+                    .height(60.dp)
             ) {
-                SelectionContainer {
-                    Text(
-                        text = stringResource(keys.text),
-                        style = MaterialTheme.typography.bodyLarge.copy(
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.6f)
+                        .fillMaxHeight()
+                        .padding(
+                            start = Padding.small,
+                            end = Padding.small,
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    SelectionContainer {
+                        Text(
+                            text = stringResource(keys.text),
+                            style = MaterialTheme.typography.bodyLarge.copy(
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
                         )
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight()
+                        .padding(
+                            start = Padding.small,
+                            end = Padding.small,
+                        )
+                ) {
+                    OutlinedTextField(
+                        value = keys.currentKey,
+                        onValueChange = {},
+                        singleLine = true,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .onFocusChanged { focused = it.isFocused }
                     )
                 }
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(
+                            start = Padding.small,
+                            end = Padding.small,
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Button(
+                        onClick = {
+                            when (uiState.selectedTopElement) {
+                                Mod.MP -> viewModel.changeMpKey(keys.id, keys.baseKey, keys.baseCode)
+                                Mod.BR -> viewModel.changeBrKey(keys.id, keys.baseKey, keys.baseCode)
+                                Mod.DMZ -> viewModel.changeDmzKey(keys.id, keys.baseKey, keys.baseCode)
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        shape = RoundedCornerShape(10),
+                        colors = ButtonDefaults.buttonColors().copy(
+                            containerColor = Color.Blue
+                        )
+                    ) {
+                        Text(
+                            text = stringResource(Res.string.reset),
+                            style = MaterialTheme.typography.bodyLarge.copy(
+                                color = greenButtonText,
+                            ),
+                            maxLines = 1
+                        )
+                    }
+                }
             }
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .fillMaxHeight()
-                    .padding(
-                        start = Padding.small,
-                        end = Padding.small,
-                    )
-            ) {
-                OutlinedTextField(
-                    value = keys.currentKey,
-                    onValueChange = {},
-                    singleLine = true,
+
+            if (keys.wheelAvailable) {
+                Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .onFocusChanged { focused = it.isFocused }
-                )
-            }
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(
-                        start = Padding.small,
-                        end = Padding.small,
-                    ),
-                contentAlignment = Alignment.Center
-            ) {
-                Button(
-                    onClick = {
-                        when (uiState.selectedTopElement) {
-                            Mod.MP -> viewModel.changeMpKey(keys.id, keys.baseKey, keys.baseCode)
-                            Mod.BR -> viewModel.changeBrKey(keys.id, keys.baseKey, keys.baseCode)
-                            Mod.DMZ -> viewModel.changeDmzKey(keys.id, keys.baseKey, keys.baseCode)
-                        }
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    shape = RoundedCornerShape(10),
-                    colors = ButtonDefaults.buttonColors().copy(
-                        containerColor = Color.Blue
-                    )
+                        .fillMaxHeight()
+                        .padding(end = Padding.large),
+                    horizontalArrangement = Arrangement.End
                 ) {
-                    Text(
-                        text = stringResource(Res.string.reset),
-                        style = MaterialTheme.typography.bodyLarge.copy(
-                            color = greenButtonText,
-                        )
+                    SelectableRadioButton(
+                        text = stringResource(Res.string.rotary_key),
+                        selected = keys.applyWheel,
+                        onClick = { viewModel.updateApplyWheel(uiState.selectedTopElement, keys.id, true) }
+                    )
+                    SelectableRadioButton(
+                        text = stringResource(Res.string.simple_key),
+                        selected = !keys.applyWheel,
+                        onClick = { viewModel.updateApplyWheel(uiState.selectedTopElement, keys.id, false) }
                     )
                 }
             }
@@ -487,7 +514,7 @@ fun DownloadButton(
 
 fun logDownloadEvent(mod: Mod) {
     val name = mod.displayName
-    gtag("event", "download-$name")
+//    gtag("event", "download-$name")
 }
 
 @Composable
