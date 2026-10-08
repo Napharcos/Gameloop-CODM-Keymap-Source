@@ -123,6 +123,12 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.08:</b>
+        &#160;&#160;&#160;&#160;- Fixed snowboard jump button disappear issue.
+        &#160;&#160;&#160;&#160;- Fixed "F" at snowboard and HawkX-3 exit.
+        &#160;&#160;&#160;&#160;- Key added to scan dog tag in vehicles.
+        &#160;&#160;&#160;&#160;- Fixed issue: opening a loot box in certain situations did not appear at correct position.
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Fixed auto marking while scrolling the map.
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.

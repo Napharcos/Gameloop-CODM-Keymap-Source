@@ -122,6 +122,12 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.10.08:</b>
+        &#160;&#160;&#160;&#160;- Hódeszka ugrás billentyű eltűnése javítva.
+        &#160;&#160;&#160;&#160;- "F" javítva a hódeszka és HawkX-3 kilépésnél.
+        &#160;&#160;&#160;&#160;- Billentyű hozzáadva a "scan dog tag"-hoz járművekben.
+        &#160;&#160;&#160;&#160;- Javítva: bizonyos esetekben a loot box megnyitása nem a megfelelő pozícióban jelent meg.
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Automatikus jelzés lehelyezés térkép görgetése közben javítva.
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
