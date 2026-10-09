@@ -41,7 +41,9 @@ val mpKeys = mutableStateListOf(
     KeyData(f4Key, Res.string.keyf4, "F4", 115, loadKey(f4Key) ?: "F4", loadKeyCode(f4Key) ?: 115),
     KeyData(oKey, Res.string.keyo, "=", 187, loadKey(oKey) ?: "=", loadKeyCode(oKey) ?: 187),
     KeyData(xKey, Res.string.keyx, "X", 88, loadKey(xKey) ?: "X", loadKeyCode(xKey) ?: 88, true, loadWheel(Mod.MP, xKey)),
-    KeyData(tKey, Res.string.keyt, "T", 84, loadKey(tKey) ?: "T", loadKeyCode(tKey) ?: 84)
+    KeyData(tKey, Res.string.keyt, "T", 84, loadKey(tKey) ?: "T", loadKeyCode(tKey) ?: 84),
+    KeyData(f2Key, Res.string.br_keyf2, "F2", 113, loadKey(f2Key) ?: "F2", loadKeyCode(f2Key) ?: 113),
+    KeyData(f3Key, Res.string.br_keyf3, "F3", 114, loadKey(f3Key) ?: "F3", loadKeyCode(f3Key) ?: 114)
 )
 
 val brKeys = mutableStateListOf(
