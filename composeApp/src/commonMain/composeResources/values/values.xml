@@ -84,7 +84,7 @@
     <string name="dmz_keyr">Reload</string>
     <string name="dmz_keyv">Cancel armor</string>
     <string name="dmz_keyt">Microphone</string>
-    <string name="dmz_keyy">Prone(if enable in game settings)</string>
+    <string name="dmz_keyy">Prone(if enable in game settings)/Drone down</string>
     <string name="dmz_keyz">Voice</string>
     <string name="dmz_keyg">Get in car/Horn/Armor</string>
     <string name="dmz_key3">Grenades</string>
@@ -197,7 +197,11 @@
 
     <string name="dmz_change_log">
         <b>2026.11.12:</b>
-        <b>&#160;&#160;&#160;&#160;- DMZ keymap is outdated.</b>
+        &#160;&#160;&#160;&#160;- Updated to the latest CODM version.
+        &#160;&#160;&#160;&#160;- Drone updates:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Up: Right mouse button
+        &#160;&#160;&#160;&#160;&#160;&#160;- Down: prone button
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 fire: left mouse button
 
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.

@@ -84,7 +84,7 @@
     <string name="dmz_keyr">Újratöltés</string>
     <string name="dmz_keyv">Mégse páncél</string>
     <string name="dmz_keyt">Mikrofon</string>
-    <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
+    <string name="dmz_keyy">Fekvés(ha engedélyezve van a beállításokban)/Drón le</string>
     <string name="dmz_keyz">Hang</string>
     <string name="dmz_keyg">Beszállás autóba/Páncél/Duda</string>
     <string name="dmz_key3">Gránát</string>
@@ -196,7 +196,11 @@
 
     <string name="dmz_change_log">
         <b>2026.11.12:</b>
-        <b>&#160;&#160;&#160;&#160;- A DMZ konfiguráció elavult!.</b>
+        &#160;&#160;&#160;&#160;- Frissítve a legújabb CODM verzióhoz.
+        &#160;&#160;&#160;&#160;- Drón frissítések:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Fel: jobb egér gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Le: fekvés gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 lövés: bal egér gomb
 
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
