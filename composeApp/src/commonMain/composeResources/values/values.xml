@@ -4,7 +4,7 @@
     <string name="lock_mouse">Lock mouse to screen</string>
     <string name="performance_panel">Combat performance panel</string>
     <string name="menu">Settings</string>
-    <string name="jump">Jump/Brake/Hawk-X3 fire</string>
+    <string name="jump">Jump/Brake/Hawk-X3 up</string>
     <string name="key1">Switch to weapon 1/Gunship switch weapon 1</string>
     <string name="key2">Switch to weapon 2/Gunship switch weapon 2</string>
     <string name="key3">Score streak 1//Gunship switch weapon 3</string>
@@ -22,7 +22,7 @@
     <string name="keym">Open-Close Map</string>
     <string name="keyr">Reload/Jump RC-XD</string>
     <string name="keyv">Knife</string>
-    <string name="keyy">Prone (if enable in game settings)</string>
+    <string name="keyy">Prone (if enable in game settings)/Hak-X3 down</string>
     <string name="keyz">Sound</string>
     <string name="keyf4">Emoji</string>
     <string name="keyo">Auto run/Night vision</string>
@@ -102,6 +102,15 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.11.12:</b>
+        &#160;&#160;&#160;&#160;- Updated to the latest CODM version.
+        &#160;&#160;&#160;&#160;- Execution, nuclear, airdrop, ladder fixed.
+        &#160;&#160;&#160;&#160;- C4 detonation fixed.
+        &#160;&#160;&#160;&#160;- Drone updates:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Up: jump key
+        &#160;&#160;&#160;&#160;&#160;&#160;- Down: prone key
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 fire: left mouse button
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
 
@@ -123,6 +132,18 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.11.12:</b>
+        &#160;&#160;&#160;&#160;- Updated to the latest CODM version.
+        &#160;&#160;&#160;&#160;- Button added to snowboard and execution.
+        &#160;&#160;&#160;&#160;- Drone updates:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Up: jump key
+        &#160;&#160;&#160;&#160;&#160;&#160;- Down: prone key
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 fire: left mouse button
+        &#160;&#160;&#160;&#160;- Map updates:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Cancel signal added to right mouse button.
+        &#160;&#160;&#160;&#160;&#160;&#160;- Button added to close map.
+        &#160;&#160;&#160;&#160;&#160;&#160;- Fixed: run, while map is opened.
+
         <b>2026.10.08:</b>
         &#160;&#160;&#160;&#160;- Fixed snowboard jump button disappear issue.
         &#160;&#160;&#160;&#160;- Fixed "F" at snowboard and HawkX-3 exit.
@@ -175,6 +196,9 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.11.12:</b>
+        <b>&#160;&#160;&#160;&#160;- DMZ keymap is outdated.</b>
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Option added to replace rotary keys with simple one.
         &#160;&#160;&#160;&#160;- Option to separate buy station button.

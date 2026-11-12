@@ -4,7 +4,7 @@
     <string name="performance_panel">Harc teljesítmény panel</string>
     <string name="full_screen">Teljes képernyő</string>
     <string name="menu">Beállítások</string>
-    <string name="jump">Ugrás/Fék/HawwkX-3 lövés</string>
+    <string name="jump">Ugrás/Fék/HawwkX-3 fel</string>
     <string name="key1">Váltás 1-es fegyverre</string>
     <string name="key2">Váltás 2-es fegyverre</string>
     <string name="key3">Score streak 1</string>
@@ -22,7 +22,7 @@
     <string name="keym">Térkép</string>
     <string name="keyr">Újratöltés/RC-XD ugrás</string>
     <string name="keyv">Kés</string>
-    <string name="keyy">Fekvés (ha engedélyezve van a beállításoknál)</string>
+    <string name="keyy">Fekvés (ha engedélyezve van a beállításoknál)/Drón le</string>
     <string name="keyz">Hang</string>
     <string name="keyf4">Emoji</string>
     <string name="keyo">Auto futás/Éjjel látás</string>
@@ -32,7 +32,7 @@
     <string name="br_tabkey">Táska/Mégse képesség</string>
     <string name="br_shiftkey">Gáz</string>
     <string name="br_esckey">Beállítások/Felszedés bezárása/Buy station bezárása</string>
-    <string name="br_spacekey">Ugrás/Fék</string>
+    <string name="br_spacekey">Ugrás/Fék/Drón fel</string>
     <string name="br_key1">Váltás 1-es fegyverre</string>
     <string name="br_key2">Váltás 2-es fegyverre</string>
     <string name="br_keyb">Tüzelési mód módosítása/RC-XD és bomb drón robbantása</string>
@@ -44,7 +44,7 @@
     <string name="br_keyq">Hódeszka/Fel billentés (motor)/Shield Turret</string>
     <string name="br_keyr">Hódeszka ugrás/Újratöltés</string>
     <string name="br_keyv">Belső/Külső nézet váltás</string>
-    <string name="br_keyy">Fekvés(ha engedélyezve van a beállításokban)</string>
+    <string name="br_keyy">Fekvés(ha engedélyezve van a beállításokban)/Drón le</string>
     <string name="br_keyz">Hang</string>
     <string name="br_keyf4">Emoji</string>
     <string name="br_keyo">Auto futás</string>
@@ -102,6 +102,15 @@
     <string name="dmz">DMZ</string>
 
     <string name="mp_change_log">
+        <b>2026.11.12:</b>
+        &#160;&#160;&#160;&#160;- Frissítve a legújabb CODM verzióhoz.
+        &#160;&#160;&#160;&#160;- Kivégzés, nuclear, airdrop, létra javítva.
+        &#160;&#160;&#160;&#160;- C4 robbantás javítva.
+        &#160;&#160;&#160;&#160;- Drón frissítések:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Fel: ugrás gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Le: fekvés gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 lövés: bal egér gomb
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
 
@@ -122,6 +131,18 @@
     </string>
 
     <string name="br_change_log">
+        <b>2026.11.12:</b>
+        &#160;&#160;&#160;&#160;- Frissítve a legújabb CODM verzióhoz.
+        &#160;&#160;&#160;&#160;- Gomb hozzáadva a hódeszkához és kivégzéshez.
+        &#160;&#160;&#160;&#160;- Drón frissítések:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Fel: ugrás gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- Le: fekvés gomb
+        &#160;&#160;&#160;&#160;&#160;&#160;- HawkX3 lövés: bal egér gomb
+        &#160;&#160;&#160;&#160;- Térkép frissítések:
+        &#160;&#160;&#160;&#160;&#160;&#160;- Mégse jelzés hozzáadva a jobb egér gombhoz.
+        &#160;&#160;&#160;&#160;&#160;&#160;- Gomb hozzáadva a térkép bezárásához.
+        &#160;&#160;&#160;&#160;&#160;&#160;- Futás miközben a térkép megvan nyitva javítva.
+
         <b>2026.10.08:</b>
         &#160;&#160;&#160;&#160;- Hódeszka ugrás billentyű eltűnése javítva.
         &#160;&#160;&#160;&#160;- "F" javítva a hódeszka és HawkX-3 kilépésnél.
@@ -174,6 +195,9 @@
     </string>
 
     <string name="dmz_change_log">
+        <b>2026.11.12:</b>
+        <b>&#160;&#160;&#160;&#160;- A DMZ konfiguráció elavult!.</b>
+
         <b>2026.10.07:</b>
         &#160;&#160;&#160;&#160;- Opció hozzáadva a forgó gombok egyszerű gombra történő cseréjéhez.
         &#160;&#160;&#160;&#160;- Opció külön buy station gombhoz.
